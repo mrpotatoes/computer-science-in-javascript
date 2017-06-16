@@ -2,7 +2,6 @@
 // http://www.stoimen.com/blog/2012/03/13/computer-algorithms-quicksort/
 // http://www.stoimen.com/blog/2012/03/12/algorithm-cheatsheet-quicksort/
 // http://www.stoimen.com/blog/2010/06/11/friday-algorithms-quicksort-difference-between-php-and-javascript/
-
 // https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
 
 /**
@@ -32,49 +31,6 @@ export const quicksortSimple = (arr) => {
   }
 
   return quicksortSimple(left).concat(pivot, quicksortSimple(right))
-}
-
-/**
- * Quicksort using iteration.
- */
-export const quicksortIterative = (arr) => {
-  const stack = [arr]
-  const sorted = []
-  const left = []
-  const right = []
-  // let pivot = null
-
-  while (stack.length) {
-    const temp = stack.pop()
-    const tl = temp.length
-
-    if (tl === 1) {
-      sorted.push(temp[0])
-      continue
-    }
-
-    const pivot = temp[0]
-
-    for (let i = 1; i < tl; i++) {
-      if (temp[i] < pivot) {
-        left.push(temp[i])
-      } else {
-        right.push(temp[i])
-      }
-    }
-
-    left.push(pivot)
-
-    if (right.length) {
-      stack.push(right)
-    }
-
-    if (left.length) {
-      stack.push(left)
-    }
-  }
-
-  return stack
 }
 
 /**
