@@ -6,9 +6,6 @@ http://www.stoimen.com/blog/2010/06/11/friday-algorithms-quicksort-difference-be
 
 https://khan4019.github.io/front-end-Interview-Questions/sort.html#quickSort
 
-
-
-
 **NOTE**: Project assumes you have `node` and `npm/yarn` installed. If not go ahead and do that now.
 
 This is important as this is what I use so that I don't need to keep typing `../../`
