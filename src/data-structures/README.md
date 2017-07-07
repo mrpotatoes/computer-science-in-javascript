@@ -10,7 +10,7 @@ Data Structures in order of difficulty. (`x == tested && documented`)
 - [x] Singly Linked List
 - [x] Doubly Linked List
 - [x] Hash Table
-- [ ] Tree
 - [ ] Binary Search Tree
+- [ ] Tree
 - [ ] Trie
 - [ ] Graph

@@ -89,6 +89,22 @@ describe('[Data Structure] Tree', () => {
 
     done()
   })
+
+  it.skip('add(1...8) remove(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) contains(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) findBFS(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) preOrder(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) postOrder(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) traverseDFS(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) traverseBFS(ceo), ', (done) => { done() })
+
+  it.skip('add(1...8) getTree(ceo), ', (done) => { done() })
 })
 
 // const tree = new Tree()

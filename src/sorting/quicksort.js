@@ -3,6 +3,7 @@
 // http://www.stoimen.com/blog/2012/03/12/algorithm-cheatsheet-quicksort/
 // http://www.stoimen.com/blog/2010/06/11/friday-algorithms-quicksort-difference-between-php-and-javascript/
 // https://www.nczonline.net/blog/2012/11/27/computer-science-in-javascript-quicksort/
+// https://www.khanacademy.org/computing/computer-science/algorithms/quick-sort/a/overview-of-quicksort
 
 /**
  * Quicksort in a single function..

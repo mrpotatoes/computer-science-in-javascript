@@ -6,6 +6,15 @@ chai.should()
 const expect = chai.expect
 
 describe('[Data Structure] Hash Table', () => {
+  it('ANDRIC ANDRIC ANDRIC ANDRIC ANDRIC', (done) => {
+    const hash = new HashTableDS(200)
+    hash.add('w9n65bq', 10)
+
+    console.log(hash.values)
+
+    done()
+  })
+
   it('HashTableDS(0...13) then calculateHash(w9n65bqdlkeoc) for each.', (done) => {
     const hash1 = new HashTableDS(1)
     const hash2 = new HashTableDS(2)

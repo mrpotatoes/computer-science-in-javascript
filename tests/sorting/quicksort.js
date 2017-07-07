@@ -27,4 +27,14 @@ describe('[Sorting] Quick Sort!', () => {
 
     done()
   })
+
+  // @TODO: Oh. I forgot these.
+  it.skip('partition([...])', (done) => {
+    done()
+  })
+
+  // @TODO: Oh. I forgot these.
+  it.skip('swap([...])', (done) => {
+    done()
+  })
 })
