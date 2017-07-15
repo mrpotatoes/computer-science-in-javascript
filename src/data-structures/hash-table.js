@@ -1,4 +1,4 @@
-/* eslint-disable consistent-return */
+/* eslint-disable consistent-return, no-console */
 
 // Converted from: http://www.willvillanueva.com/javascript-hash-tables/
 export default class HashTableDS {
@@ -35,12 +35,6 @@ export default class HashTableDS {
     }
 
     return hash % this.storageLimit
-  }
-
-  add = (key, value) => {
-    this.insert(key, value)
-
-    return this
   }
 
   /**
@@ -104,17 +98,36 @@ export default class HashTableDS {
   remove = (key) => {
     const index = this.calculateHash(key)
 
+    // console.log(index, key)
+
     if (this.storage[index].length === 1 && this.storage[index][0][0] === key) {
+      // console.log('Only item')
       delete this.storage[index]
     } else {
-      for (let i = 0; i < this.storage[index]; i++) {
+      // console.log(this.storage[index])
+
+      for (let i = 0; i < this.storage[index].length; i++) {
+        // console.log(`loop # ${i}`)
+        if (!this.storage[index][i]) {
+          // eslint-disable-next-line
+          continue
+        }
+
         if (this.storage[index][i][0] === key) {
+          // console.log('I should be deleting this')
           delete this.storage[index][i]
         }
       }
     }
 
     this.numberOfValues--
+
+    // If the last one was cleared out let's set the array back to nill.
+    if (this.numberOfValues === 0) {
+      this.storage = []
+    }
+
+    return this
   }
 
   /**
