@@ -103,7 +103,6 @@ describe('[Data Structure] Hash Table', () => {
     hash.insert('w9 - 0xdebzx9jqs7roe - n65bq', 'another thingy')
 
     // hash.remove('70xdebzx9jqs7roe083u8zolxr').length().should.equal(1)
-
     // console.log(JSON.stringify(hash.storage, null, 2))
 
     done()
