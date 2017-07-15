@@ -46,11 +46,12 @@
  * @return {array}
  */
 export const mergeSort = (arr) => {
-  if (arr.length <= 1) {
+  // We've divided enough.
+  if (arr.length === 1) {
     return arr
   }
 
-  const middle = parseInt(arr.length / 2, 10)
+  const middle = Math.floor(arr.length / 2, 10)
   const left = arr.slice(0, middle)
   const right = arr.slice(middle, arr.length)
 
