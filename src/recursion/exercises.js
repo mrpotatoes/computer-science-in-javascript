@@ -105,6 +105,12 @@ export const reverseString = (string) => {
  *    ((((recursionReverse('o') + 'l') + 'l' ) + 'e') + 'h')
  *    (((('o') + 'l') + 'l' ) + 'e') + 'h')
  *
+ * What is odd is how we're doing the return in the recurisve function. This is often what
+ * throws me off. We are passing in a substring for as long as we have a string left and
+ * then we call ourself again. What is important here is the string.charAt(0) as this is
+ * what we're using to build out the reverse string. until we reach the end. The diagram
+ * above explains it best.
+ *
  * @see http://bit.ly/2v4XBZE
  * @see http://eddmann.com/posts/ten-ways-to-reverse-a-string-in-javascript/ *
  * @param {string} string String to reverse.
