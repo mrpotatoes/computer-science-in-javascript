@@ -1,11 +1,24 @@
 import chai from 'chai'
-// import { factorial, addition } from '../../src/recursion/exercises'
+import {
+  reverseString,
+  reverseStringTernary,
+  sumArray,
+} from '../../src/recursion/exercises'
 
 chai.should()
 
 describe('Recursion', () => {
   describe('Exercises', () => {
-    it.skip('...', (done) => {
+    it('reverseString(hello)', (done) => {
+      reverseString('hello world').should.equal('dlrow olleh')
+      // reverseStringTernary('hello world').should.equal('dlrow olleh')
+
+      done()
+    })
+
+    it('reverseString(hello)', (done) => {
+      sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]).should.equal(45)
+
       done()
     })
   })
