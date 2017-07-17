@@ -2,8 +2,9 @@ import chai from 'chai'
 import {
   reverseString,
   reverseStringTernary,
-  sumArray,
 } from '../../src/recursion/exercises'
+
+import { sumArray } from '../../src/recursion/math'
 
 chai.should()
 
@@ -11,7 +12,7 @@ describe('Recursion', () => {
   describe('Exercises', () => {
     it('reverseString(hello)', (done) => {
       reverseString('hello world').should.equal('dlrow olleh')
-      // reverseStringTernary('hello world').should.equal('dlrow olleh')
+      reverseStringTernary('hello world').should.equal('dlrow olleh')
 
       done()
     })

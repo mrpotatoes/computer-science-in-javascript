@@ -12,14 +12,14 @@ class Trie {
 
   add (word) {
     if (!this.root) {
-      return null
+      return
     }
     this._addNode(this.root, word)
   }
 
   _addNode (node, word) {
     if (!node || !word) {
-      return null
+      return
     }
     node.prefixes++
     const letter = word.charAt(0)

@@ -17,27 +17,26 @@
 // http://www.cs.wustl.edu/~kjg/cse131/modules/recursion/lab.html
 // http://anandology.com/python-practice-book/functional-programming.html
 
-// Write a recursive function that outputs the range between two positive numbers
-// myFunction(1, 5) #=> [1, 2, 3, 4, 5]
-export const range = (array) => (
-  array
-)
-
-// Write a recursive function that outputs the sum of an array of integers
-// myFunction([1, 2, 3, 4, 5, 6]) #=> 21
-export const sumArray = (array) => {
-  if (array.length === 1) {
-    return array[0]
-  }
-
-  return array.shift() + sumArray(array)
+// Implement Ruby's `select` in JavaScript recursively.
+// Example: iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning even numbers.
+export const arraySelectEven = (array) => {
+  // eslint-disable-next-line
+  console.log('evenNumbers')
+  return array
 }
 
 // Implement Ruby's `select` in JavaScript recursively.
 // Example: iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning even numbers.
-export const arraySelect = (array) => (
-  array
-)
+//
+// Use FN to determine which to actually select. Is applied ONLY on one element at a time.
+export const arraySelect = (array, fn) => {
+  // eslint-disable-next-line
+  console.log('evenNumbers')
+
+  // eslint-disable-next-line
+  console.log('user func', fn)
+  return array
+}
 
 // Implement Ruby's `drop_while` in JavaScript recursively.
 // Example: iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning integers greater than 7.
