@@ -66,7 +66,11 @@ export const dropWhile = (array) => (
  *    ((((recursionReverse('o') + 'l') + 'l' ) + 'e') + 'h')
  *    (((('o') + 'l') + 'l' ) + 'e') + 'h')
  *
- * s
+ * What is odd is how we're doing the return in the recurisve function. This is often what
+ * throws me off. We are passing in a substring for as long as we have a string left and
+ * then we call ourself again. What is important here is the string.charAt(0) as this is
+ * what we're using to build out the reverse string. until we reach the end. The diagram
+ * above explains it best.
  *
  * @see http://bit.ly/2v4XBZE
  * @see http://eddmann.com/posts/ten-ways-to-reverse-a-string-in-javascript/ *
@@ -74,11 +78,9 @@ export const dropWhile = (array) => (
  * @return {string}
  */
 export const reverseString = (string) => {
-  if (string.length <= 1) {
+  if (string.length === 0) {
     return string
   }
-
-  console.log(string)
 
   return reverseString(string.substr(1)) + string.charAt(0)
 }
@@ -109,7 +111,7 @@ export const reverseString = (string) => {
  * @return {string}
  */
 export const reverseStringTernary = (string) => (
-  (string.length <= 1)
+  (string.length === 0)
     ? string
     : reverseStringTernary(string.substr(1)) + string.charAt(0)
 )
