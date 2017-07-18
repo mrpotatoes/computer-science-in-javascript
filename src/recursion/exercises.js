@@ -17,25 +17,66 @@
 // http://www.cs.wustl.edu/~kjg/cse131/modules/recursion/lab.html
 // http://anandology.com/python-practice-book/functional-programming.html
 
-// Implement Ruby's `select` in JavaScript recursively.
-// Example: iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning even numbers.
-export const arraySelectEven = (array) => {
-  // eslint-disable-next-line
-  console.log('evenNumbers')
-  return array
+/**
+ * Get the evens from an array.
+ *
+ * Implement Ruby's `select` in JavaScript recursively.
+ *
+ * @note Can I do this with a return easier?
+ * @example iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning even numbers.
+ *
+ * @param {Array} array The array to get the evens out of.
+ * @param {Array} [newArray=[]] An array pointer (if none provided use default)
+ * @return {Array} A new array with just even numbers.
+ */
+export const arraySelectEven = (array, newArray = []) => {
+  if (array.length === 0) {
+    return 0
+  }
+
+  const first = array.shift()
+
+  if (first % 2 === 0) {
+    newArray.push(first)
+  }
+
+  // Recurse dawg.
+  arraySelectEven(array, newArray)
+
+  return newArray
 }
 
-// Implement Ruby's `select` in JavaScript recursively.
-// Example: iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning even numbers.
-//
-// Use FN to determine which to actually select. Is applied ONLY on one element at a time.
-export const arraySelect = (array, fn) => {
-  // eslint-disable-next-line
-  console.log('evenNumbers')
+/**
+ * Get the evens from an array.
+ *
+ * Implement Ruby's `select` in JavaScript recursively. using user prov FN to determine
+ * which integers to actually select to actually select. Is applied ONLY on one element at
+ * a time. Function must return true or false.
+ *
+ * @note Can I do this with a return easier?
+ * @example iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning even numbers.
+ *
+ * @param {Array} array The array to get the evens out of.
+ * @param {Function} fn [description]
+ * @param {Array} [newArray=[]] An array pointer (if none provided use default)
+ * @return {Array} A new array with just even numbers.
+ */
+export const arraySelect = (array, fn, newArray = []) => {
+  if (array.length === 0) {
+    return 0
+  }
 
-  // eslint-disable-next-line
-  console.log('user func', fn)
-  return array
+  const first = array.shift()
+
+  // Run user proved method against element.
+  if (fn(first)) {
+    newArray.push(first)
+  }
+
+  // Recurse dawg.
+  arraySelect(array, fn, newArray)
+
+  return newArray
 }
 
 // Implement Ruby's `drop_while` in JavaScript recursively.

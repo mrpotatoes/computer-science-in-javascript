@@ -1,10 +1,15 @@
 import chai from 'chai'
-import { factorial, addition } from '../../src/recursion/math'
+import { factorial, addition, sumArray } from '../../src/recursion/math'
 
 chai.should()
 
 describe('Recursion', () => {
   describe('Math', () => {
+    it('sumArray([])', (done) => {
+      sumArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 0]).should.equal(45)
+      done()
+    })
+
     it('factorial(1) and factorial(10)', (done) => {
       const factorial1 = factorial(1)
       const factorial10 = factorial(10)
