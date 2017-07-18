@@ -1,4 +1,4 @@
-/* eslint-disable max-len, no-else-return */
+/* eslint-disable max-len, no-else-return, no-console */
 
 // the collatz conjecture
 // https://youtu.be/VrrnjYgDBEk?t=729

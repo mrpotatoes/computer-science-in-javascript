@@ -26,13 +26,14 @@ describe('Recursion', () => {
       const evens = (int) => (int % 2 === 0)
       arraySelect([0, 1, 2, 3, 4, 5, 6], evens).should.deep.equal([0, 2, 4, 6])
       arraySelect([0, 1, 2.4, 3, 4, 5, 6], evens).should.deep.equal([0, 4, 6])
+      arraySelect([0, 1, 2.4, 3, 4, 5, 6, 7], evens).should.deep.equal([0, 4, 6])
       done()
     })
 
     it('arraySelect(odds) should get me odd numbers', (done) => {
       const odds = (int) => (int % 2 === 1)
       arraySelect([0, 1, 1.1, 2, 3, 4, 5, 6], odds).should.deep.equal([1, 3, 5])
-      arraySelect([0, 1, 2.4, 3, 4, 5, 6], odds).should.deep.equal([1, 3, 5])
+      arraySelect([0, 1, 2.4, 3, 4, 5, 6, 9], odds).should.deep.equal([1, 3, 5, 9])
       done()
     })
   })
