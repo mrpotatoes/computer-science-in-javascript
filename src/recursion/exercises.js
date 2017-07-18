@@ -106,6 +106,15 @@ export const dropWhile = (array) => (
  *    ((((recursionReverse('o') + 'l') + 'l' ) + 'e') + 'h')
  *    (((('o') + 'l') + 'l' ) + 'e') + 'h')
  *
+ * Another way of doing this specifically for the text 'hello' w/o using recursion.
+ *     const helloReverse = () => (get_H())
+ *     const get_H = () => (get_E() + 'h')
+ *     const get_E = () => (get_L1() + 'e')
+ *     const get_L1 = () => (get_L2() + 'l')
+ *     const get_L2 = () => (get_O() + 'l')
+ *     const get_O = () => ('o')
+ *     helloReverse()
+ *
  * What is odd is how we're doing the return in the recurisve function. This is often what
  * throws me off. We are passing in a substring for as long as we have a string left and
  * then we call ourself again. What is important here is the string.charAt(0) as this is
@@ -144,6 +153,15 @@ export const reverseString = (string) => {
  *    (((recursionReverse('lo') + 'l') + 'e') + 'h')
  *    ((((recursionReverse('o') + 'l') + 'l' ) + 'e') + 'h')
  *    (((('o') + 'l') + 'l' ) + 'e') + 'h')
+ *
+ * Another way of doing this specifically for the text 'hello' w/o using recursion.
+ *     const helloReverse = () => (get_H())
+ *     const get_H = () => (get_E() + 'h')
+ *     const get_E = () => (get_L1() + 'e')
+ *     const get_L1 = () => (get_L2() + 'l')
+ *     const get_L2 = () => (get_O() + 'l')
+ *     const get_O = () => ('o')
+ *     helloReverse()
  *
  * What is odd is how we're doing the return in the recurisve function. This is often what
  * throws me off. We are passing in a substring for as long as we have a string left and
