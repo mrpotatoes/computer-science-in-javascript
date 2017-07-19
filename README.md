@@ -42,6 +42,7 @@ Unlike the data structures all sorting algorithms have the same goal and they ca
 By doing so we will be able to compare the different sorting algorithms more easily. Sorting algorithms are very sensitive to the input data so we will also try different input data to see how they affect the performances.
 
 # Notes
+1. Currently all documentation is in `./docs/` but this isn't ideal. I will move this to each topic instead.
 1. Project assumes you have `node` and `npm/yarn` installed. If not go ahead and do that now.
 1. I'm using: [Babel Namespace Plugin](https://github.com/yudhasetiawan/babel-plugin-namespace)
     * This is important so I don't need to keep typing `../../`. It isn't 1980 anymore.
