@@ -18,10 +18,23 @@ Remember these things when writing a recursive method:
     * `reverseStringTernary(string)`
 
 ## Arrays
-
-## Iterables
+* Write a function to build a tree from a flattened array
+    * `explodeFlatTree(flat)`
+* Write a function to flatten an array from a tree
+    * `flattenTree(tree)`
 
 ## Math
+* Get the factorial of a number.
+    * `factorial(num)`
+* Outputs the range between two positive numbers ie: `(1, 5) => [1, 2, 3, 4, 5]`
+    * `range(start, end)`
+* Sum an array of integers
+    * `sumArray(array)`
+* Add one number recursively until there is nothing left.
+    * `addition(num)`
+
+## Iterables ... ?
+Nothing yet, can't think of anything.
 
 # Links to comb through
 * http://www.integralist.co.uk/posts/js-recursion.html

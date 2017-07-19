@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars, no-undef, arrow-body-style */
+
 // http://oskarhane.com/create-a-nested-array-recursively-in-javascript/
 // Create a nested array recursively in Javascript
 //
@@ -29,12 +31,10 @@
 //     ]}
 // ]
 
-// eslint-disable-next-line
 export const explodeFlatTree = (flat) => {
-  return flat
+  return tree
 }
 
-// eslint-disable-next-line
-export const flattenTree = (flat) => {
+export const flattenTree = (tree) => {
   return flat
 }

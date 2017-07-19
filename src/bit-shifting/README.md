@@ -25,6 +25,29 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 | `>>=` | Bitwise right shift and assignment |
 | `>>>=` | Bitwise unsigned right shift and assignment |
 
+# Exercises
+## [HEX to Decimal](http://bit.ly/2uatstw)
+* Convert a single decimal number
+* Convert one letter
+* Convert 10
+* Convert multiple letters
+* Convert large numbers
+* Convert large numbers and letters
+* Convert white
+* Convert papayawhip
+* Return null for an invalid hex
+
+## [RGB to HEX](http://bit.ly/2uaiMLn)
+* Convert white
+* Convert papayawhip (and be able to handle missing rgb
+* Convert steelblue (and be able to handle missing spaces
+* Convert magenta
+* Convert yellow
+* Convert green
+* Convert black
+* Return the hex value if accidently given a hex
+
+# Misc links to comb over
 * http://michalbe.blogspot.com/2013/03/javascript-less-known-parts-bitwise.html
 * https://github.com/turingschool/data_structures_and_algorithms/tree/master/bitwise_binary_operators
 * https://www.codecademy.com/en/courses/introduction-to-bitwise-operators/0/1
