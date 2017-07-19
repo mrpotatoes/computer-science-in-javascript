@@ -57,3 +57,7 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 * https://www.w3schools.com/js/js_numbers.asp
 * https://danthedev.com/2015/07/25/binary-in-javascript
 * http://graphics.stanford.edu/~seander/bithacks.html
+
+Benchmarking
+* https://github.com/bestiejs/benchmark.js
+* https://github.com/happner/benchmarket

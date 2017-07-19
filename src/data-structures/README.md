@@ -2,6 +2,26 @@
 
 [Data Structures With JavaScript: Tree](https://code.tutsplus.com/articles/data-structures-with-javascript-tree--cms-23393)
 
+The expected tree structure for each of these structures.
+
+```
+data-structures/
+├── array/
+│   ├── array.js
+│   ├── diagram.png
+│   └── README.md
+├── stack/
+│   ├── stack.js
+│   ├── diagram.png
+│   └── README.md
+└── queue/
+│   ├── queue.js
+│   ├── diagram.png
+│   └── README.md
+│
+└── etc ...
+```
+
 # Exercises
 ## Array
 Build an array class. Must have following features/methods:
