@@ -55,12 +55,15 @@ These two seem to be the same huh?
 
 <hr />
 
+## Table Data
 Table 1
+
 | TEST DATA  | OUTPUT  |
 |---|---|
 | `getVowels('United States')` | `"SUadeeinsttt"`
 
 Table 2
+
 | TEST DATA  | OUTPUT  |
 |---|---|
 | `thousandsSeparators('1000')` | `'1,000'`
