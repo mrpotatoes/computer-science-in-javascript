@@ -26,6 +26,7 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 | `>>>=` | Bitwise unsigned right shift and assignment |
 
 * http://michalbe.blogspot.com/2013/03/javascript-less-known-parts-bitwise.html
+* https://github.com/turingschool/data_structures_and_algorithms/tree/master/bitwise_binary_operators
 * https://www.codecademy.com/en/courses/introduction-to-bitwise-operators/0/1
 * https://www.cs.ucsb.edu/~pconrad/cs16/topics/bitOps/
 * https://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
