@@ -1,14 +1,10 @@
-# REGEX
-If there is one part of computer science where I am honestly very weak would be regexes.
+# REGEX - Thoughts
+I normally dislike the idea of "elegance" in code because it tends to make code more difficult to read. Unless this is code that we *need* to rely on and need the speed I choose readability over speed each time. In one respect I will sometimes flip on this is regex validation.
 
-Check these out.
-* [w3resource.com exercises](http://www.w3resource.com/javascript-exercises/javascript-regexp-exercises.php)
-* [sketchengine.co.uk](https://regex.sketchengine.co.uk/)
-* [sketchengine.co.uk Quiz](https://regex.sketchengine.co.uk/extra_regexps.html)
+Now, to be honest, if there is one aspect of computer science where I am very weak it would be regexes. But here's the thing. Regex is used a lot and all over. That needs to change for everyone.
 
-## Write regex functions to:
-
-### General String Regexes
+# Exercises
+## General String Regexes
 1. Test the first character of a string is uppercase or not.
     * `firstLetterUppercase(string)`
 1. A trim function (string) using regular expression.
@@ -24,7 +20,7 @@ Check these out.
     * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex2.cgi)
     * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex3.cgi)
 
-### Personal Information
+## Personal Information
 1. Check whether a given value is US zip code or not.
     * `isZipCode(string)`
 1. Check whether a given value is UK Post Code or not.
@@ -36,7 +32,7 @@ Check these out.
 1. Check a credit card number.
     * `isCreditCardNumber(string)`
 
-### Numbers and Dates
+## Numbers and Dates
 1. Print an integer with commas as thousands separators. (Table 2)
     * `numberFormatting(string)`
 1. Check whether a given value is time string or not.
@@ -44,7 +40,7 @@ Check these out.
 1. Search a date within a string.
     * `findDateExists(string)`
 
-### ¡INTERNET! shenanigans
+## ¡INTERNET! shenanigans
 1. Check whether a given value is hexadecimal value or not.
     * `validateHex(string)`
 1. Check whether a given value is hex color value or not.
@@ -66,7 +62,7 @@ Check these out.
         * Character `.` (period, dot or full stop)
             * Provided that it is not the first or last character and it will not come one after the other.
 
-### Misc
+## Misc
 These two seem to be the same huh?
 1. Check a given value contains alpha, dash and underscore.
     * `validateASCII(string)`
@@ -75,7 +71,7 @@ These two seem to be the same huh?
 
 <hr />
 
-## Table Data
+### Table Data
 Table 1
 
 | TEST DATA  | OUTPUT  |
@@ -89,3 +85,9 @@ Table 2
 | `thousandsSeparators('1000')` | `'1,000'`
 | `thousandsSeparators('10000.23')` | `'10,000.23'`
 | `thousandsSeparators('100000')` | `'100,000'`
+
+# Notes
+Check these out.
+* [w3resource.com exercises](http://www.w3resource.com/javascript-exercises/javascript-regexp-exercises.php)
+* [sketchengine.co.uk](https://regex.sketchengine.co.uk/)
+* [sketchengine.co.uk Quiz](https://regex.sketchengine.co.uk/extra_regexps.html)

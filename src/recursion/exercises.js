@@ -1,22 +1,5 @@
 /* eslint-disable max-len, no-else-return, no-console, no-unreachable */
 
-// the collatz conjecture
-// https://youtu.be/VrrnjYgDBEk?t=729
-// http://www.cs.utep.edu/vladik/cs2401.10a/Ch_14_Recursion.pdf
-
-// http://www.w3resource.com/javascript-exercises/javascript-recursion-functions-exercises.php
-// http://www.w3resource.com/c-programming-exercises/recursion/index.php
-// https://roman01la.github.io/recursion-exercises/
-// https://cscircles.cemc.uwaterloo.ca/16-recursion/
-// http://www.bowdoin.edu/~ltoma/teaching/cs107/spring05/recursion.html
-// http://codingbat.com/java/Recursion-1
-// http://www.cse.chalmers.se/edu/year/2016/course/TDA555/ex-week2.html
-// https://www.inf.unibz.it/~calvanese/teaching/04-05-ip/exercises/recursion/strings/
-// http://www.geeksforgeeks.org/category/algorithm/recursion/
-// https://www.hackerrank.com/domains/fp/fp-recursion
-// http://www.cs.wustl.edu/~kjg/cse131/modules/recursion/lab.html
-// http://anandology.com/python-practice-book/functional-programming.html
-
 /**
  * Get the evens from an array.
  *

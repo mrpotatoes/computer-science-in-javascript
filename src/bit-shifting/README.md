@@ -1,4 +1,4 @@
-## Thoughts
+# Bit Shifting - Thoughts
 As JavaScript becomes more ubiquitous and powerful the more seriously it will be taken.
 Therefore if we plan to become better software engineers we must then learn more about
 and become more efficient with bitwise operators and bit shifting and all that awful nonsense.
