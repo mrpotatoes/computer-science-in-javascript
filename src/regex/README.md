@@ -11,15 +11,15 @@ Check these out.
 ### General String Regexes
 1. Test the first character of a string is uppercase or not.
 1. A trim function (string) using regular expression.
-  * Remove white-space from start and end position.
-  * Convert 2 or more spaces to 1.
-  * Exclude newline with a start spacing.
+    * Remove white-space from start and end position.
+    * Convert 2 or more spaces to 1.
+    * Exclude newline with a start spacing.
 1. Count number of words in string.
 1. Count the number of vowels in a given string. (Table 1)
 1. Match all items in first column but not the other
-  * [Sample Data 1](https://regex.sketchengine.co.uk/cgi/ex1.cgi)
-  * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex2.cgi)
-  * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex3.cgi)
+    * [Sample Data 1](https://regex.sketchengine.co.uk/cgi/ex1.cgi)
+    * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex2.cgi)
+    * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex3.cgi)
 
 ### Personal Information
 1. Check whether a given value is US zip code or not.
@@ -41,12 +41,12 @@ Check these out.
 1. Check whether a given value is a valid url or not.
 1. Check whether a given value is IP value or not.
 1. Matches [all] e-mail addresses.
-  * The personal information part contains the following ASCII characters.
-    * Uppercase (A-Z) and lowercase (a-z) English letters.
-    * Digits (0-9).
-    * Characters: `! # $ % & ' * + - / = ? ^ _ ` { | } ~`
-    * Character `.` (period, dot or full stop)
-      * Provided that it is not the first or last character and it will not come one after the other.
+    * The personal information part contains the following ASCII characters.
+        * Uppercase (A-Z) and lowercase (a-z) English letters.
+        * Digits (0-9).
+        * Characters: `! # $ % & ' * + - / = ? ^ _ ` { | } ~`
+        * Character `.` (period, dot or full stop)
+            * Provided that it is not the first or last character and it will not come one after the other.
 
 ### Misc
 These two seem to be the same huh?
