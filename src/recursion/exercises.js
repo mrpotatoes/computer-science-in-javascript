@@ -82,9 +82,15 @@ export const arraySelect = (array, fn, newArray = []) => {
 /**
  * Given an integer remove any items from an array that are less than it.
  *
+ * This is clearly a little more complicated looking than it really is. I spearated the
+ * return into multiple lines so that the complexity can be shown with greater ease.
+ *
+ * @note The first parameter in Array.concat() is what we return to the concat. If the first
+ * element of the array is equal to or greater than the concat.
+ * @note Instead of using array.shift() we use splice this way we can do it inline.
+ *
  * @example iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning integers
  * greater than 7.
- *
  * @param {int} dropBefore Drop everything before.
  * @param {array} array The array to work against.
  * @return {array} The resulting array.
@@ -94,10 +100,10 @@ export const dropWhile = (dropBefore, array) => {
     return []
   }
 
-  const first = array.shift()
-  const addWhile = (first >= dropBefore) ? [first] : []
-
-  return Array.concat(addWhile, dropWhile(dropBefore, array))
+  return Array.concat(
+    ((array[0] >= dropBefore) ? [array[0]] : []),
+    dropWhile(dropBefore, array.splice(1, array.length))
+  )
 }
 
 /**
