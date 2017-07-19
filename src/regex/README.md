@@ -6,16 +6,19 @@ Check these out.
 * [sketchengine.co.uk](https://regex.sketchengine.co.uk/)
 * [sketchengine.co.uk Quiz](https://regex.sketchengine.co.uk/extra_regexps.html)
 
-## Write functions to:
+## Write regex functions to:
 
 ### General String Regexes
 1. Test the first character of a string is uppercase or not.
+    * `firstLetterUppercase(string)`
 1. A trim function (string) using regular expression.
-    * Remove white-space from start and end position.
-    * Convert 2 or more spaces to 1.
-    * Exclude newline with a start spacing.
+    * Remove white-space from start and end position: `trimBookends(string)`
+    * Convert 2 or more spaces to 1: `convertSpaces(string)`
+    * Exclude newline with a start spacing: `excludeNewline(string)`
 1. Count number of words in string.
+    * `countWords(string)`
 1. Count the number of vowels in a given string. (Table 1)
+    * `matchAllColumnOne(column1,`
 1. Match all items in first column but not the other
     * [Sample Data 1](https://regex.sketchengine.co.uk/cgi/ex1.cgi)
     * [Sample Data 2](https://regex.sketchengine.co.uk/cgi/ex2.cgi)
@@ -23,24 +26,39 @@ Check these out.
 
 ### Personal Information
 1. Check whether a given value is US zip code or not.
+    * `isZipCode(string)`
 1. Check whether a given value is UK Post Code or not.
+    * `isPostCode(string)`
 1. Check whether a given value is Canada Post Code or not.
+    * `isCanadianPostCode(string)`
 1. Check whether a given value is a social security number or not.
+    * `isSocialSecurityNumber(string)`
 1. Check a credit card number.
+    * `isCreditCardNumber(string)`
 
 ### Numbers and Dates
 1. Print an integer with commas as thousands separators. (Table 2)
+    * `numberFormatting(string)`
 1. Check whether a given value is time string or not.
+    * `isTimeString(string)`
 1. Search a date within a string.
+    * `findDateExists(string)`
 
-### ¡INTERNET! Nonsense
+### ¡INTERNET! shenanigans
 1. Check whether a given value is hexadecimal value or not.
+    * `validateHex(string)`
 1. Check whether a given value is hex color value or not.
+    * `validateHexColor(string)`
 1. Check whether a given value represents a domain or not.
+    * `validateDomain(string)`
 1. Check whether a given value is html or not.
+    * `validateHTML(string)`
 1. Check whether a given value is a valid url or not.
+    * `validateUrl(string)`
 1. Check whether a given value is IP value or not.
+    * `validateIP(string)`
 1. Matches [all] e-mail addresses.
+    * `validateEmail(string)`
     * The personal information part contains the following ASCII characters.
         * Uppercase (A-Z) and lowercase (a-z) English letters.
         * Digits (0-9).
@@ -51,7 +69,9 @@ Check these out.
 ### Misc
 These two seem to be the same huh?
 1. Check a given value contains alpha, dash and underscore.
+    * `validateASCII(string)`
 1. Check whether a given value is alpha numeric or not.
+    * `validateAlphaNumeric(string)`
 
 <hr />
 
