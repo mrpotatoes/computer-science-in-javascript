@@ -34,18 +34,18 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 * Convert large numbers
 * Convert large numbers and letters
 * Convert white
-* Convert papayawhip
+* Convert `papayawhip`
 * Return null for an invalid hex
 
 ## [RGB to HEX](http://bit.ly/2uaiMLn)
 * Convert white
-* Convert papayawhip (and be able to handle missing rgb
-* Convert steelblue (and be able to handle missing spaces
+* Convert `papayawhip` (and be able to handle missing RBG)
+* Convert `steelblue` (and be able to handle missing spaces)
 * Convert magenta
 * Convert yellow
 * Convert green
 * Convert black
-* Return the hex value if accidently given a hex
+* Return the hex value if accidentally given a hex
 
 # Misc links to comb over
 * http://michalbe.blogspot.com/2013/03/javascript-less-known-parts-bitwise.html
