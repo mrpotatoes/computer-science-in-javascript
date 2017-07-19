@@ -42,6 +42,7 @@ describe('Recursion', () => {
       dropWhile(-1, [1, 2, 3, 4, 5]).should.deep.equal([1, 2, 3, 4, 5])
       dropWhile(0, [1, 2, 3, 4, 5]).should.deep.equal([1, 2, 3, 4, 5])
       dropWhile(1, [1, 2, 3, 4, 5]).should.deep.equal([1, 2, 3, 4, 5])
+      dropWhile(1, [1, 2, 7, 3, 4, 5]).should.deep.equal([1, 2, 7, 3, 4, 5])
       dropWhile(3, [1, 2, 3, 4, 5]).should.deep.equal([3, 4, 5])
       dropWhile(5, [1, 2, 3, 4, 5]).should.deep.equal([5])
       dropWhile(10, [1, 2, 3, 4, 5]).should.deep.equal([])
