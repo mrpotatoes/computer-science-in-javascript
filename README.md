@@ -1,6 +1,8 @@
 # Computer Science in JavaScript
 Who doesn't want to learn Computer Science? It's really easy but the problem is that is is hidden behind many layers of complexity and that can be a problem for different types of learners. For instance I can grasp concepts in no time but to cement them I need to actually do the work. So, for a reference to myself but a study guide for others I've created this repository.
 
+I use it as both a study guide and a reference.
+
 ## What this repo is not
 1. A cheat sheet
     * This is just a reference/study guide so use it accordingly.
@@ -12,18 +14,16 @@ Who doesn't want to learn Computer Science? It's really easy but the problem is 
 1. Production ready code.
     * This is for learning/referencing not to reuse professionally. I mean, if you're going to implement your own linked list then you, my friend, are an idiot.
 
-## How to use
-I use it as both a study guide and a reference.
+# How to use as a for self learning
+When I finish this reference for myself my intention is to make a new repo of this exact structure but empty out all the document headers, functions and tests and allow you to do the exercises yourself. Until then to do the study guide I suggest:
 
-The way you can get this study guide or reference to work for you is to do the following.
 1. Git clone
-1. Remove the git stuff: `rm -rf .git`. Add your own if required.
-1. Read the `README.md` files in every `./src/*` directory.
-    1. Each `README.md` here explains the exercises for this particular topic.
-    1. If you want to learn Computer Science I suggest that you do them otherwise
-    1. This is a reference to you and hopefully will be useful.
+1. Remove the git stuff: `rm -rf .git .gitignore`
 1. Run `yarn install` from the root directory.
 1. run `yarn start` to fun all the tests. There are more script options in the `package.json`.
+1. Go into all the `*.js` files and remove all function headers. Delete all the bodies from all the functions (leaving only the signatures).
+1. Read the `README.md` files in every `./src/*` directory and then implement all exercises.
+    1. Each `README.md` explains the exercises for a particular topic (re: directory).
 
 ## What's in this repository?
 This repository is my personal reference and refresher course for computer science. Under the `./src/` directory I have a few different topics and they are all done in JavaScript. More to come eventually when they hit my fancy.
