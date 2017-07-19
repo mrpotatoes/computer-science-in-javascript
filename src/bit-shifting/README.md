@@ -24,3 +24,11 @@ https://code.tutsplus.com/articles/understanding-bitwise-operators--active-11301
 | `<<=` | Bitwise left shift and assignment |
 | `>>=` | Bitwise right shift and assignment |
 | `>>>=` | Bitwise unsigned right shift and assignment |
+
+* http://michalbe.blogspot.com/2013/03/javascript-less-known-parts-bitwise.html
+* https://www.codecademy.com/en/courses/introduction-to-bitwise-operators/0/1
+* https://www.cs.ucsb.edu/~pconrad/cs16/topics/bitOps/
+* https://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript
+* http://bit.ly/2viAQS9
+* https://www.w3schools.com/js/js_numbers.asp
+* https://danthedev.com/2015/07/25/binary-in-javascript
