@@ -6,7 +6,6 @@ import {
   sumArray,
   NO_END,
   END_BIGGER,
-  PARAMS_EQUAL,
 } from '../../src/recursion/math'
 
 chai.should()

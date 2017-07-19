@@ -28,3 +28,13 @@
 //         {id: 8, title: 'hello', parent: 2}
 //     ]}
 // ]
+
+// eslint-disable-next-line
+export const explodeFlatTree = (flat) => {
+  return flat
+}
+
+// eslint-disable-next-line
+export const flattenTree = (flat) => {
+  return flat
+}

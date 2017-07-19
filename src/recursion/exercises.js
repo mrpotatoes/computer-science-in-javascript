@@ -1,4 +1,4 @@
-/* eslint-disable max-len, no-else-return, no-console */
+/* eslint-disable max-len, no-else-return, no-console, no-unreachable */
 
 // the collatz conjecture
 // https://youtu.be/VrrnjYgDBEk?t=729
@@ -79,12 +79,26 @@ export const arraySelect = (array, fn, newArray = []) => {
   return newArray
 }
 
-// Implement Ruby's `drop_while` in JavaScript recursively.
-// Example: iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning integers greater than 7.
-// drop_while: http://ruby-doc.org/core-2.2.3/Enumerable.html#method-i-drop
-export const dropWhile = (array) => (
-  array
-)
+/**
+ * Given an integer remove any items from an array that are less than it.
+ *
+ * @example iterating over [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] and only returning integers
+ * greater than 7.
+ *
+ * @param {int} dropBefore Drop everything before.
+ * @param {array} array The array to work against.
+ * @return {array} The resulting array.
+ */
+export const dropWhile = (dropBefore, array) => {
+  if (array.length === 0) {
+    return []
+  }
+
+  const first = array.shift()
+  const addWhile = (first >= dropBefore) ? [first] : []
+
+  return Array.concat(addWhile, dropWhile(dropBefore, array))
+}
 
 /**
  * Reverse a string.
