@@ -13,7 +13,6 @@
     "start": "npm run test",
     "generate-hash": "babel-node tests/fixtures/generate-hash-fixture.js",
     "test": "mocha --require babel-polyfill --recursive ./tests --compilers js:babel-register --watch",
-
     "test:bit-shifting": "mocha --require babel-polyfill ./tests/bit-shifting --compilers js:babel-register --watch",
     "test:regex": "mocha --require babel-polyfill ./tests/regex --compilers js:babel-register --watch",
     "test:interview": "mocha --require babel-polyfill ./tests/interview-questions --compilers js:babel-register --watch",
