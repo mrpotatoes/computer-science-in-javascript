@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 import chai from 'chai'
-import BST from '../../src/data-structures/binary-search-tree'
+import BST from '../../src/data-structures/binary-search-tree/binary-search-tree'
 
 chai.should()
 
