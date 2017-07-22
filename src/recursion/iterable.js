@@ -2,3 +2,4 @@
 // https://www.refactoring.com/catalog/replaceIterationWithRecursion.html
 // https://gist.github.com/dherman/1761665
 // https://www.refactoring.com/catalog/replaceRecursionWithIteration.html
+// http://homepages.math.uic.edu/~jan/mcs275/rectoitr.pdf
