@@ -20,7 +20,7 @@
  * our method in the happenstance of an odd list.
  * LEFT: [34, 203, 3, 746] ----- RIGHT: [200, 984, 198, 764, 9]
  *
- * This is where things get a bit wierd. In the method below you'll notice that we pass
+ * This is where things get a bit weird. In the method below you'll notice that we pass
  * the left side first and then the right side into the merge method. Since we are calling
  * mergeSort again (recursion) as we pass it into merge we'll keep doing the left side in
  * the stack as it keeps going in. Then the right side will have it's chance and then
@@ -32,7 +32,7 @@
  * LEFT: [34, 203] ----- RIGHT: [3, 746]
  * LEFT: [34]----- RIGHT: [203]
  *
- * For mor imformation:
+ * For more information:
  * @see https://www.youtube.com/watch?v=sWtYJv_YXbo
  */
 
@@ -42,7 +42,7 @@
  * Code is a simplified version of:
  * @see http://www.stoimen.com/blog/2010/07/02/friday-algorithms-javascript-merge-sort/
  *
- * @param {array} arr The array to sort.
+ * @param {array} The array to sort.
  * @return {array}
  */
 export const mergeSort = (arr) => {
