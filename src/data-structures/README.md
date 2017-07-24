@@ -1,3 +1,28 @@
+<p align="center">
+  <img src="https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/docs/placeholder.png" alt="Awesome Cryptography">
+</p>
+
+- [Theory](#theory)
+  - [Algorithms](#algorithms)
+    - [Symmetric encryption](#symmetric-encryption)
+    - [Asymmetric encryption](#asymmetric-encryption)
+    - [Hash functions](#hash-functions)
+  - [Articles](#articles)
+  - [Books](#books)
+  - [Courses](#courses)
+- [Tools](#tools)
+  - [Standalone](#standalone)
+  - [Plugins](#plugins)
+    - [Git](#git)
+- [Resources](#resources)
+  - [Blogs](#blogs)
+  - [Mailing lists](#mailing-lists)
+  - [Web-tools](#web-tools)
+  - [Web-sites](#web-sites)
+- [Contributing](#contributing)
+- [License](#license)
+- - -
+
 [A good writeup of each data structure](https://blog.syncano.io/data-structures-in-javascript/)
 
 [Data Structures With JavaScript: Tree](https://code.tutsplus.com/articles/data-structures-with-javascript-tree--cms-23393)
