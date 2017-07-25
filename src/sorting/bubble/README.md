@@ -28,7 +28,7 @@ Third Pass
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
 ```
 
-## Diagram
+## Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
 ![Bubble Sort](./Bubblesort-edited-color.png)
 
 # Exercises
