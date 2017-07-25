@@ -7,3 +7,6 @@ Binary search runs in at worst logarithmic time, making O(log n) comparisons, wh
 Although the idea is simple, implementing binary search correctly requires attention to some subtleties about its exit conditions and midpoint calculation.
 
 There are numerous variations of binary search. In particular, fractional cascading speeds up binary searches for the same value in multiple arrays, efficiently solving a series of search problems in computational geometry and numerous other fields. Exponential search extends binary search to unbounded lists. The binary search tree and B-tree data structures are based on binary search.
+
+![Sorting](./binary-and-linear-search-animations.gif)
+Original Source: https://blog.penjee.com/binary-vs-linear-search-animated-gifs/
