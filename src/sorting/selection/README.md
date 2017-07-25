@@ -2,7 +2,7 @@
 Wiki intro text.
 
 ## Diagram ([Concept Draw](http://www.conceptdraw.com/examples/flowchart-for-selerction-sorting))
-![placeholder](./selection.png)
+![placeholder](./selectionSort.png)
 
 # Exercises
 * Write the selection sort.
