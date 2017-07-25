@@ -6,6 +6,7 @@ Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping 
 
 # Exercises
 * Write the binary search.
+    * Do not forget to add your comment headers.
 * Test your code (Unit tests)
     * [9, 2, 5, 6, 4, 3, 7, 10, 1, 8]
     * [10, 9, 8, 7, 6, 5, 4, 3, 2, 1, 0, -10]
@@ -39,4 +40,7 @@ Third Pass
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
 ```
 
-Example text source: http://www.geeksforgeeks.org/bubble-sort/
+___
+# Bibliography
+[1] [Bubble Sort](http://www.geeksforgeeks.org/bubble-sort/) - GeeksforGeeks, Feb 2014<br />
+[2] [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) - Kragen, October 29, 2001<br />
