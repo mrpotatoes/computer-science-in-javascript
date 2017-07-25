@@ -39,4 +39,4 @@ Third Pass
 ( 1 2 4 5 8 ) –> ( 1 2 4 5 8 )
 ```
 
-Source: http://www.geeksforgeeks.org/bubble-sort/
+Example text source: http://www.geeksforgeeks.org/bubble-sort/
