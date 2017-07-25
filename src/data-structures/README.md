@@ -1,3 +1,5 @@
+https://blog.syncano.io/data-structures-in-javascript/
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/docs/Trie-Data-Structure-with-Strings-at-HiringLibrary-Com.png" alt="Awesome Cryptography">
 </p>

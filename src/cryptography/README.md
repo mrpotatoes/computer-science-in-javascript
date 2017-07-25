@@ -4,6 +4,11 @@ ORIGINAL: https://github.com/sobolevn/awesome-cryptography (& minified)
 * https://github.com/sobolevn/awesome-cryptography
 * https://github.com/bitwiseshiftleft/sjcl
 * https://cryptopals.com/sets/1
+* http://csfieldguide.org.nz/en/chapters/coding-compression.html
+* http://csunplugged.org/text-compression/
+* http://csunplugged.org/activities/
+* http://csunplugged.org/
+* https://www.docsity.com/en/exercises/computer-science/data-compression/ 
 
 # Awesome Cryptography
 <p align="center">
