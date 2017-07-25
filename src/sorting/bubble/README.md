@@ -29,7 +29,7 @@ Third Pass
 ```
 
 ## Diagram
-![Bubble Sort](./Bubblesort-edited-color.svg)
+![Bubble Sort](./Bubblesort-edited-color.png)
 
 # Exercises
 * Write the binary search.
