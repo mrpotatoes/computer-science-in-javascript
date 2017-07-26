@@ -93,13 +93,19 @@ Although the idea is simple, implementing binary search correctly requires atten
 
 There are numerous variations of binary search. In particular, fractional cascading speeds up binary searches for the same value in multiple arrays, efficiently solving a series of search problems in computational geometry and numerous other fields. Exponential search extends binary search to unbounded lists. The binary search tree and B-tree data structures are based on binary search.
 
-# Exercises
-...
+---
 
- # Resources
+# Resources
 * [JS: Interview Questions - Sorting](https://khan4019.github.io/front-end-Interview-Questions/sort.html)
 * [About the #sorting-algorithms series](http://blog.benoitvallon.com/sorting-algorithms-in-javascript/sorting-algorithms-in-javascript/)
 * [Friday Algorithms: JavaScript Bubble Sort( http://www.stoimen.com/blog/2010/07/09/friday-algorithms-javascript-bubble-sort/)
 * [Stoimen's Slgorithms](https://github.com/stoimen/algorithms)
-
 * http://www.geeksforgeeks.org/bubble-sort/
+
+Make these assignments:
+* http://www.geeksforgeeks.org/comb-sort/
+* http://www.geeksforgeeks.org/shellsort/
+* http://www.geeksforgeeks.org/bucket-sort-2/
+* http://www.geeksforgeeks.org/counting-sort/
+* http://www.geeksforgeeks.org/radix-sort/
+* http://www.geeksforgeeks.org/heap-sort/

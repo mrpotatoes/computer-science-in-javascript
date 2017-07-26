@@ -1,4 +1,4 @@
-# [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
+# [Bubble Sort Assignment](https://en.wikipedia.org/wiki/Bubble_sort)
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
 ## Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
