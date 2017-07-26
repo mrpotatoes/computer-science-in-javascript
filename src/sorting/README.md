@@ -39,7 +39,14 @@ The algorithm divides the input list into two parts: the sublist of items alread
 This Algorithm is aboot ...
 
 ## Merge Sort
-This Algorithm is aboot ...
+In computer science, merge sort (also commonly spelled mergesort) is an efficient, general-purpose, comparison-based sorting algorithm. Most implementations produce a stable sort, which means that the implementation preserves the input order of equal elements in the sorted output. Mergesort is a divide and conquer algorithm that was invented by John von Neumann in 1945. A detailed description and analysis of bottom-up mergesort appeared in a report by Goldstine and Neumann as early as 1948.
+
+| Description |  Complexity |
+|---|:--------:|
+| Worst-case performance | `O(n log n)` |
+| Best-case performance | `O(n log n)` typical <br /> `O(n)` natural variant |
+| Average performance | `O(n log n)` |
+| Worst-case space complexity | `О(n)` total, `O(n)` auxiliary |
 
 ## Quick Sort
 This Algorithm is aboot ...
@@ -48,7 +55,15 @@ This Algorithm is aboot ...
 This Algorithm is aboot ...
 
 ## Bucket Sort
-This Algorithm is aboot ...
+Bucket sort, or bin sort, is a sorting algorithm that works by distributing the elements of an array into a number of buckets. Each bucket is then sorted individually, either using a different sorting algorithm, or by recursively applying the bucket sorting algorithm. It is a distribution sort, and is a cousin of radix sort in the most to least significant digit flavor. Bucket sort is a generalization of pigeonhole sort. Bucket sort can be implemented with comparisons and therefore can also be considered a comparison sort algorithm. The computational complexity estimates involve the number of buckets.
+
+Bucket sort works as follows
+* Set up an array of initially empty "buckets".
+* *Scatter*: Go over the original array, putting each object in its bucket.
+* Sort each non-empty bucket.
+* *Gather*: Visit the buckets in order and put all elements back into the original array.
+
+https://initjs.org/bucket-sort-in-javascript-dc040b8f0058
 
 ## Shell Sort
 This Algorithm is aboot ...
