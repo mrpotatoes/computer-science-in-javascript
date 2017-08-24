@@ -1,3 +1,5 @@
+https://www.youtube.com/playlist?list=PLF206E906175C7E07
+
 <p align="center">
   <img src="https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/docs/Trie-Data-Structure-with-Strings-at-HiringLibrary-Com.png" alt="Awesome Cryptography">
 </p>
