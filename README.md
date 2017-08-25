@@ -57,3 +57,7 @@ By doing so we will be able to compare the different sorting algorithms more eas
 * https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
 * https://gist.github.com/samwize/8877226
 * http://exercism.io/languages/javascript/exercises
+
+## Closures & Private
+* http://javascript.crockford.com/private.html
+* https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
