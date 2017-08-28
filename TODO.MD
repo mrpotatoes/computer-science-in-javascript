@@ -1,4 +1,10 @@
 # Todo
+Fix Mocha absolute paths:
+* https://stackoverflow.com/q/15951010/7933358
+* https://stackoverflow.com/q/37221010/7933358
+* https://stackoverflow.com/q/26182161/7933358
+* https://github.com/entwicklerstube/babel-plugin-root-import
+* http://bit.ly/2xGrWhB
 
 ## Bit Shifting
 - [ ] Hex to Decimal
