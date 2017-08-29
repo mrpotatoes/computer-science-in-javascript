@@ -10,7 +10,13 @@ Each TODO item requires that it not only have the code completed plus it's corre
 
 ## Bit Shifting
 - [ ] Hex to Decimal
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] RGB to Decimal
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 
 ## Compilers
 ...
@@ -20,41 +26,143 @@ Each TODO item requires that it not only have the code completed plus it's corre
 
 ## Data Structures
 - [ ] Array
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Binary Search Tree
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Graph
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Hash Table
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Linked List Doubly
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Linked List Singly
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Queue
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Set
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Stack
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Tree
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Trie
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 
 ## Design Patterns
 - [ ] Abstract Factory
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Adapter
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Bridge
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Builder
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Chain of Responsibility
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Command
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Composite
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Decorator
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Facade
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Factory
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Flyweight
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Interpreter
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Iterator
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Mediator
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Memento
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Observer
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Prototype
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Proxy
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Singleton
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] State
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Strategy
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Template Method
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Visitor
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 
 ## Essential Javascript
 ...
@@ -64,10 +172,25 @@ Each TODO item requires that it not only have the code completed plus it's corre
 
 ## Javascript
 - [ ] Objects
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Promises
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Prototypes
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] This
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Tricks 'n Bullshit
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 
 ## Math
 ...
@@ -77,29 +200,98 @@ Each TODO item requires that it not only have the code completed plus it's corre
 
 ## Recursion
 - [ ] Array
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Iterable
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Math
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] String
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Towers of Hanoi
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 
 ## Regex
 - [ ] General Strings
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Internet Shenanigans
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Miscellaneous
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Numbers & Dates
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Personal Info
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Miscellaneous
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 
 ## Sorting
 - [ ] Binary
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Bubble
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Bucket
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Cocktail
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Heap
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Insertion
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Merge
-- [ ] Pigen hole
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
+- [ ] Pigeon hole
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Quick sort
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Radix
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Selection
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
 - [ ] Shell
+  - [ ] Description, explanation & diagrams
+  - [ ] Code
+  - [ ] Tests
