@@ -1,5 +1,5 @@
 import chai from 'chai'
-import { fixture1, fixture2, fixture3, fixture4, fixture5 } from './tests/fixtures/sorting'
+import { fixture1, fixture2, fixture3, fixture4, fixture5 } from '../_fixtures/sorting'
 import { bubbleSort, bubbleSortRecursive } from './bubble'
 
 chai.should()

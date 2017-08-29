@@ -1,6 +1,7 @@
+/* eslint-disable max-len */
 import chai from 'chai'
 import { mergeSort, merge } from './merge'
-import { fixture1, fixture2, fixture3, merge1, merge2, merge3 } from './tests/fixtures/sorting'
+import { fixture1, fixture2, fixture3, merge1, merge2, merge3 } from '../_fixtures/sorting'
 
 chai.should()
 

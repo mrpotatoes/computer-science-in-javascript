@@ -1,6 +1,6 @@
 /* eslint-disable */
 import chai from 'chai'
-import { fixture1, fixture2, fixture3, fixture4, fixture5 } from './tests/fixtures/sorting'
+import { fixture1, fixture2, fixture3, fixture4, fixture5 } from '../_fixtures/sorting'
 import { quicksort, quicksortSimple, quicksortIterative } from './quicksort'
 
 chai.should()

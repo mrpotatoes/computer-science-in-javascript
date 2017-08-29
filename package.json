@@ -11,7 +11,7 @@
   "license": "MIT",
   "scripts": {
     "start": "npm run test",
-    "generate-hash": "babel-node tests/fixtures/generate-hash-fixture.js",
+    "generate-hash": "babel-node src/hash-table/generate-hash-fixture.js",
 
     "test": "mocha --require babel-polyfill --recursive ./tests --compilers js:babel-register --watch",
     "test:bit-shifting": "mocha --require babel-polyfill ./src/bit-shifting/**/spec.*.js --compilers js:babel-register --watch",

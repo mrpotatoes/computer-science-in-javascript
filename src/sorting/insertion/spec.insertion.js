@@ -1,6 +1,6 @@
 import chai from 'chai'
 import { insertionSort } from './insertion'
-import { fixture1, fixture2, fixture3 } from './tests/fixtures/sorting'
+import { fixture1, fixture2, fixture3 } from '../_fixtures/sorting'
 
 chai.should()
 
