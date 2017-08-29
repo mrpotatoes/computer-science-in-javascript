@@ -27,44 +27,44 @@ Each TODO item requires that it not only have the code completed plus it's corre
 ## Data Structures
 - [ ] Array
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Binary Search Tree
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Graph
   - [ ] Description, explanation & diagrams
   - [ ] Code
   - [ ] Tests
 - [ ] Hash Table
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Linked List Doubly
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Linked List Singly
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Queue
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Set
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Stack
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Tree
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Trie
   - [ ] Description, explanation & diagrams
   - [ ] Code
@@ -201,7 +201,7 @@ Each TODO item requires that it not only have the code completed plus it's corre
 ## Recursion
 - [ ] Array
   - [ ] Description, explanation & diagrams
-  - [ ] Code
+  - [x] Code
   - [ ] Tests
 - [ ] Iterable
   - [ ] Description, explanation & diagrams
@@ -209,12 +209,12 @@ Each TODO item requires that it not only have the code completed plus it's corre
   - [ ] Tests
 - [ ] Math
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] String
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
 - [ ] Towers of Hanoi
   - [ ] Description, explanation & diagrams
   - [ ] Code
@@ -249,12 +249,12 @@ Each TODO item requires that it not only have the code completed plus it's corre
 ## Sorting
 - [ ] Binary
   - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
-- [ ] Bubble
-  - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+  - [x] Code
+  - [x] Tests
+- [x] Bubble
+  - [x] Description, explanation & diagrams
+  - [x] Code
+  - [x] Tests
 - [ ] Bucket
   - [ ] Description, explanation & diagrams
   - [ ] Code
@@ -267,30 +267,30 @@ Each TODO item requires that it not only have the code completed plus it's corre
   - [ ] Description, explanation & diagrams
   - [ ] Code
   - [ ] Tests
-- [ ] Insertion
-  - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
-- [ ] Merge
-  - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+- [x] Insertion
+  - [x] Description, explanation & diagrams
+  - [x] Code
+  - [x] Tests
+- [x] Merge
+  - [x] Description, explanation & diagrams
+  - [x] Code
+  - [x] Tests
 - [ ] Pigeon hole
   - [ ] Description, explanation & diagrams
   - [ ] Code
   - [ ] Tests
 - [ ] Quick sort
-  - [ ] Description, explanation & diagrams
-  - [ ] Code
+  - [x] Description, explanation & diagrams
+  - [x] Code
   - [ ] Tests
 - [ ] Radix
   - [ ] Description, explanation & diagrams
   - [ ] Code
   - [ ] Tests
-- [ ] Selection
-  - [ ] Description, explanation & diagrams
-  - [ ] Code
-  - [ ] Tests
+- [x] Selection
+  - [x] Description, explanation & diagrams
+  - [x] Code
+  - [x] Tests
 - [ ] Shell
   - [ ] Description, explanation & diagrams
   - [ ] Code
