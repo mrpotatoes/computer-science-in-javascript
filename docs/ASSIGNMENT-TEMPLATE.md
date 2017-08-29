@@ -1,8 +1,11 @@
 # [Heading](wiki-link)
 Wiki intro text.
 
-## Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
+## Topic Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
 ![placeholder](./logo-placeholder.png)
+
+# How it works
+Explain how the algo works. 
 
 # Exercises
 * Write the binary search.
@@ -13,8 +16,16 @@ Wiki intro text.
     * [10]
 * Make sure to draw a multi-step diagram of how the method works.
 
-## Example
-Simple example text.
+## Example(s)
+First example
+```
+// An ASCII example of how the data will be manipulated
+```
+
+Second Example
+```
+// An ASCII example of how the data will be manipulated
+```
 ___
 # Bibliography
 *Yes, I am doubling up Citations & Bibliography. Deal with it however you need to.* <br />
