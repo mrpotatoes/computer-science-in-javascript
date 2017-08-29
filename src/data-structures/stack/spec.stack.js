@@ -1,5 +1,5 @@
 import chai from 'chai'
-import StackDS from '../../src/data-structures/stack/stack'
+import StackDS from './stack'
 
 chai.should()
 

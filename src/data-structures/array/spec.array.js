@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai'
-import ArrayDS from '../../src/data-structures/array/array'
+import ArrayDS from './array'
 
 chai.should()
 const expect = chai.expect

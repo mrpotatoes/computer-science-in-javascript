@@ -1,22 +1,14 @@
 import chai from 'chai'
 import {
-  reverseString,
-  reverseStringTernary,
   arraySelectEven,
   arraySelect,
   dropWhile,
-} from '../../src/recursion/exercises'
+} from './array'
 
 chai.should()
 
 describe('Recursion', () => {
   describe('Exercises', () => {
-    it('reverseString(hello)', (done) => {
-      reverseString('hello world').should.equal('dlrow olleh')
-      reverseStringTernary('hello world').should.equal('dlrow olleh')
-      done()
-    })
-
     it('arraySelectEven(evens) should get me even numbers', (done) => {
       arraySelectEven([0, 1, 2, 3, 4, 5, 6]).should.deep.equal([0, 2, 4, 6])
       arraySelectEven([0, 1, 2.4, 3, 4, 5, 6]).should.deep.equal([0, 4, 6])

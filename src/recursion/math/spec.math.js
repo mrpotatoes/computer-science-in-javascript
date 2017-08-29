@@ -6,7 +6,7 @@ import {
   sumArray,
   NO_END,
   END_BIGGER,
-} from '../../src/recursion/math'
+} from './math'
 
 chai.should()
 const expect = chai.expect

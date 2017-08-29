@@ -1,6 +1,6 @@
 import chai from 'chai'
-import values from '../fixtures/hash.fixture.json'
-import HashTableDS from '../../src/data-structures/hash-table/hash-table'
+import values from './fixture.hash.json'
+import HashTableDS from './hash-table'
 
 const expect = chai.expect
 

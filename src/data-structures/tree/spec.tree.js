@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-expressions */
 import chai from 'chai'
-import TreeDS from '../../src/data-structures/tree/tree'
-import { fullFixture, removedCtoFixture, removedCfoFixture } from '../fixtures/tree'
+import TreeDS from './tree'
+import { fullFixture, removedCtoFixture, removedCfoFixture } from './fixture.tree'
 
 chai.should()
 const expect = chai.expect

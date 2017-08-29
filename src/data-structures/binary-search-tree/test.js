@@ -7,7 +7,7 @@
  */
 
 // eslint-disable-next-line
-import customUtils from './customUtils.js'
+// import customUtils from './customUtils.js'
 
 // Constructor
 class BinarySearchTree {
@@ -23,8 +23,8 @@ class BinarySearchTree {
 
     this.data = options.hasOwnProperty('value') ? [options.value] : []
     this.unique = options.unique || false
-    this.compareKeys = options.compareKeys || customUtils.defaultCompareKeysFunction
-    this.checkValueEquality = options.checkValueEquality || customUtils.defaultCheckValueEquality
+    // this.compareKeys = options.compareKeys || customUtils.defaultCompareKeysFunction
+    // this.checkValueEquality = options.checkValueEquality || customUtils.defaultCheckValueEquality
   }
 
   // Get the descendant with max key

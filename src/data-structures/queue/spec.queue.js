@@ -1,5 +1,5 @@
 import chai from 'chai'
-import QueueDS from '../../src/data-structures/queue/queue'
+import QueueDS from './queue'
 
 chai.should()
 

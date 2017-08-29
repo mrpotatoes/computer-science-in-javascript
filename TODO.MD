@@ -1,6 +1,8 @@
 # Todo
 Each TODO item requires that it not only have the code completed plus it's corresponding tests but the assignment/readme/explanation/diagrams to go along with it the concept. So it won't be checked off *UNTIL* all those files exist.
 
+Move fixtures to their respective topic folders.
+
 ## Fix Mocha absolute paths:
 * https://stackoverflow.com/q/15951010/7933358
 * https://stackoverflow.com/q/37221010/7933358
