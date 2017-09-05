@@ -251,10 +251,10 @@ Each TODO item requires that it not only have the code completed plus it's corre
   - [ ] Description, explanation & diagrams
   - [x] Code
   - [x] Tests
-- [x] Bubble
-  - [x] Description, explanation & diagrams
-  - [x] Code
-  - [x] Tests
+- [x] ~~Bubble~~
+  - [x] ~~Description, explanation & diagrams~~
+  - [x] ~~Code~~
+  - [x] ~~Tests~~
 - [ ] Bucket
   - [ ] Description, explanation & diagrams
   - [ ] Code
