@@ -3,7 +3,7 @@ In computer science, selection sort is a sorting algorithm, specifically an in-p
 
 The algorithm divides the input list into two parts: the sublist of items already sorted, which is built up from left to right at the front (left) of the list, and the sublist of items remaining to be sorted that occupy the rest of the list. Initially, the sorted sublist is empty and the unsorted sublist is the entire input list. The algorithm proceeds by finding the smallest (or largest, depending on sorting order) element in the unsorted sublist, exchanging (swapping) it with the leftmost unsorted element (putting it in sorted order), and moving the sublist boundaries one element to the right.
 
-## Diagram ([Concept Draw](http://www.conceptdraw.com/examples/flowchart-for-selerction-sorting))
+## Topic Diagram ([Concept Draw](http://www.conceptdraw.com/examples/flowchart-for-selerction-sorting))
 ![placeholder](./selectionSort.png)
 
 # Exercises
@@ -44,7 +44,6 @@ arr[] = 64 25 12 22 11
 // and place it at beginning of arr[3...4]
 11 12 22 25 64
 ```
-
 ___
 # Bibliography
 [1] [Selection Sort](http://www.geeksforgeeks.org/selection-sort/) - GeeksforGeeks, January 2014<br />

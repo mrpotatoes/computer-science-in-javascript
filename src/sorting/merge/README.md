@@ -1,6 +1,10 @@
 # [Merge Sort Assignment](http://www.geeksforgeeks.org/merge-sort/)
 Like QuickSort, Merge Sort is a Divide and Conquer algorithm. It divides input array in two halves, calls itself for the two halves and then merges the two sorted halves. The merge() function is used for merging two halves. The `merge(arr, l, m, r)` is key process that assumes that `arr[l..m]` and `arr[m+1..r]` are sorted and merges the two sorted sub-arrays into one.
 
+## Topic Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Merge_sort))
+![placeholder](./merge-sort.png)
+
+# How it works
 | Description |  Complexity |
 |---|:--------:|
 | Worst-case performance | `O(n log n)` |
@@ -29,9 +33,6 @@ Loop from i = 1 to n-1.
 ...a) Pick element arr[i] and insert it into sorted sequence arr[0…i-1]
 ```
 
-## Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Merge_sort))
-![placeholder](./merge-sort.png)
-
 # Exercises
 * Write the merge search.
     * Do not forget to add your comment headers.
@@ -42,7 +43,7 @@ Loop from i = 1 to n-1.
     * [10]
 * Make sure to draw a multi-step diagram of how the method works.
 
-## Example
+## Example(s)
 *12*, 11, 13, 5, 6
 
 Let us loop for i = 1 (second element of the array) to 5 (Size of input array)
