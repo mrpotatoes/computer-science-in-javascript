@@ -103,12 +103,4 @@ ENDFOR
 ___
 # Bibliography
 *Yes, I am doubling up Citations & Bibliography. Deal with it however you need to.* <br />
-[1] [Redux From Twitter Hype to Production](https://www.w3schools.in/data-structures-tutorial/data-structures-arrays/) - W3Schools, Jan 09, 2016<br />
-[3] [Redux Reducers](http://redux.js.org/docs/basics/Reducers.html) - Facebook, Sep 4, 2016
-
-# Resources
-7 Videos that teach the very basics of `redux` in a really concise manner.<br />
-[Code Academy `redux` tutorials](https://www.youtube.com/playlist?list=PLoYCgNOIyGADILc3iUJzygCqC8Tt3bRXt)
-
-The github link to the code in the playlist<br />
-[Code Academy's redux/react code](https://github.com/learncodeacademy/react-js-tutorials/tree/master/4-redux/src/js)
+[1] [Data Structures and Arrays](https://www.w3schools.in/data-structures-tutorial/data-structures-arrays/) - W3Schools, Jan 09, 2016<br />
