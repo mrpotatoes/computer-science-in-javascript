@@ -7,6 +7,11 @@ export default class ArrayDS {
     this.array = []
   }
 
+  /**
+   * Get the internal array.
+   *
+   * @return {array}
+   */
   getArray = () => (
     this.array
   )
@@ -28,9 +33,11 @@ export default class ArrayDS {
    */
   remove = (data) => {
     // filter(): a new array with all elements that pass the test by the
-    // provided function. https://mzl.la/2r1yFPU So as long as this array does
+    // provided function. So as long as this array does
     // not contain the data passed in it'll be added to the new array.
-    this.array = this.array.filter((current) => current !== data)
+    //
+    // @see: https://mzl.la/2r1yFPU
+    this.array = this.array.filter((current) => (current !== data))
 
     return this
   }
@@ -57,8 +64,8 @@ export default class ArrayDS {
    *
    * This looks super clever but it isn't once you know the compliment (run ~-1
    * in the console). Then you'll see that bitwise -1 is 0 which is false in
-   * avascript making this return a null. Hense my little shortcut documentation
-   * below above: ~-1 === 0 == false
+   * javascript making this return a null. Hense my little shortcut
+   * documentation below above: ~-1 === 0 == false
    *
    * Don't be cute like this. An easier to read expression is as such and
    * therefore: index === -1 ? null : index. Or check for < 0 which is easiest.
