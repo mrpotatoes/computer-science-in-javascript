@@ -7,11 +7,10 @@
 >
 > — W3 Schools
 
-## Topic Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
-![placeholder](./logo-placeholder.png)
+![placeholder](./array.jpg)
 
 # How it works
-Explain how the algo works.
+I mean, it's an array ...
 
 # Exercises
 Write a class or set of functions to create and manage an array data structure.
@@ -74,40 +73,37 @@ FOR CURR !== array.length
 ENDFOR
 ```
 
-If you wanted all indexes (meh).
+## Find All
 ```
 indexes = []
 FOR CURR !== array.length
   IF array[CURR] === DATA
-    indexes.push(curr)
+    indexes.push(array[CURR])
 ENDFOR
-```
-
-## Find All
-```
-// An ASCII example of how the data will be manipulated
 ```
 
 ## Get Data at Index
 ```
-// An ASCII example of how the data will be manipulated
+return array[INDEX]
 ```
 
 ## Length
+Using any current language you can easily get the length parameter using the following. Not useful though as we know the size at create time.
 ```
-// An ASCII example of how the data will be manipulated
+return array.length
 ```
 
 ## Print
 Get a string representation of an array.
 ```
-// An ASCII example of how the data will be manipulated
+FOR CURR !== array.length
+  PRINT array[CURR]
+ENDFOR
 ```
 ___
 # Bibliography
 *Yes, I am doubling up Citations & Bibliography. Deal with it however you need to.* <br />
-[1] [Redux From Twitter Hype to Production](http://slides.com/jenyaterpil/redux-from-twitter-hype-to-production) - Ievgen Terpil, Feb 2016<br />
-[2] [Redux Actions](http://redux.js.org/docs/basics/Actions.html) - Tim Dorr, Sep 4, 2016<br />
+[1] [Redux From Twitter Hype to Production](https://www.w3schools.in/data-structures-tutorial/data-structures-arrays/) - W3Schools, Jan 09, 2016<br />
 [3] [Redux Reducers](http://redux.js.org/docs/basics/Reducers.html) - Facebook, Sep 4, 2016
 
 # Resources

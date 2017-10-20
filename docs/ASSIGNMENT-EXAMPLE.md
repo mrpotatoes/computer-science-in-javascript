@@ -2,7 +2,7 @@
 Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
 
 ## Topic Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
-![placeholder](./logo-placeholder.png)
+![placeholder](https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/docs/logo-placeholder.png)
 
 # How it works
 The following is an example for bubble sort.
