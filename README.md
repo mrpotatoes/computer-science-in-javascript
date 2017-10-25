@@ -12,6 +12,7 @@ I use it as both a study guide and a reference.
     * How to install and setup Node JS, MongoDB & Express.
     * et cetra.
 1. Production ready code.
+    * I mean, LOL. SERIOUSLY?!?!
     * This is for learning/referencing not to reuse professionally. I mean, if you're going to implement your own linked list then you, my friend, are an idiot.
 
 # How to use as a for self learning
