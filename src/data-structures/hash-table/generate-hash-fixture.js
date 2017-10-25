@@ -9,6 +9,12 @@ import fs from 'fs'
  * Arguments: If you use the optional "A", "N" flags:
  *            "A" (Alpha flag)   return random a-Z string
  *            "N" (Numeric flag) return random 0-9 string
+ *
+ * Some examples to try out.
+ * generateFixture()
+ * console.log(('some string' << 5) + 0)
+ * console.log(('some string' << 5) + 1)
+ * console.log(('some string' << 5) + 2)
  */
 export function randomString (len, an) {
   // eslint-disable-next-line
@@ -49,9 +55,3 @@ const generateFixture = () => {
 
   fs.writeFileSync(filename, JSON.stringify(hashFixture, null, 2))
 }
-
-// generateFixture()
-
-console.log(('some string' << 5) + 0)
-console.log(('some string' << 5) + 1)
-console.log(('some string' << 5) + 2)

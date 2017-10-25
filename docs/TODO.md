@@ -25,8 +25,12 @@ Each TODO item requires that it not only have the code completed plus it's corre
 ...
 
 ## Data Structures
-- [ ] Array
-  - [ ] Description, explanation & diagrams
+- [x] Array
+  - [x] Description, explanation & diagrams
+  - [x] Code
+  - [x] Tests
+- [x] Hash Table
+  - [x] Description, explanation & diagrams
   - [x] Code
   - [x] Tests
 - [ ] Binary Search Tree
@@ -37,10 +41,6 @@ Each TODO item requires that it not only have the code completed plus it's corre
   - [ ] Description, explanation & diagrams
   - [ ] Code
   - [ ] Tests
-- [ ] Hash Table
-  - [ ] Description, explanation & diagrams
-  - [x] Code
-  - [x] Tests
 - [ ] Linked List Doubly
   - [ ] Description, explanation & diagrams
   - [x] Code

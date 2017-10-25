@@ -10,10 +10,16 @@ describe('[Hash test] Testing index', () => {
     const hashExample = hash.calculateHash('wow')
     const hashExample2 = hash.calculateHash('wow')
 
-    hash.calculateHash('andric here is pretty cool bro')
-
     expect(hashExample).to.equal(hashExample2)
+    done()
+  })
 
+  it('calculateHash() keys are different', (done) => {
+    const hash = new HashTableDS()
+    const hashExample = hash.calculateHash('wow')
+    const hashExample2 = hash.calculateHash('wowy')
+
+    expect(hashExample).to.not.equal(hashExample2)
     done()
   })
 
@@ -22,13 +28,19 @@ describe('[Hash test] Testing index', () => {
 
     // There are 1200 entries to be saved.
     // Note: If the order of the items are changed so it will change in the bucket
-    // but the key would be exactly the same.
+    // but the key would be exactly the same. Well, better be. Gosh darnnit.
     Object.keys(values.data).forEach((key) => {
+      // console.log(key, values.data[key])
       hash.insert(key, values.data[key])
     })
 
-    // hash.calculateHash(values.sampleNames[1])
     // Now check to make sure that things are where they are supposed to be.
+    expect(hash.get(values.sampleNames[0])).to.equal('3899252939')
+    expect(hash.get(values.sampleNames[1])).to.equal('2837007250')
+    expect(hash.get(values.sampleNames[2])).to.equal('9912627915')
+    expect(hash.get(values.sampleNames[3])).to.equal('5765205274')
+    expect(hash.get(values.sampleNames[4])).to.equal('1485017918')
+    expect(hash.get(values.sampleNames[5])).to.equal('3368586480')
 
     done()
   })

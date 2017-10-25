@@ -98,23 +98,16 @@ export default class HashTableDS {
   remove = (key) => {
     const index = this.calculateHash(key)
 
-    // console.log(index, key)
-
     if (this.storage[index].length === 1 && this.storage[index][0][0] === key) {
-      // console.log('Only item')
       delete this.storage[index]
     } else {
-      // console.log(this.storage[index])
-
       for (let i = 0; i < this.storage[index].length; i++) {
-        // console.log(`loop # ${i}`)
         if (!this.storage[index][i]) {
           // eslint-disable-next-line
           continue
         }
 
         if (this.storage[index][i][0] === key) {
-          // console.log('I should be deleting this')
           delete this.storage[index][i]
         }
       }
