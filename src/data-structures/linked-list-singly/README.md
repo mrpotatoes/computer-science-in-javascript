@@ -83,4 +83,6 @@ ___
 ](http://www.geeksforgeeks.org/linked-list-set-1-introduction/) - Geeksforgeeks.org, March 8th, 2013<br />
 
 # Resources
-...
+[More from Geeks for Geeks](http://www.geeksforgeeks.org/data-structures/linked-list/)<br />
+[Introduction to linked list](https://www.youtube.com/watch?v=NobHlGUjV3g) - mycodeschool, Mar 28, 2013 <br />
+[Single Linked List Operations](https://www.youtube.com/watch?v=o1QaGUEi6ew) - Naresh i Technologies, Sep 26, 2016 <br />
