@@ -1,10 +1,22 @@
-# [Heading](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_linear_lists_vs._other_lists)
-Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in wrong order.
+# [Singly Linked Lists](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_linear_lists_vs._other_lists)
+> In computer science, a linked list is a linear collection of data elements, in which linear order is not given by their physical placement in memory. Each pointing to the next node by means of a pointer. It is a data structure consisting of a group of nodes which together represent a sequence. Under the simplest form, each node is composed of data and a reference (in other words, a link) to the next node in the sequence. This structure allows for efficient insertion or removal of elements from any position in the sequence during iteration. More complex variants add additional links, allowing efficient insertion or removal from arbitrary element references.
 
-## Topic Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Bubble_sort))
+Linked lists will be familiar. Stored data in a series. First node points to the next and so on and so forth until there is no more data. The different between a linked list and an array is that nodes aren't stored contiguously. Meaning that any given node can be anywhere in memory. It does manage links between each node, though, so we don't lose any data and can loop through the array.
+
+So, since they're so similar then why would we use one or the other? Generally you'd choose an array but there are advantages over using an array.
+
+## Advantages
+1. Dynamic size.
+
+## Drawbacks
+1. Cannot randomly access a node; elements need be searched starting from first to found (or last).
+1. Extra memory space for a pointer is required with each element of the list.
+1. Searching is slow for large lists `Θ(n)`.
+
+------------------------------------------------------------------------------------------------
+
+## Topic Diagram
 ![placeholder](https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/src/data-structures/linked-list-singly/reference-image.png)
-
-# How it works
 
 # Exercises
 Write a class or set of functions to create and manage a singly linked list.
@@ -56,20 +68,19 @@ Add: 20
 ```
 
 Adding when there is a head and at least (1, 2, 3?) nodes.
-![](./insert-after.png)
+```
+Add: 40
+[HEAD: 10] -> [20] -> [30] -> [40] -> [TAIL: null]
+```
 
-Removing a node
-```
-```
-
-Inserting a node to an arbitrary location within the chain.
-```
-```
+Removing a node & inserting a node to an arbitrary location within the chain (basically the same)
+![](https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/src/data-structures/linked-list-singly/reference.insert-after.png)
 
 ___
 # Bibliography
-[1] [Bubble Sort](http://www.geeksforgeeks.org/bubble-sort/) - GeeksforGeeks, Feb 2014<br />
-[2] [Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort) - Kragen, October 29, 2001<br />
+[1] [Singly Linked Lists](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_linear_lists_vs._other_lists) - Wikipedia, September 2001<br />
+[1] [Linked List | Set 1 (Introduction)
+](http://www.geeksforgeeks.org/linked-list-set-1-introduction/) - Geeksforgeeks.org, March 8th, 2013<br />
 
 # Resources
 ...
