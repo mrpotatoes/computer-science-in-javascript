@@ -8,8 +8,7 @@ export function Node (data) {
 }
 
 /**
- * [head description]
- * @type {[type]}
+ * A class to create a singly linked list.
  */
 export default class SinglyLinkedListDS {
   // Set initial state of the list.
