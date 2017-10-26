@@ -79,10 +79,10 @@ Removing a node & inserting a node to an arbitrary location within the chain (ba
 ___
 # Bibliography
 [1] [Singly Linked Lists](https://en.wikipedia.org/wiki/Linked_list#Singly_linked_linear_lists_vs._other_lists) - Wikipedia, September 2001<br />
-[1] [Linked List | Set 1 (Introduction)
+[2] [Linked List | Set 1 (Introduction)
 ](http://www.geeksforgeeks.org/linked-list-set-1-introduction/) - Geeksforgeeks.org, March 8th, 2013<br />
 
 # Resources
-[More from Geeks for Geeks](http://www.geeksforgeeks.org/data-structures/linked-list/)<br />
+[Linked List Data Structure](http://www.geeksforgeeks.org/data-structures/linked-list/) - Geeksforgeeks.org<br />
 [Introduction to linked list](https://www.youtube.com/watch?v=NobHlGUjV3g) - mycodeschool, Mar 28, 2013 <br />
 [Single Linked List Operations](https://www.youtube.com/watch?v=o1QaGUEi6ew) - Naresh i Technologies, Sep 26, 2016 <br />
