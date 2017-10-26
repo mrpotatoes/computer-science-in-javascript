@@ -33,6 +33,10 @@ Each TODO item requires that it not only have the code completed plus it's corre
   - [x] Description, explanation & diagrams
   - [x] Code
   - [x] Tests
+- [x] Linked List Singly
+  - [x] Description, explanation & diagrams
+  - [x] Code
+  - [x] Tests
 - [ ] Binary Search Tree
   - [ ] Description, explanation & diagrams
   - [x] Code
@@ -42,10 +46,6 @@ Each TODO item requires that it not only have the code completed plus it's corre
   - [ ] Code
   - [ ] Tests
 - [ ] Linked List Doubly
-  - [ ] Description, explanation & diagrams
-  - [x] Code
-  - [x] Tests
-- [ ] Linked List Singly
   - [ ] Description, explanation & diagrams
   - [x] Code
   - [x] Tests
