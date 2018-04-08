@@ -1,16 +1,4 @@
-Different from algebra
-
-## Design Patterns
-* [Function Design Patterns](https://www.infoq.com/presentations/Clojure-Design-Patterns)
-* [Functional design patterns, Part 1](https://www.ibm.com/developerworks/library/j-ft10/), part of a series.
-* [reddit - Functional programming design patterns](https://www.reddit.com/r/programming/comments/61kt36/functional_programming_design_patterns_by_scott/)
-* [Youtube - Functional programming design patterns](https://www.youtube.com/watch?v=E8I19uA-wGY)
-* [Functional architecture - The pits of success](https://www.youtube.com/watch?v=US8QG9I1XW0)
-* [Functional Design Patterns](https://www.youtube.com/watch?v=srQt1NAHYC0)
-* [Thirteen ways of looking at a Turtle](https://www.youtube.com/watch?v=AG3KuqDbmhM)
-* [Equivalent of SOLID principles for functional programming](https://softwareengineering.stackexchange.com/questions/165356/equivalent-of-solid-principles-for-functional-programming)
-* [How do you design programs in Haskell or other functional programming languages?](https://softwareengineering.stackexchange.com/questions/72557/how-do-you-design-programs-in-haskell-or-other-functional-programming-languages)
-* [Are there any specific workflows or ...](https://softwareengineering.stackexchange.com/questions/167134/are-there-any-specific-workflows-or-design-patterns-that-are-commonly-used-to-cr)
+Have intros in here as well. Use my medium.com article series.
 
 ## Misc
 * [Goodbye, Object Oriented Programming](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53)
