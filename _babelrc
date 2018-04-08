@@ -1,0 +1,24 @@
+{
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ],
+    "plugins": [
+      [
+        "namespace",
+        {
+          "disableSync": false,
+          "sources": ["src"],
+          "includes": ["foo"],
+          "excludes": ["node_modules"],
+          "namespaces": {
+            "tests": "./tests",
+            "sorting": "./sorting",
+            "data-structures": "./data-structures"
+          }
+        }
+      ]
+    ]
+  }
+}
