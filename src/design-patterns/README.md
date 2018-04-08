@@ -1,3 +1,18 @@
+```
+https://github.com/KleoPetroff/javascript-design-patterns
+https://github.com/loredanacirstea/es6-design-patterns/tree/gh-pages/Model/design_patterns
+https://github.com/VanHakobyan/DesignPatterns
+https://github.com/iluwatar/java-design-patterns
+https://github.com/domnikl/DesignPatternsPHP
+https://github.com/kamranahmedse/design-patterns-for-humans
+https://github.com/robdodson/JavaScript-Design-Patterns
+http://loredanacirstea.github.io/es6-design-patterns/
+https://github.com/loredanacirstea/es6-design-patterns
+https://github.com/danwellman/js-patterns/tree/master/js
+https://github.com/Apress/pro-javascript-design-patterns/tree/master/Source%20Code
+https://github.com/PacktPublishing/Mastering-JavaScript-Design-Patterns-Second-Edition
+```
+
 ## Design Patterns JS [![Coverage Status](https://coveralls.io/repos/github/FelipeBB/Design-Patterns-JS/badge.svg?branch=master)](https://coveralls.io/github/FelipeBB/Design-Patterns-JS?branch=master)
 
 Here you will find the 23 (GoF) design patterns implemented in JavaScript using both prototype and ES6 classes. You can use the [**docs.md**](docs.md) to quicky overview the examples.
