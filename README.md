@@ -1,12 +1,3 @@
-# TODO (Temp section)
-* Re think articles, readmes et al
-* Make branches for all the topics now.
-* Move Design, Anti-patterns to top level
-* Perhaps have a "blogs" or "thoughts" dir with general articles about software design.
-* Directory for code formatting and reasons.
-* Directory for my personal software development philosophies.
----
-
 # Computer Science in JavaScript
 Who doesn't want to learn Computer Science? It's really easy but the problem is that is is hidden behind many layers of complexity and often abstract math that you may not have time to learn. That can be a problem for different types of learners especially for the self starter. For instance I can grasp concepts in no time but to cement them I need to actually do the work. So, for a reference to myself but a study guide for others I've created this repository.
 
@@ -14,26 +5,21 @@ I use it as both a study guide and a reference.
 
 ## What this repo is not
 1. A cheat sheet
-  * This is just a reference/study guide so use it accordingly.
-  * Not meant to accommodate any specific language.
+    * This is just a reference/study guide so use it accordingly.
+    * Not meant to accommodate any specific language.
 1. A reference guide or how-to for setups of different techs.
 1. Production ready code.
-  * This is for learning/referencing not to reuse professionally.
+    * This is for learning/referencing not to reuse professionally.
 
-# How to use as a for self learning
-Clone repo, go 
+## How to use for self learning
+You can, instead, use any of the scripts within the `scripts` folder to do this. Click on there and `README` the instructions within there (if these subheaders aren't links I haven't done that yet)
 
-When I finish this reference for myself my intention is to make a new repo of this exact structure but empty out all the document headers, functions and tests and allow you to do the exercises yourself. Until then to do the study guide I suggest:
+* [If you want to just read the articles]()
+* [If this is a refresher but want the code]()
+* [If you want to write the code yourself (in JS)]()
+* [If you want to write the code yourself (!in JS)]()
 
-1. Git clone
-1. Remove the git stuff: `rm -rf .git .gitignore`
-1. Run `yarn install` from the root directory.
-1. run `yarn start` to fun all the tests. There are more script options in the `package.json`.
-1. Go into all the `*.js` files and remove all function headers. Delete all the bodies from all the functions (leaving only the signatures).
-1. Read the `README.md` files in every `./src/*` directory and then implement all exercises.
-  1. Each `README.md` explains the exercises for a particular topic (re: directory).
-
-## What's in this repository?
+# Table of Contents (`./src/`)
 This repository is my personal reference and refresher course for computer science. Under the `./src/` directory I have a few different topics and they are all done in JavaScript. More to come eventually when they hit my fancy.
 
 - Bit Shifting
@@ -131,14 +117,10 @@ By doing so we will be able to compare the different sorting algorithms more eas
 1. I'm using: [Babel Namespace Plugin](https://github.com/yudhasetiawan/babel-plugin-namespace)
     * This is important so I don't need to keep typing `../../`. It isn't 1980 anymore.
 
-# Links 2 comb through
-* https://github.com/eyas-ranjous/datastructures-js
-* https://github.com/nzakas/computer-science-in-javascript
-* [Friday Algorithms: Sorting a Set of Integers](http://bit.ly/2tGbxHy)
-* [Difference Between PHP and JavaScript](http://bit.ly/2tGh0OD)
-* [JS: Interview Questions - khan4019.github.io](http://bit.ly/2tFZU3x)
-* https://github.com/mgechev/javascript-algorithms
-
-* https://github.com/Olical/tuple => https://oli.me.uk/2013/07/12/tuples-in-javascript/
-* https://gist.github.com/samwize/8877226
-* http://exercism.io/languages/javascript/exercises
+# TODO (Temp section)
+* Re think articles, readmes et al
+* Make branches for all the topics now.
+* Move Design, Anti-patterns to top level
+* Perhaps have a "blogs" or "thoughts" dir with general articles about software design.
+* Directory for code formatting and reasons.
+* Directory for my personal software development philosophies.
