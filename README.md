@@ -12,7 +12,9 @@ I use it as both a study guide and a reference.
     * This is for learning/referencing not to reuse professionally.
 
 ## How to use for self learning
-You can, instead, use any of the scripts within the `scripts` folder to do this. Click on there and `README` the instructions within there (if these subheaders aren't links I haven't done that yet)
+You can, instead, use any of the scripts within the `scripts` folder to do this. Click on there and `README` the instructions within there (if these subheaders aren't links I haven't done that yet). 
+
+If you take any of the code paths then you need to have tests included with the code. You don't learn by just reading articles and having code run with tests that you put in `main()`. It must have tests and those tests must cover all the required hot code paths.
 
 * [If you want to just read the articles](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-just-read-the-articles)
 * [If this is a refresher but want the code](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-this-is-a-refresher-but-want-the-code)
