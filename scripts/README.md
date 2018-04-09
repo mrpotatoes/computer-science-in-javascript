@@ -4,26 +4,22 @@ Contains scripts to auto install on your system.
 
 ## If you want to just read the articles
 ```
-curl -fsSkL http://bit.ly/1vT0836 | sh
-curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+curl -fsSkL https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/scripts/articles.sh | sh
 ```
 
 ## If this is a refresher but want the code
 ```
-curl -fsSkL http://bit.ly/1vT0836 | sh
-curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+curl -fsSkL https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/scripts/refresher.sh | sh
 ```
 
 ## If you want to write the code yourself (in JS)
 ```
-curl -fsSkL http://bit.ly/1vT0836 | sh
-curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+curl -fsSkL https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/scripts/write-code-other.sh | sh
 ```
 
 ## If you want to write the code yourself (!in JS)
 ```
-curl -fsSkL http://bit.ly/1vT0836 | sh
-curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+curl -fsSkL https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/scripts/write-code.sh | sh
 ```
 
 ## Notes to self
