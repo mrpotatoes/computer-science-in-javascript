@@ -9,3 +9,4 @@
 * [Equivalent of SOLID principles for functional programming](https://softwareengineering.stackexchange.com/questions/165356/equivalent-of-solid-principles-for-functional-programming)
 * [How do you design programs in Haskell or other functional programming languages?](https://softwareengineering.stackexchange.com/questions/72557/how-do-you-design-programs-in-haskell-or-other-functional-programming-languages)
 * [Are there any specific workflows or ...](https://softwareengineering.stackexchange.com/questions/167134/are-there-any-specific-workflows-or-design-patterns-that-are-commonly-used-to-cr)
+* [Where are all the functional programming design patterns?](https://softwareengineering.stackexchange.com/questions/89273/where-are-all-the-functional-programming-design-patterns)

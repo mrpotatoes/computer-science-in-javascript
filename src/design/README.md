@@ -23,3 +23,4 @@ Should prolly make this it's own repo.
 
 ## MicroServices
 * [From Monolith to Microservice Architecture on Kubernetes, part 1 — The Api Gateway](https://medium.com/jeroen-rosenberg/from-monolith-to-microservice-architecture-on-kubernetes-part-1-the-api-gateway-eb82f8c2d10c)
+
