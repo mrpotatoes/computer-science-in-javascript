@@ -14,10 +14,10 @@ I use it as both a study guide and a reference.
 ## How to use for self learning
 You can, instead, use any of the scripts within the `scripts` folder to do this. Click on there and `README` the instructions within there (if these subheaders aren't links I haven't done that yet)
 
-* [If you want to just read the articles]()
-* [If this is a refresher but want the code]()
-* [If you want to write the code yourself (in JS)]()
-* [If you want to write the code yourself (!in JS)]()
+* [If you want to just read the articles](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-just-read-the-articles)
+* [If this is a refresher but want the code](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-this-is-a-refresher-but-want-the-code)
+* [If you want to write the code yourself (in JS)](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-write-the-code-yourself-in-js)
+* [If you want to write the code yourself (!in JS)](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-write-the-code-yourself-in-js-1)
 
 # Table of Contents (`./src/`)
 This repository is my personal reference and refresher course for computer science. Under the `./src/` directory I have a few different topics and they are all done in JavaScript. More to come eventually when they hit my fancy.

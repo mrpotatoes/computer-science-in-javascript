@@ -1,23 +1,36 @@
 Contains scripts to auto install on your system.
 
+# FYI NONE OF THESE WORK YET
+
 ## If you want to just read the articles
+```
+curl -fsSkL http://bit.ly/1vT0836 | sh
+curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+```
+
+## If this is a refresher but want the code
+```
+curl -fsSkL http://bit.ly/1vT0836 | sh
+curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+```
+
+## If you want to write the code yourself (in JS)
+```
+curl -fsSkL http://bit.ly/1vT0836 | sh
+curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+```
+
+## If you want to write the code yourself (!in JS)
+```
+curl -fsSkL http://bit.ly/1vT0836 | sh
+curl -fsSkL https://raw.github.com/mrpotatoes/my-emacs/master/install.sh | sh
+```
+
+## Notes to self
 1. In your terminal goto a directory you want to clone
 1. `git clone git@github.com:mrpotatoes/computer-science-in-javascript.git`
 1. `find . -type f -name '*.js' -delete`
 
-## If this is a refresher but want the code
-1. In your terminal goto a directory you want to clone
-1. `git clone git@github.com:mrpotatoes/computer-science-in-javascript.git`
-
-## If you want to write the code yourself (in JS)
-1. In your terminal goto a directory you want to clone
-1. `git clone git@github.com:mrpotatoes/computer-science-in-javascript.git`
-
-## If you want to write the code yourself (!in JS)
-1. In your terminal goto a directory you want to clone
-1. `git clone git@github.com:mrpotatoes/computer-science-in-javascript.git`
-
-## Notes to self
 1. Git clone
 1. Remove the git stuff: `rm -rf .git .gitignore`
 1. Run `yarn install` from the root directory.
