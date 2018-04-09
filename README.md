@@ -19,6 +19,13 @@ You can, instead, use any of the scripts within the `scripts` folder to do this.
 * [If you want to write the code yourself (in JS)](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-write-the-code-yourself-in-js)
 * [If you want to write the code yourself (!in JS)](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-write-the-code-yourself-in-js-1)
 
+# Table of Contents (`./`)
+- Documentation
+- Scripts
+- Formatting
+- Philosophy
+- Articles/Blog/Thoughts
+
 # Table of Contents (`./src/`)
 This repository is my personal reference and refresher course for computer science. Under the `./src/` directory I have a few different topics and they are all done in JavaScript. More to come eventually when they hit my fancy.
 
