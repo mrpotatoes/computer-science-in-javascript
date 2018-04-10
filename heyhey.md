@@ -13,3 +13,6 @@ versus: `collection.sorted() // no side effect; ideally, should always return a 
 This is also the keystone of command-query separation principle.
 
 Same for the file reader; preferring `csv_file_reader(x)` in lieu of `create_csv_file_reader(x)` or something similar is more natural.
+
+
+https://www.grammarly.com/blog/imperative-verbs/
