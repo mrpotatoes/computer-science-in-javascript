@@ -127,8 +127,7 @@ By doing so we will be able to compare the different sorting algorithms more eas
     * This is important so I don't need to keep typing `../../`. It isn't 1980 anymore.
 
 # TODO (Temp section)
-* Re think articles, readmes et al
-* Make branches for all the topics now.
+* Make branches for all the topics.
 * Move Design, Anti-patterns to top level
 * Perhaps have a "blogs" or "thoughts" dir with general articles about software design.
 * Directory for code formatting and reasons.
