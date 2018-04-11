@@ -128,7 +128,4 @@ By doing so we will be able to compare the different sorting algorithms more eas
 
 # TODO (Temp section)
 * Make branches for all the topics.
-* Move Design, Anti-patterns to top level
-* Perhaps have a "blogs" or "thoughts" dir with general articles about software design.
 * Directory for code formatting and reasons.
-* Directory for my personal software development philosophies.
