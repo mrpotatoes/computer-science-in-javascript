@@ -58,6 +58,6 @@ These all have side effects. Meaning that each of these will modify state, call 
 * `collection().remove(id)`
 * `collection().find(id)`
 * `collection().pop()`
-* `collection().insert({})`\
+* `collection().insert({})`
 
 So think about it now, `csv_file_reader(x)` in lieu of `create_csv_file_reader(x)` or something similar is more natural and if following these rules you can see how it'll always be more readable and easier to follow.
