@@ -1,22 +1,4 @@
 # Function Naming
-> Write your code in such a fashion that the consumer of said code can build as if it is a throught through API but it's declarative. - Me
-
-One thing I notice in many parts of code is where we will write functions so long that we require variables to have complex names in order to keep track of what each of them do. Here is some simple code from another one of my docs:
-```js
-// This is better than
-const students = collection('users')
-  .alphabetical(FIRST_NAME)     // Filters by alphabetical
-  .year(FRESHMEN)               // Filters by first year
-  .degree(BA)                   // Finally filter by BA degree
-  .ethnicity(DOMINCAN|AMERICA)  // Cuz that's what I be.
-```
-
-In a small enough function we'll only have one students variable and we know what it is. It's a filtered and sorted students collection. In any other function that is much taller we could have `studentsBA` and `studentsBS` collections.
-
-In small enough functions you won't need either of these (call functions directly).
-
----
-
 Writing functions using verbs conceals the purpose of the function and reveals it's imperative nature. What I care about is how to use it in my project. Take for instance `createTwitterAccount()` tells me the function will create a twitter account but what does that really mean? Is it to to make a new account or register a user or login? What am I getting back or how do I use this in my project?
 
 How about `file.isFile(filePath)` or `file.containsString(str)`? If the language supports it (or you have a library that supports it) then it's better to just return the file object and do a truthy check against that and your code will be better for it.
@@ -90,3 +72,5 @@ So think about it now, `csv_file_reader(x)` in lieu of `create_csv_file_reader(x
 Fucking stop that bullshit got damn.
 
 You want your code to flow and tell you what it is trying to do not how it is doing things. 
+
+Good luck.
