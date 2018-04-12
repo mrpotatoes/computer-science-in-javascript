@@ -83,7 +83,8 @@ Fucking stop that bullshit garbage got damn.
 
 You want your code to flow and tell you what it is trying to do not how it is doing things. So, basically, this is not behavior this is a boolean. It's such a useless verb. It is often used to clean up branching logic so that an `if` conditional is easier to read. I can always give a 👍 to that.
 
-Your have other options though.
+# Your other choices
+Your have other options.
 1. Don't use the `is` prefix at all and instead just name it what the function actually ... well ... is.
     * Instead of `isBathroom` use `bathroom`
 1. Use truthy values wherever you can if you're using a "good" language.
