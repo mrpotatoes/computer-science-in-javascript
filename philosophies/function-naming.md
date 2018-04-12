@@ -1,4 +1,14 @@
 # Function Naming
+> We care not what the function does or how it does it but what we get from it. We name it thusly - Grand Coder LibreSinn
+
+## Tao of Naming
+> A function's return value is most important <br />
+> Name functions and methods according to their side-effects <br />
+> Those without side-effects should read as noun phrases <br />
+> Those with side-effects should read as imperative verbs <br />
+> A side effected function, ideally, should return void <br />
+
+## About Naming
 Writing functions using verbs conceals the purpose of the function and reveals it's imperative nature. What I care about is how to use it in my project. Take for instance `createTwitterAccount()` tells me the function will create a twitter account but what does that really mean? Is it to to make a new account or register a user or login? What am I getting back or how do I use this in my project?
 
 How about `file.isFile(filePath)` or `file.containsString(str)`? If the language supports it (or you have a library that supports it) then it's better to just return the file object and do a truthy check against that and your code will be better for it.
