@@ -1,0 +1,17 @@
+* http://rebootjeff.github.io/blog/2015/06/14/refactoring-towards-functional-programming-in-javascript/
+* https://drboolean.gitbooks.io/mostly-adequate-guide-old/content/ch8.html#the-mighty-container
+* http://eloquentjavascript.net/1st_edition/chapter6.html
+* https://gist.github.com/Integralist/b7ed2e337a0b5cbbecce
+* https://www.reddit.com/r/javascript/comments/48htq9/getting_a_bit_confused_about_how_proper/
+* http://lucasmreis.github.io/blog/pointfree-javascript/
+* https://gist.github.com/ripter/2786033
+* https://gist.github.com/JamieMason/172460a36a0eaef24233e6edb2706f83
+* https://medium.com/@dtipson/creating-an-es6ish-compose-in-javascript-ac580b95104a
+* https://hackernoon.com/javascript-functional-composition-for-every-day-use-22421ef65a10
+* http://blakeembrey.com/articles/2014/01/compose-functions-javascript/
+* http://busypeoples.github.io/post/functional-composing-javascript/
+* http://layv.net/curry-compose/
+* https://github.com/daliwali/promise-compose
+* https://github.com/grncdr/js-compose-promise
+* https://hackernoon.com/lets-compose-promises-309a63225f8a
+* https://stackoverflow.com/questions/36662404/javascript-compose-functions
