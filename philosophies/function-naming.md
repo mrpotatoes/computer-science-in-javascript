@@ -79,7 +79,7 @@ And honestly `.sort()` and `.remove()` can be handed via `.map()` or `.filter()`
 So think about it now, `csv_file_reader(x)` in lieu of `create_csv_file_reader(x)` or something similar is more natural and if following these rules you can see how it'll always be more readable and easier to follow.
 
 # On the `is` prefix
-Fucking stop that bullshit got damn.
+Fucking stop that bullshit garbage got damn.
 
 You want your code to flow and tell you what it is trying to do not how it is doing things. 
 
