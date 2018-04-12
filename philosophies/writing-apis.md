@@ -1,3 +1,4 @@
+# Writing APIs
 Write your code in such a fashion that the consumer of said code can build as if it is a throught through API but it's declarative.
 
 ```js
@@ -34,4 +35,4 @@ Reading that is still more difficult and in terms of API usage more fragile/less
 
 Not to mention the sort at the end. Granted this is something that can be done w/o but often you'll see this because state is managed within the class. It'll modify the object inside of the class and to call the filterable functions in any order you need to sort at the end. Whereas the version above is `functional` and is always returning new state.
 
-Mind you this chain can be easily replicated using a class.
+Mind you this chain can be easily replicated using a class. Also, should be noted, that the the functions in the functional version is using `map` and `filter` but always returning new state.
