@@ -1,3 +1,4 @@
+* https://hackernoon.com/functional-programming-alternatives-to-the-if-functional-javascript-8804905db43e
 * http://rebootjeff.github.io/blog/2015/06/14/refactoring-towards-functional-programming-in-javascript/
 * https://drboolean.gitbooks.io/mostly-adequate-guide-old/content/ch8.html#the-mighty-container
 * http://eloquentjavascript.net/1st_edition/chapter6.html
