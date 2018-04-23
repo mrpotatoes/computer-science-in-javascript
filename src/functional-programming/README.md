@@ -1,6 +1,8 @@
 Have intros in here as well. Use my medium.com article series.
 
 ## Misc
+* [Professor Frisby's Mostly Adequate Guide to Functional Programming](https://mostly-adequate.gitbooks.io/mostly-adequate-guide/content/)
+    * https://github.com/MostlyAdequate/mostly-adequate-guide
 * [Awesome FP JS](https://github.com/stoeffel/awesome-fp-js)
 * [Real world functional programming in JS
 ](https://github.com/haskellcamargo/js-real-world-functional-programming)
