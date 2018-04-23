@@ -1,6 +1,9 @@
 Have intros in here as well. Use my medium.com article series.
 
 ## Misc
+* [Awesome FP JS](https://github.com/stoeffel/awesome-fp-js)
+* [Real world functional programming in JS
+](https://github.com/haskellcamargo/js-real-world-functional-programming)
 * [Destroy All Ifs](http://degoes.net/articles/destroy-all-ifs)
 * [Goodbye, Object Oriented Programming](https://medium.com/@cscalfani/goodbye-object-oriented-programming-a59cda4c0e53)
 * [No ifs ... alternatives to statement branching in JavaScript](https://javascriptweblog.wordpress.com/2010/07/26/no-more-ifs-alternatives-to-statement-branching-in-javascript/)
