@@ -1,61 +1,45 @@
-function ShoppingCart() {
-  this.products = [];
-
-  this.addProduct = function(p) {
-    this.products.push(p);
-  };
+export class Handler {
+  // Returns a string because returning is dope and makes testing easier. Why
+  // don't all functions return? That's right Timmy, because those are bad
+  // programmers and they should be removed from their keyboards.
+  handleRequest () { }
 }
 
-function Discount() {
-  this.calc = function(products) {
-    var ndiscount = new NumberDiscount()
-    var pdiscount = new PriceDiscount()
-    var none = new NoneDiscount()
+export class ConcreteHandler1 { // extends Handler {
+  hasSucessor = () => (this.successor === undefined)
 
-    ndiscount.setNext(pdiscount)
-    pdiscount.setNext(none)
-
-    return ndiscount.exec(products)
-  };
-}
-
-function NumberDiscount() {
-  this.next = null
-  this.setNext = (fn) => {
-    this.next = fn
+  setSuccessor = (successor) => {
+    this.successor = successor
   }
 
-  this.exec = (products) => {
-    var result = 0
-    if (products.length > 3)
-      result = 0.05
+  handleRequest = (request) => {
+    let handleMessage = ''
 
-    return result + this.next.exec(products)
-  }
-}
+    // console.log('this.hasSucessor()', this.successor === undefined)
 
-function PriceDiscount() {
-  this.next = null
-  this.setNext = (fn) => {
-    this.next = fn
-  }
-
-  this.exec = (products) => {
-    const result = 0;
-    const total = products.reduce((a, b) => (
-      a + b
-    ))
-
-    if (total >= 500) {
-      result = 0.1
+    if (request === 'run') {
+      handleMessage = 'I do the thing'
+    } else if (!this.hasSucessor()) {
+      handleMessage = this.successor.handleRequest(request)
+    } else {
+      handleMessage = 'just go on forward'
     }
 
-    return result + this.next.exec(products);
+    return handleMessage
   }
 }
 
-function NoneDiscount() {
-  this.exec = () => (0)
+// I'm not going to bother testing this.
+export class ConcreteHandler2 extends Handler {
+  handleRequest = (request) => (
+    `ConcreteHandler2: ${request}`
+  )
 }
 
-module.exports = [ShoppingCart, Discount];
+export function initChainofResponsibility () {
+  const handle1 = new ConcreteHandler1()
+  const handle2 = new ConcreteHandler2()
+  handle1.setSuccessor(handle2)
+  handle1.handleRequest('run')
+  handle1.handleRequest('stay')
+}
