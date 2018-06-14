@@ -1,27 +1,42 @@
-function Sum(left, right) {
-    this.left = left;
-    this.right = right;
+/* eslint-disable no-param-reassign */
+export class Context {
+  constructor (input) {
+    this.input = input
+    this.output = 0
+  }
+
+  startsWith = (str) => (
+    this.input.substr(0, str.length) === str
+  )
 }
 
-Sum.prototype.interpret = function() {
-   return this.left.interpret() + this.right.interpret();
-};
+export class Expression {
+  constructor (name, one, four, five, nine, multiplier) {
+    this.name = name
+    this.one = one
+    this.four = four
+    this.five = five
+    this.nine = nine
+    this.multiplier = multiplier
+  }
 
-function Min(left, right) {
-    this.left = left;
-    this.right = right;
+  interpret (context) {
+    if (context.input.length === 0) {
+      return
+    } else if (context.startsWith(this.nine)) {
+      context.output += (9 * this.multiplier)
+      context.input = context.input.substr(2)
+    } else if (context.startsWith(this.four)) {
+      context.output += (4 * this.multiplier)
+      context.input = context.input.substr(2)
+    } else if (context.startsWith(this.five)) {
+      context.output += (5 * this.multiplier)
+      context.input = context.input.substr(1)
+    }
+
+    while (context.startsWith(this.one)) {
+      context.output += (1 * this.multiplier)
+      context.input = context.input.substr(1)
+    }
+  }
 }
-
-Min.prototype.interpret = function() {
-   return this.left.interpret() - this.right.interpret();
-};
-
-function Num(val) {
-    this.val = val;
-}
-
-Num.prototype.interpret = function() {
-    return this.val;
-};
-
-module.exports = [Num, Min, Sum];

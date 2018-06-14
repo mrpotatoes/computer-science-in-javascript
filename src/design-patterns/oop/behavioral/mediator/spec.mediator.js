@@ -1,20 +1,14 @@
-const expect = require('chai').expect;
+/* eslint-disable no-unused-vars */
+import chai, { expect } from 'chai'
+import spies from 'chai-spies'
 
-const [TrafficTower, Airplane] = require('../src/behavioral/mediator/mediator');
+// import { visitor } from './mediator'
 
-describe('mediator tests', () => {
+chai.use(spies)
 
-    it('sanity', () => {
-        test(TrafficTower, Airplane);
-    });
-
-});
-
-function test(TrafficTower, AirPlane) {
-    var trafficTower = new TrafficTower();
-    var boeing1 = new Airplane(10, trafficTower);
-    var boeing2 = new Airplane(15, trafficTower);
-    var boeing3 = new Airplane(55, trafficTower);
-
-    expect(boeing1.requestPositions()).to.deep.equals([10, 15, 55]);
-}
+describe('./src/design-patterns/oop/behavioral/mediator', () => {
+  describe('Class: ', () => {
+    it('', () => {
+    })
+  })
+})

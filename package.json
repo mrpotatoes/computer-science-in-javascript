@@ -18,7 +18,7 @@
     "test:cryptography": "mocha --require babel-polyfill --recursive ./src/cryptography --compilers js:babel-register --watch",
     "test:data-structures": "mocha --require babel-polyfill --recursive ./src/data-structures --compilers js:babel-register --watch",
     "test:design-patterns": "mocha --require babel-polyfill --recursive ./src/design-patterns --compilers js:babel-register --watch",
-    "test:design-patterns:oop": "mocha --require babel-polyfill --recursive ./src/design-patterns/oop/behavioral/chain-of-resp --compilers js:babel-register --watch",
+    "test:design-patterns:oop": "mocha --require babel-polyfill --recursive ./src/design-patterns/oop/behavioral/ --compilers js:babel-register --watch",
     "test:design-patterns:functional": "mocha --require babel-polyfill --recursive ./src/design-patterns/functional --compilers js:babel-register --watch",
     "test:design-patterns:react": "mocha --require babel-polyfill --recursive ./src/design-patterns/react --compilers js:babel-register --watch",
     "test:essential-javascript": "mocha --require babel-polyfill --recursive ./src/essential-javascript --compilers js:babel-register --watch",

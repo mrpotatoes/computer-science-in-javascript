@@ -36,9 +36,12 @@ export class ConcreteHandler2 extends Handler {
   )
 }
 
+// This is how you know it works lol.
 export function initChainofResponsibility () {
   const handle1 = new ConcreteHandler1()
   const handle2 = new ConcreteHandler2()
+
+  // A better way would be to have this as loop.
   handle1.setSuccessor(handle2)
   handle1.handleRequest('run')
   handle1.handleRequest('stay')

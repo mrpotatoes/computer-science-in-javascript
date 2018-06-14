@@ -1,16 +1,14 @@
-const expect = require('chai').expect;
+/* eslint-disable no-unused-vars */
+import chai, { expect } from 'chai'
+import spies from 'chai-spies'
 
-const Order = require('../src/behavioral/state/state');
+// import { state } from './state'
 
-describe('state tests', () => {
+chai.use(spies)
 
-    it('sanity', () => {
-        var order = new Order();
-        expect(order.state.name).to.equal('waitingForPayment');
-        order.nextState();
-        expect(order.state.name).to.equal('shipping');
-        order.nextState();
-        expect(order.state.name).to.equal('delivered');
-    });
-
-});
+describe('./src/design-patterns/oop/behavioral/state', () => {
+  describe('Class: ', () => {
+    it('', () => {
+    })
+  })
+})

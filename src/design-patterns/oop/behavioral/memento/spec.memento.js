@@ -1,18 +1,14 @@
-const expect = require('chai').expect;
+/* eslint-disable no-unused-vars */
+import chai, { expect } from 'chai'
+import spies from 'chai-spies'
 
-const [originator, Caretaker] = require('../src/behavioral/memento/memento');
+// import { memento } from './memento'
 
-describe('memento tests', () => {
+chai.use(spies)
 
-    it('sanity', () => {
-        var careTaker = new Caretaker();
-        careTaker.addMemento(originator.store("hello"));
-        careTaker.addMemento(originator.store("hello world"));
-        careTaker.addMemento(originator.store("hello world !!!"));
-
-
-        var result = originator.restore(careTaker.getMemento(1));
-        expect(result).to.equal("hello world");
-    });
-
-});
+describe('./src/design-patterns/oop/behavioral/memento', () => {
+  describe('Class: ', () => {
+    it('', () => {
+    })
+  })
+})

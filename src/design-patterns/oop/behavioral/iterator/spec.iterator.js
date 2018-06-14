@@ -1,31 +1,14 @@
-const expect = require('chai').expect;
+/* eslint-disable no-unused-vars */
+import chai, { expect } from 'chai'
+import spies from 'chai-spies'
 
-const Iterator = require('../src/behavioral/iterator/iterator');
+// import { visitor } from './iterator'
 
-import Iterator6 from '../src/behavioral/iterator/iterator_es6';
+chai.use(spies)
 
-describe('iterator tests', () => {
-
-    it('sanity', () => {
-        test(Iterator);
-    });
-
-});
-
-
-describe('iterator es6 tests', () => {
-
-    it('sanity', () => {
-        test(Iterator6);
-    });
-
-});
-
-function test(Iterator) {
-    var numbers = new Iterator([1,2,3]);
-
-    expect(numbers.next()).to.equal(1);
-    expect(numbers.next()).to.equal(2);
-    expect(numbers.next()).to.equal(3);
-    expect(numbers.hasNext()).to.false;
-}
+describe('./src/design-patterns/oop/behavioral/iterator', () => {
+  describe('Class: ', () => {
+    it('', () => {
+    })
+  })
+})

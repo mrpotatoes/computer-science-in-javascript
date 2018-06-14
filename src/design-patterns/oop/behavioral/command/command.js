@@ -1,65 +1,45 @@
-function Cockpit(command) {
-    this.command = command;
-}
-Cockpit.prototype.execute = function() {
-    this.command.execute();
-};
+/* eslint-disable no-unused-vars */
 
-function Turbine() {
-  this.speed = 0;
-  this.state = false;
+export class Invoker {
+  storeCommand = (command) => {
+    this.command = command
+  }
 }
 
-Turbine.prototype.on = function() {
-    this.state = true;
-    this.speed = 100;
-};
+export class Command {
+  // eslint-disable-next-line
+  constructor () {
+  }
 
-Turbine.prototype.off = function() {
-    this.speed = 0;
-    this.state = false;
-};
-
-Turbine.prototype.speedDown = function() {
-    if (!this.state) return;
-
-    this.speed -= 100;
-};
-
-Turbine.prototype.speedUp = function() {
-    if (!this.state) return;
-
-    this.speed += 100;
-};
-
-
-function OnCommand(turbine) {
-    this.turbine = turbine;
+  execute = () => {
+  }
 }
-OnCommand.prototype.execute = function() {
-    this.turbine.on();
-};
 
-function OffCommand(turbine) {
-    this.turbine = turbine;
+export class Receiver {
+  // eslint-disable-next-line
+  constructor() {
+  }
+
+  action = () => {
+  }
 }
-OffCommand.prototype.execute = function() {
-    this.turbine.off();
-};
 
-function SpeedUpCommand(turbine) {
-    this.turbine = turbine;
+export class ConcreteCommand extends Command {
+  constructor (receiver, state) {
+    super()
+    this.receiver = receiver
+  }
+
+  execute = () => {
+    this.receiver.action()
+  }
 }
-SpeedUpCommand.prototype.execute = function() {
-    this.turbine.speedUp();
-};
 
-function SpeedDownCommand(turbine) {
-    this.turbine = turbine;
+export const initCommand = () => {
+  const invoker = new Invoker()
+  const receiver = new Receiver()
+  const command = new ConcreteCommand(receiver)
+
+  invoker.StoreCommand(command)
+  invoker.command.Execute()
 }
-SpeedDownCommand.prototype.execute = function() {
-    this.turbine.speedDown();
-};
-
-
-module.exports = [Cockpit, Turbine, OnCommand, OffCommand, SpeedUpCommand, SpeedDownCommand];

@@ -1,16 +1,14 @@
-const expect = require('chai').expect;
+/* eslint-disable no-unused-vars */
+import chai, { expect } from 'chai'
+import spies from 'chai-spies'
 
-const [Tax1, Tax2] = require('../src/behavioral/template/template');
+// import { template } from './template'
 
-describe('template tests', () => {
+chai.use(spies)
 
-    it('sanity', () => {
-        var tax1 = new Tax1();
-        var tax2 = new Tax2();
-
-        expect(tax1.calc(1000)).to.equal(1110);
-        expect(tax2.calc(1000)).to.equal(1210);
-        expect(tax2.calc(100)).to.equal(110);
-    });
-
-});
+describe('./src/design-patterns/oop/behavioral/template', () => {
+  describe('Class: ', () => {
+    it('', () => {
+    })
+  })
+})

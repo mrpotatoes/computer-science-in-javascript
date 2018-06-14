@@ -1,27 +1,57 @@
-const expect = require('chai').expect;
+import chai, { expect } from 'chai'
+import spies from 'chai-spies'
 
-const [Cockpit, Turbine, OnCommand, OffCommand, SpeedUpCommand, SpeedDownCommand] = require('../src/behavioral/command/command.js');
+import { Invoker, Command, ConcreteCommand, Receiver, initCommand } from './command'
 
-describe('command tests', () => {
+chai.use(spies)
 
-    it('turn off/on test', () => {
-        var turbine = new Turbine();
-        const onCommand = new OnCommand(turbine);
-        const cockpit = new Cockpit(onCommand);
-        cockpit.execute();
-        expect(turbine.state).to.be.true;
-    });
+describe('./src/design-patterns/oop/behavioral/command', () => {
+  describe('Class: Invoker', () => {
+    it('command is null', () => {
+      const invoker = new Invoker()
+      expect(invoker.command).to.equal(undefined)
+    })
 
-    it('speed test', () => {
-        var turbine = new Turbine();
-        const onCommand = new OnCommand(turbine);
-        var cockpit = new Cockpit(onCommand);
-        cockpit.execute();
+    it('command equals "lorem ipsum"', () => {
+      const invoker = new Invoker()
+      invoker.storeCommand('lorem ipsum')
+      expect(invoker.command).to.equal('lorem ipsum')
+    })
+  })
 
-        const speedUp = new SpeedUpCommand(turbine);
-        cockpit = new Cockpit(speedUp);
-        cockpit.execute();
+  describe('Class: Command', () => {
+    it('expects command.execute() method to be called', () => {
+      const command = new Command()
+      command.execute = chai.spy()
+      command.execute()
+      expect(command.execute).to.have.been.called()
+    })
+  })
 
-        expect(turbine.speed).to.equal(200);
-    });
-});
+  describe('Class: Receiver', () => {
+    it('expects reciever.action() to be called.', () => {
+      const receiver = new Receiver()
+      receiver.action = chai.spy()
+      receiver.action()
+      expect(receiver.action).to.have.been.called()
+    })
+  })
+
+  describe('Class: ConcreteCommand', () => {
+    it('', () => {
+      // const cc = new ConcreteCommand()
+      // handler.handleRequest = chai.spy()
+      // handler.handleRequest()
+      // expect(handler.handleRequest).to.have.been.called()
+    })
+  })
+
+  describe('initCommand()', () => {
+    it('', () => {
+      // const handler = new Handler()
+      // handler.handleRequest = chai.spy()
+      // handler.handleRequest()
+      // expect(handler.handleRequest).to.have.been.called()
+    })
+  })
+})
