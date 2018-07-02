@@ -130,3 +130,5 @@ By doing so we will be able to compare the different sorting algorithms more eas
 * Make branches for all the topics.
 * Directory for code formatting and reasons.
 * https://github.com/jwasham/coding-interview-university
+
+https://able.bio/drenther/javascript-design-patterns--89mv2af
