@@ -1,9 +1,6 @@
+/* eslint-disable no-unused-vars */
 import chai, { expect } from 'chai'
-import spies from 'chai-spies'
-
 import { Invoker, Command, ConcreteCommand, Receiver, initCommand } from './command'
-
-chai.use(spies)
 
 describe('./src/design-patterns/oop/behavioral/command', () => {
   describe('Class: Invoker', () => {
