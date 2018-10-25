@@ -12,6 +12,7 @@ So, since they're so similar then why would we use one or the other? Generally y
 1. Cannot randomly access a node; elements need be searched starting from first to found (or last).
 1. Extra memory space for a pointer is required with each element of the list.
 1. Searching is slow for large lists `Θ(n)`.
+1. Can only go forward.
 
 ------------------------------------------------------------------------------------------------
 
