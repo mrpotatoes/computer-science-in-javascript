@@ -13,9 +13,11 @@ export default class GraphDS {
 
   removeVertex (vertex) {
     const index = this.vertices.indexOf(vertex)
+    
     if (~index) {
       this.vertices.splice(index, 1)
     }
+    
     while (this.edges[vertex].length) {
       const adjacentVertex = this.edges[vertex].pop()
       this.removeEdge(adjacentVertex, vertex)
@@ -31,10 +33,12 @@ export default class GraphDS {
   removeEdge (vertex1, vertex2) {
     const index1 = this.edges[vertex1] ? this.edges[vertex1].indexOf(vertex2) : -1
     const index2 = this.edges[vertex2] ? this.edges[vertex2].indexOf(vertex1) : -1
+    
     if (~index1) {
       this.edges[vertex1].splice(index1, 1)
       this.numberOfEdges--
     }
+    
     if (~index2) {
       this.edges[vertex2].splice(index2, 1)
     }
@@ -52,15 +56,18 @@ export default class GraphDS {
     if (!~this.vertices.indexOf(vertex)) {
       return console.log('Vertex not found')
     }
+
     const visited = []
     this._traverseDFS(vertex, visited, fn)
   }
 
   _traverseDFS (vertex, visited, fn) {
     visited[vertex] = true
+
     if (this.edges[vertex] !== undefined) {
       fn(vertex)
     }
+
     for (let i = 0; i < this.edges[vertex].length; i++) {
       if (!visited[this.edges[vertex][i]]) {
         this._traverseDFS(this.edges[vertex][i], visited, fn)
@@ -72,6 +79,7 @@ export default class GraphDS {
     if (!~this.vertices.indexOf(vertex)) {
       return console.log('Vertex not found')
     }
+
     const queue = []
     queue.push(vertex)
     const visited = []
@@ -80,6 +88,7 @@ export default class GraphDS {
     while (queue.length) {
       vertex = queue.shift()
       fn(vertex)
+
       for (let i = 0; i < this.edges[vertex].length; i++) {
         if (!visited[this.edges[vertex][i]]) {
           visited[this.edges[vertex][i]] = true
@@ -93,11 +102,12 @@ export default class GraphDS {
     if (!~this.vertices.indexOf(vertexSource)) {
       return console.log('Vertex not found')
     }
+
     const queue = []
-    queue.push(vertexSource)
-    const visited = []
-    visited[vertexSource] = true
     const paths = []
+    const visited = []
+    queue.push(vertexSource)
+    visited[vertexSource] = true
 
     while (queue.length) {
       const vertex = queue.shift()
@@ -105,11 +115,13 @@ export default class GraphDS {
         if (!visited[this.edges[vertex][i]]) {
           visited[this.edges[vertex][i]] = true
           queue.push(this.edges[vertex][i])
-          // save paths between vertices
+          
+          // Save paths between vertices.
           paths[this.edges[vertex][i]] = vertex
         }
       }
     }
+
     if (!visited[vertexDestination]) {
       return undefined
     }
@@ -118,6 +130,7 @@ export default class GraphDS {
     for (var j = vertexDestination; j != vertexSource; j = paths[j]) {
       path.push(j)
     }
+
     path.push(j)
     return path.reverse().join('-')
   }
