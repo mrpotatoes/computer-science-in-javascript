@@ -1,182 +1,182 @@
-/* eslint-disable */
-export default class GraphDS {
-  constructor () {
-    this.vertices = []
-    this.edges = []
-    this.numberOfEdges = 0
+export default class Graph {
+  /**
+   *
+   */
+  constructor (isDirected = false) {
+    this.vertices = {}
+    this.edges = {}
+    this.isDirected = isDirected
   }
 
-  addVertex (vertex) {
-    this.vertices.push(vertex)
-    this.edges[vertex] = []
+  /**
+   * @param {GraphVertex} newVertex
+   */
+  addVertex (newVertex) {
+    this.vertices[newVertex.getKey()] = newVertex
+
+    return this
   }
 
-  removeVertex (vertex) {
-    const index = this.vertices.indexOf(vertex)
-    
-    if (~index) {
-      this.vertices.splice(index, 1)
-    }
-    
-    while (this.edges[vertex].length) {
-      const adjacentVertex = this.edges[vertex].pop()
-      this.removeEdge(adjacentVertex, vertex)
-    }
+  /**
+   *
+   */
+  getVertexByKey (vertexKey) {
+    return this.vertices[vertexKey]
   }
 
-  addEdge (vertex1, vertex2) {
-    this.edges[vertex1].push(vertex2)
-    this.edges[vertex2].push(vertex1)
-    this.numberOfEdges++
+  /**
+   *
+   */
+  getNeighbors (vertex) {
+    return vertex.getNeighbors()
   }
 
-  removeEdge (vertex1, vertex2) {
-    const index1 = this.edges[vertex1] ? this.edges[vertex1].indexOf(vertex2) : -1
-    const index2 = this.edges[vertex2] ? this.edges[vertex2].indexOf(vertex1) : -1
-    
-    if (~index1) {
-      this.edges[vertex1].splice(index1, 1)
-      this.numberOfEdges--
+  /**
+   *
+   */
+  getAllVertices = () => (Object.values(this.vertices))
+
+  /**
+   *
+   */
+  getAllEdges = () => (Object.values(this.edges))
+
+  /**
+   *
+   */
+  addEdge (edge) {
+    // Try to find and end start vertices.
+    let startVertex = this.getVertexByKey(edge.startVertex.getKey())
+    let endVertex = this.getVertexByKey(edge.endVertex.getKey())
+
+    // Insert start vertex if it wasn't inserted.
+    if (!startVertex) {
+      this.addVertex(edge.startVertex)
+      startVertex = this.getVertexByKey(edge.startVertex.getKey())
     }
-    
-    if (~index2) {
-      this.edges[vertex2].splice(index2, 1)
+
+    // Insert end vertex if it wasn't inserted.
+    if (!endVertex) {
+      this.addVertex(edge.endVertex)
+      endVertex = this.getVertexByKey(edge.endVertex.getKey())
     }
+
+    // Check if edge has been already added.
+    if (this.edges[edge.getKey()]) {
+      throw new Error('Edge has already been added before')
+    } else {
+      this.edges[edge.getKey()] = edge
+    }
+
+    // Add edge to the vertices.
+    if (this.isDirected) {
+      // If graph IS directed then add the edge only to start vertex.
+      startVertex.addEdge(edge)
+    } else {
+      // If graph ISN'T directed then add the edge to both vertices.
+      startVertex.addEdge(edge)
+      endVertex.addEdge(edge)
+    }
+
+    return this
   }
 
-  size () {
-    return this.vertices.length
+  /**
+   *
+   */
+  deleteEdge (edge) {
+    // Delete edge from the list of edges.
+    if (this.edges[edge.getKey()]) {
+      delete this.edges[edge.getKey()]
+    } else {
+      throw new Error('Edge not found in graph')
+    }
+
+    // Try to find and end start vertices and delete edge from them.
+    const startVertex = this.getVertexByKey(edge.startVertex.getKey())
+    const endVertex = this.getVertexByKey(edge.endVertex.getKey())
+
+    startVertex.deleteEdge(edge)
+    endVertex.deleteEdge(edge)
   }
 
-  relations () {
-    return this.numberOfEdges
+  /**
+   *
+   */
+  findEdge (startVertex, endVertex) {
+    const vertex = this.getVertexByKey(startVertex.getKey())
+
+    if (!vertex) {
+      return null
+    }
+
+    return vertex.findEdge(endVertex)
   }
 
-  traverseDFS (vertex, fn) {
-    if (!~this.vertices.indexOf(vertex)) {
-      return console.log('Vertex not found')
-    }
-
-    const visited = []
-    this._traverseDFS(vertex, visited, fn)
+  /**
+   *
+   */
+  getWeight () {
+    return this.getAllEdges().reduce((weight, graphEdge) => weight + graphEdge.weight, 0)
   }
 
-  _traverseDFS (vertex, visited, fn) {
-    visited[vertex] = true
+  /**
+   * Reverse all the edges in directed graph.
+   */
+  reverse () {
+    /** @param {GraphEdge} edge */
+    this.getAllEdges().forEach((edge) => {
+      // Delete straight edge from graph and from vertices.
+      this.deleteEdge(edge)
 
-    if (this.edges[vertex] !== undefined) {
-      fn(vertex)
-    }
+      // Reverse the edge.
+      edge.reverse()
 
-    for (let i = 0; i < this.edges[vertex].length; i++) {
-      if (!visited[this.edges[vertex][i]]) {
-        this._traverseDFS(this.edges[vertex][i], visited, fn)
-      }
-    }
+      // Add reversed edge back to the graph and its vertices.
+      this.addEdge(edge)
+    })
+
+    return this
   }
 
-  traverseBFS (vertex, fn) {
-    if (!~this.vertices.indexOf(vertex)) {
-      return console.log('Vertex not found')
-    }
+  /**
+   *
+   */
+  getVerticesIndices () {
+    const verticesIndices = {}
+    this.getAllVertices().forEach((vertex, index) => {
+      verticesIndices[vertex.getKey()] = index
+    })
 
-    const queue = []
-    queue.push(vertex)
-    const visited = []
-    visited[vertex] = true
-
-    while (queue.length) {
-      vertex = queue.shift()
-      fn(vertex)
-
-      for (let i = 0; i < this.edges[vertex].length; i++) {
-        if (!visited[this.edges[vertex][i]]) {
-          visited[this.edges[vertex][i]] = true
-          queue.push(this.edges[vertex][i])
-        }
-      }
-    }
+    return verticesIndices
   }
 
-  pathFromTo (vertexSource, vertexDestination) {
-    if (!~this.vertices.indexOf(vertexSource)) {
-      return console.log('Vertex not found')
-    }
+  /**
+   *
+   */
+  getAdjacencyMatrix () {
+    const vertices = this.getAllVertices()
+    const verticesIndices = this.getVerticesIndices()
 
-    const queue = []
-    const paths = []
-    const visited = []
-    queue.push(vertexSource)
-    visited[vertexSource] = true
+    // Init matrix with infinities meaning that there is no ways of
+    // getting from one vertex to another yet.
+    const adjacencyMatrix = Array(vertices.length).fill(null).map(() => Array(vertices.length).fill(Infinity))
 
-    while (queue.length) {
-      const vertex = queue.shift()
-      for (let i = 0; i < this.edges[vertex].length; i++) {
-        if (!visited[this.edges[vertex][i]]) {
-          visited[this.edges[vertex][i]] = true
-          queue.push(this.edges[vertex][i])
-          
-          // Save paths between vertices.
-          paths[this.edges[vertex][i]] = vertex
-        }
-      }
-    }
+    // Fill the columns.
+    vertices.forEach((vertex, vertexIndex) => {
+      vertex.getNeighbors().forEach((neighbor) => {
+        const neighborIndex = verticesIndices[neighbor.getKey()]
+        adjacencyMatrix[vertexIndex][neighborIndex] = this.findEdge(vertex, neighbor).weight
+      })
+    })
 
-    if (!visited[vertexDestination]) {
-      return undefined
-    }
-
-    const path = []
-    for (var j = vertexDestination; j != vertexSource; j = paths[j]) {
-      path.push(j)
-    }
-
-    path.push(j)
-    return path.reverse().join('-')
+    return adjacencyMatrix
   }
 
-  print () {
-    console.log(this.vertices.map(function (vertex) {
-      return (`${vertex} -> ${this.edges[vertex].join(', ')}`).trim()
-    }, this).join(' | '))
+  /**
+   *
+   */
+  toString () {
+    return Object.keys(this.vertices).toString()
   }
 }
-
-// const graph = new Graph()
-// graph.addVertex(1)
-// graph.addVertex(2)
-// graph.addVertex(3)
-// graph.addVertex(4)
-// graph.addVertex(5)
-// graph.addVertex(6)
-// graph.print() // 1 -> | 2 -> | 3 -> | 4 -> | 5 -> | 6 ->
-// graph.addEdge(1, 2)
-// graph.addEdge(1, 5)
-// graph.addEdge(2, 3)
-// graph.addEdge(2, 5)
-// graph.addEdge(3, 4)
-// graph.addEdge(4, 5)
-// graph.addEdge(4, 6)
-// graph.print() // 1 -> 2, 5 | 2 -> 1, 3, 5 | 3 -> 2, 4 | 4 -> 3, 5, 6 | 5 -> 1, 2, 4 | 6 -> 4
-// console.log('graph size (number of vertices):', graph.size()) // => 6
-// console.log('graph relations (number of edges):', graph.relations()) // => 7
-// graph.traverseDFS(1, (vertex) => { console.log(vertex) }) // => 1 2 3 4 5 6
-// console.log('---')
-// graph.traverseBFS(1, (vertex) => { console.log(vertex) }) // => 1 2 5 3 4 6
-// graph.traverseDFS(0, (vertex) => { console.log(vertex) }) // => 'Vertex not found'
-// graph.traverseBFS(0, (vertex) => { console.log(vertex) }) // => 'Vertex not found'
-// console.log('path from 6 to 1:', graph.pathFromTo(6, 1)) // => 6-4-5-1
-// console.log('path from 3 to 5:', graph.pathFromTo(3, 5)) // => 3-2-5
-// graph.removeEdge(1, 2)
-// graph.removeEdge(4, 5)
-// graph.removeEdge(10, 11)
-// console.log('graph relations (number of edges):', graph.relations()) // => 5
-// console.log('path from 6 to 1:', graph.pathFromTo(6, 1)) // => 6-4-3-2-5-1
-// graph.addEdge(1, 2)
-// graph.addEdge(4, 5)
-// console.log('graph relations (number of edges):', graph.relations()) // => 7
-// console.log('path from 6 to 1:', graph.pathFromTo(6, 1)) // => 6-4-5-1
-// graph.removeVertex(5)
-// console.log('graph size (number of vertices):', graph.size()) // => 5
-// console.log('graph relations (number of edges):', graph.relations()) // => 4
-// console.log('path from 6 to 1:', graph.pathFromTo(6, 1)) // => 6-4-3-2-1

@@ -1,6 +1,9 @@
 # [Heading](wiki-link)
 Wiki intro text.
 
+## Credit
+Most of this is from https://github.com/mgechev/javascript-algorithms but converted to ES6 with my own tests and a ton of comments.
+
 ## Topic Diagram ([From Wikipedia](https://en.wikipedia.org/wiki/Graph_(abstract_data_type)))
 ![placeholder](./logo-placeholder.png)
 

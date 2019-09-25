@@ -21,6 +21,9 @@ If you take any of the code paths then you need to have tests included with the 
 * [If you want to write the code yourself (in JS)](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-write-the-code-yourself-in-js)
 * [If you want to write the code yourself (!in JS)](https://github.com/mrpotatoes/computer-science-in-javascript/tree/master/scripts#if-you-want-to-write-the-code-yourself-in-js-1)
 
+## Credits
+Not all of this code is my own. In those cases I will note it within the code and any `README` files referencing said code. Like I said this is just a repo for me to learn, re-learn, or to setup as a reference for myself.
+
 # Table of Contents (`./`)
 - Documentation
 - Scripts

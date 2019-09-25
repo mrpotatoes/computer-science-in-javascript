@@ -92,3 +92,11 @@ export const reverseStringTernary = (string) => (
     ? string
     : reverseStringTernary(string.substr(1)) + string.charAt(0)
 )
+
+// Reduce to concat
+export const concat = (...strings) => (
+  strings.reduce(
+    (acc, curr) => (`${acc} ${curr}`),
+    ''
+  )
+)
