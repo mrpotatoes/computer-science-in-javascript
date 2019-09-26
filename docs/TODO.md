@@ -3,7 +3,8 @@ Each TODO item requires that it not only have the code completed plus it's corre
 
 https://github.com/trekhleb/javascript-algorithms
 
-## Write a `yo` generator
+## Convert to a Mono Repo
+Only makes sense.
 
 ## Fix Mocha absolute paths:
 * https://stackoverflow.com/q/15951010/7933358
