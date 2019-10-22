@@ -23,7 +23,7 @@
     "fantasy-combinators": "0.0.x"
   },
   "devDependencies": {
-    "eslint": "3.8.x",
+    "eslint": "6.5.x",
     "nodeunit": "0.9.x",
     "sanctuary-style": "0.2.x",
     "xyz": "2.0.x"
