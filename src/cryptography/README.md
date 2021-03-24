@@ -12,7 +12,7 @@ ORIGINAL: https://github.com/sobolevn/awesome-cryptography (& minified)
 
 # Awesome Cryptography
 <p align="center">
-  <img src="https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/docs/placeholder.png" alt="Awesome Cryptography">
+  <img src="https://raw.githubusercontent.com/mrpotatoes/computer-science-in-javascript/master/src/cryptography/awesome-crypto.png" alt="Awesome Cryptography">
 </p>
 
 ## Contents
