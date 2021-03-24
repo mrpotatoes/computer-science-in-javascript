@@ -1,3 +1,4 @@
+<!-- https://stackoverflow.com/questions/11804820/how-can-i-embed-a-youtube-video-on-github-wiki-pages -->
 # Computer Science in JavaScript
 Who doesn't want to learn Computer Science? It's really easy but the problem is that is is hidden behind many layers of complexity and often abstract math that you may not have time to learn. That can be a problem for different types of learners especially for the self starter. For instance I can grasp concepts in no time but to cement them I need to actually do the work. So, for a reference to myself but a study guide for others I've created this repository.
 

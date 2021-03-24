@@ -1,4 +1,4 @@
-
+/* eslint-disable no-else-return */
 /**
  * Reverse a string.
  *
@@ -100,3 +100,50 @@ export const concat = (...strings) => (
     ''
   )
 )
+
+// https://davidtang.io/2019-04-11-learning-recursion-in-javascript-part-4/
+export const isPalindromeLinear = (string) => {
+  const middle = string.length / 2
+  let yes = false
+
+  // Single or no character strings are paleidromes for us.
+  if (string.length <= 1) {
+    return true
+  }
+
+  // I'm not even going to bother with odd things.
+  if (string.length % 2 !== 0) {
+    return false
+  }
+
+  // Simple loop
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] !== string[(string.length - 1) - i]) {
+      // eslint-disable-next-line
+      yes = false
+      break
+    } else {
+      yes = true
+    }
+
+    // Sloppy, I know.
+    if (i - 1 === middle) {
+      break
+    }
+  }
+
+  return yes
+}
+
+export const isPalindrome = (string) => {
+  if (string.length <= 1) {
+    return true
+  }
+
+  const [firstLetter] = string
+  const lastLetter = string[string.length - 1]
+
+  return (firstLetter === lastLetter)
+    ? isPalindrome(string.substring(1, string.length - 1))
+    : false
+}

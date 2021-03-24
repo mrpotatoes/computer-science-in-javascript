@@ -16,8 +16,9 @@ const students = getCollection('users')
   .whichDegree(BA)                   // Finally filter by BA degree
   .whatEthnicity(DOMINCAN|AMERICA)  // Cuz that's what I be.
   .sort()
-
 ```
+
+Don't ask, just do.
 
 Just look at the difficulty building the chain using the second method. Granted that is an issue of multiple people working on the same codebase and with different perspectives and live experiances but here is a "better" version.
 

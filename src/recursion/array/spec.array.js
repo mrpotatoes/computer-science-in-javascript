@@ -1,17 +1,14 @@
 import chai from 'chai'
-import {
-  arraySelectEven,
-  arraySelect,
-  dropWhile,
-} from './array'
+import { arraySelectEven, arraySelect, dropWhile } from './array'
 
 chai.should()
 
 describe('Recursion', () => {
-  describe('Exercises', () => {
+  describe('Arrays', () => {
     it('arraySelectEven(evens) should get me even numbers', (done) => {
       arraySelectEven([0, 1, 2, 3, 4, 5, 6]).should.deep.equal([0, 2, 4, 6])
       arraySelectEven([0, 1, 2.4, 3, 4, 5, 6]).should.deep.equal([0, 4, 6])
+      arraySelectEven([-2, -1, 0, 1, 2]).should.deep.equal([-2, 0, 2])
       done()
     })
 
