@@ -16,17 +16,17 @@ const emptyRes = 0
 const sum = (acc, curr) => (acc + curr)
 
 describe('reduce :: f a -> ((b, a) -> b, b) -> b', () => {
-  describe('iterable', () => {
-    it('reduce.iterable(whole, sum)', () => {
-      reduce.iterable(sum, 0, whole).should.deep.equal(wholeRes)
+  describe('imperative', () => {
+    it('reduce.imperative(whole, sum)', () => {
+      reduce.imperative(sum, 0, whole).should.deep.equal(wholeRes)
     })
 
-    it('reduce.iterable(integers, sum)', () => {
-      reduce.iterable(sum, 0, integers).should.deep.equal(integersRes)
+    it('reduce.imperative(integers, sum)', () => {
+      reduce.imperative(sum, 0, integers).should.deep.equal(integersRes)
     })
 
-    it('reduce.iterable(empty, sum)', () => {
-      reduce.iterable(sum, 0, empty).should.deep.equal(emptyRes)
+    it('reduce.imperative(empty, sum)', () => {
+      reduce.imperative(sum, 0, empty).should.deep.equal(emptyRes)
     })
   })
 

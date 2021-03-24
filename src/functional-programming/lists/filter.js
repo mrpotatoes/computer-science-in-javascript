@@ -27,8 +27,8 @@ const recursive = ([head, ...tail], fn) => {
   return [...recursive(tail, fn)]
 }
 
-// iterable :: ([Number], fn) -> [Number]
-const iterable = (arr, fn) => {
+// imperative :: ([Number], fn) -> [Number]
+const imperative = (arr, fn) => {
   const newArray = []
 
   arr.forEach((element) => {
@@ -42,6 +42,6 @@ const iterable = (arr, fn) => {
 
 export default {
   recursive,
-  iterable,
+  imperative,
   reduce: filterButWithReduce,
 }

@@ -16,17 +16,17 @@ const emptyRes = []
 const addOne = (elm) => (elm + 1)
 
 describe('map :: f a -> (a -> b) -> f b', () => {
-  describe('iterable', () => {
-    it('map.iterable(whole, addOne)', () => {
-      map.iterable(whole, addOne).should.deep.equal(wholeRes)
+  describe('imperative', () => {
+    it('map.imperative(whole, addOne)', () => {
+      map.imperative(whole, addOne).should.deep.equal(wholeRes)
     })
 
-    it('map.iterable(integers, addOne)', () => {
-      map.iterable(integers, addOne).should.deep.equal(integersRes)
+    it('map.imperative(integers, addOne)', () => {
+      map.imperative(integers, addOne).should.deep.equal(integersRes)
     })
 
-    it('map.iterable(empty, addOne)', () => {
-      map.iterable(empty, addOne).should.deep.equal(emptyRes)
+    it('map.imperative(empty, addOne)', () => {
+      map.imperative(empty, addOne).should.deep.equal(emptyRes)
     })
   })
 

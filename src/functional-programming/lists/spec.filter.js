@@ -16,17 +16,17 @@ const emptyRes = []
 const lessThan3 = (elm) => (elm > 3)
 
 describe('filter :: f a -> (a -> Boolean) -> f a', () => {
-  describe('iterable', () => {
-    it('filter.iterable(whole, lessThan3)', () => {
-      filter.iterable(whole, lessThan3).should.deep.equal(wholeRes)
+  describe('imperative', () => {
+    it('filter.imperative(whole, lessThan3)', () => {
+      filter.imperative(whole, lessThan3).should.deep.equal(wholeRes)
     })
 
-    it('filter.iterable(integers, lessThan3)', () => {
-      filter.iterable(integers, lessThan3).should.deep.equal(integersRes)
+    it('filter.imperative(integers, lessThan3)', () => {
+      filter.imperative(integers, lessThan3).should.deep.equal(integersRes)
     })
 
-    it('filter.iterable(empty, lessThan3)', () => {
-      filter.iterable(empty, lessThan3).should.deep.equal(emptyRes)
+    it('filter.imperative(empty, lessThan3)', () => {
+      filter.imperative(empty, lessThan3).should.deep.equal(emptyRes)
     })
   })
 

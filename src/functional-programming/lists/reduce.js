@@ -9,7 +9,7 @@ const recursive = (fn, acc, [head, ...tail]) => {
 }
 
 // iterable :: ([Number], fn) -> [Number]
-const iterable = (fn, acc, arr) => {
+const imperative = (fn, acc, arr) => {
   for (let i = 0; i < arr.length; i++) {
     acc = fn(acc, arr[i])
   }
@@ -19,5 +19,5 @@ const iterable = (fn, acc, arr) => {
 
 export default {
   recursive,
-  iterable,
+  imperative,
 }
