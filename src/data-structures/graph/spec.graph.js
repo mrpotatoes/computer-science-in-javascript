@@ -6,7 +6,7 @@ import { Vertex as GraphVertex, Edge as GraphEdge } from './base'
 chai.should()
 const expect = chai.expect
 
-describe('Graph', () => {
+describe('[Data Structure] Graph', () => {
   it.skip('should add vertices to graph', () => {
     const graph = new Graph()
 
@@ -316,8 +316,6 @@ describe('Graph', () => {
       .addEdge(edgeBC)
       .addEdge(edgeCD)
       .addEdge(edgeBD)
-
-    console.log(graph.toString())
 
     const verticesIndices = graph.getVerticesIndices()
     expect(verticesIndices).to.deep.equal({

@@ -4,7 +4,7 @@ import HashTableDS from './hash-table'
 
 const expect = chai.expect
 
-describe('[Hash test] Testing index', () => {
+describe('[Hashing] Testing index', () => {
   it('calculateHash() keys are the same', (done) => {
     const hash = new HashTableDS()
     const hashExample = hash.calculateHash('wow')

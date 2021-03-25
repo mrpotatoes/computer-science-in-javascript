@@ -18,7 +18,7 @@ A hash function will sometimes return the same values for two different keys. If
 ### Structure Example (Chaining)
 This ASCII example comes from "Notes on Hashing" [3]. This uses chaining instead of linear probing which is easier to work with. This is instead of figuring out the sorting of collisions within the table in a linear fashion (yuck).
 
-Given 4 keys `Krista`, `Allen`, `Peter` and `Susan` we want to enter then into our hash table. Our hashing function isn't the best and determines that one of them, `Krista`, has a unique hash/index and the other three end up with the same. That means that `Allen`, `Peter` and `Susan` are collisions. What we'll plan to do is store them all at the same index/hash (in an array or linked list or what-have-you it's dealer's choice).
+Given 4 keys `Krista`, `Allen`, `Peter` and `Susan` we want to enter them into our hash table. Our hashing function isn't the best and determines that one of them, `Krista`, has a unique hash/index and the other three end up with the same. That means that `Allen`, `Peter` and `Susan` are collisions. What we'll plan to do is store them all at the same index/hash (in an array or linked list or what-have-you it's dealer's choice).
 
 What that example would end up looking like is as thus:
 

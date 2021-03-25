@@ -42,6 +42,8 @@ describe('[Data Structure] Hash Table', () => {
     hash.insert('w9n65bqdlkeocdc6v3wel8fr', 3899345252939)
     hash.insert('70xdebzx9jqs7roe083u8zolxr', 3899234552939)
 
+    console.log(hash.storage)
+
     // Assertions.
     hash.length().should.equal(5)
     hash.storage.should.deep.equal(fixture)
