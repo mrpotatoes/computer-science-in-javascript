@@ -39,9 +39,6 @@
 /**
  * Sort an array using the merge sort algorithm.
  *
- * Code is a simplified version of:
- * @see http://www.stoimen.com/blog/2010/07/02/friday-algorithms-javascript-merge-sort/
- *
  * @param {array} The array to sort.
  * @return {array}
  */
