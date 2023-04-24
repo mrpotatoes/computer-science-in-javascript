@@ -129,6 +129,7 @@ By doing so we will be able to compare the different sorting algorithms more eas
 1. Project assumes you have `node` and `npm/yarn` installed. If not go ahead and do that now.
 1. I'm using: [Babel Namespace Plugin](https://github.com/yudhasetiawan/babel-plugin-namespace)
     * This is important so I don't need to keep typing `../../`. It isn't 1980 anymore.
+1. Would like to convert this from hard coding `Babel` to using `Parcel.js`
 
 # TODO (Temp section)
 * Make branches for all the topics.
