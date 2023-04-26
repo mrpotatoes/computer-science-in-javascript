@@ -1,1 +1,1 @@
-export const colorToHex = () => { }
+export const colorToHex = () => 'asd'

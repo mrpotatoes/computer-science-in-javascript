@@ -10,3 +10,4 @@ To do before adding more code
 1. All the scripts that use `./scripts/run-lesson.sh` should be converted to tests
 1. Create a file `./tools/.eslintrc.json` to take the `eslint` configs out of `package.json`
 1. Namespaces, let's get them to work in `Jest` and `Rollup`
+1. There are docs within that could exist elsewhere like `./docs`

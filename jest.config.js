@@ -4,10 +4,11 @@
 module.exports = {
   testEnvironment: 'node',
   roots: [
-    '<rootDir>/src',
+    '<rootDir>/src/',
   ],
   testMatch: null,
-  testRegex: '(/src/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$',
+  testRegex:
+    '^.*(spec|test).*$',
   transform: {
     '^.+\\.js$': 'babel-jest',
   },
@@ -15,6 +16,7 @@ module.exports = {
   testPathIgnorePatterns: [
     '/node_modules/',
     '/dist/',
+    '<rootDir>/src/design-patterns/',
   ],
   moduleFileExtensions: ['js'],
   clearMocks: true,

@@ -43,6 +43,7 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.21.4",
+    "@types/jest": "^29.5.1",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",

@@ -1,5 +1,13 @@
 // /* eslint-disable no-prototype-builtins, max-len, no-param-reassign, no-console, no-lonely-if */
 
+describe('Binary Search Tree', () => {
+  describe('General string regex', () => {
+    it('[NOT YET IMPLIMENTED]', () => {
+    })
+  })
+})
+
+
 // /**
 //  * Simple binary search tree.
 //  *

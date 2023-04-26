@@ -1,16 +1,11 @@
-import chai from 'chai'
 import { selectionSort } from './selection'
 import { fixture1, fixture2, fixture3 } from '../_fixtures/sorting'
 
-chai.should()
-
 describe('[Sorting] Selection', () => {
-  it('Selection Sort([...])', (done) => {
+  it('Selection Sort([...])', () => {
     // Assertions.
-    selectionSort(fixture1().unsorted).should.deep.equal(fixture1().sorted)
-    selectionSort(fixture2().unsorted).should.deep.equal(fixture2().sorted)
-    selectionSort(fixture3().unsorted).should.deep.equal(fixture3().sorted)
-
-    done()
+    expect(selectionSort(fixture1().unsorted)).toEqual(fixture1().sorted)
+    expect(selectionSort(fixture2().unsorted)).toEqual(fixture2().sorted)
+    expect(selectionSort(fixture3().unsorted)).toEqual(fixture3().sorted)
   })
 })

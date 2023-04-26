@@ -1,10 +1,5 @@
-/* eslint-disable no-unused-expressions */
-import chai from 'chai'
 import Graph from './graph'
 import { Vertex as GraphVertex, Edge as GraphEdge } from './base'
-
-chai.should()
-const expect = chai.expect
 
 describe('[Data Structure] Graph', () => {
   it.skip('should add vertices to graph', () => {
@@ -318,7 +313,7 @@ describe('[Data Structure] Graph', () => {
       .addEdge(edgeBD)
 
     const verticesIndices = graph.getVerticesIndices()
-    expect(verticesIndices).to.deep.equal({
+    expect(verticesIndices).toEqual({
       A: 0,
       B: 1,
       C: 2,

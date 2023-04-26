@@ -1,8 +1,8 @@
-var fs = require('fs');
-var ws = fs.createWriteStream('message.txt');
+// var fs = require('fs');
+// var ws = fs.createWriteStream('message.txt');
 
-ws.write('beep ');
+// ws.write('beep ');
 
-setTimeout(function () {
-    ws.end('boop\n');
-}, 1000);
+// setTimeout(function () {
+//     ws.end('boop\n');
+// }, 1000);

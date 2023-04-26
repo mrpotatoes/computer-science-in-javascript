@@ -1,29 +1,22 @@
-import chai from 'chai'
 import { fixture1, fixture2, fixture3, fixture4, fixture5 } from '../_fixtures/sorting'
 import { bubbleSort, bubbleSortRecursive } from './bubble'
 
-chai.should()
-
 describe('[Sorting] Bubble', () => {
-  it('bubbleSort([...])', (done) => {
+  it('bubbleSort([...])', () => {
     // Assertions.
-    bubbleSort([1]).should.deep.equal([1])
-    bubbleSort([1, -10]).should.deep.equal([-10, 1])
-    bubbleSort(fixture1().unsorted).should.deep.equal(fixture1().sorted)
-    bubbleSort(fixture2().unsorted).should.deep.equal(fixture2().sorted)
-    bubbleSort(fixture3().unsorted).should.deep.equal(fixture3().sorted)
-
-    done()
+    expect(bubbleSort([1])).toEqual([1])
+    expect(bubbleSort([1, -10])).toEqual([-10, 1])
+    expect(bubbleSort(fixture1().unsorted)).toEqual(fixture1().sorted)
+    expect(bubbleSort(fixture2().unsorted)).toEqual(fixture2().sorted)
+    expect(bubbleSort(fixture3().unsorted)).toEqual(fixture3().sorted)
   })
 
-  it('bubbleSortRecursive([...])', (done) => {
+  it('bubbleSortRecursive([...])', () => {
     // Assertions.
-    bubbleSortRecursive(fixture1().unsorted, 10).should.deep.equal(fixture1().sorted)
-    bubbleSortRecursive(fixture2().unsorted, 12).should.deep.equal(fixture2().sorted)
-    bubbleSortRecursive(fixture3().unsorted, 2).should.deep.equal(fixture3().sorted)
-    bubbleSortRecursive(fixture4().unsorted, 1).should.deep.equal(fixture4().sorted)
-    bubbleSortRecursive(fixture5().unsorted, 2).should.deep.equal(fixture5().sorted)
-
-    done()
+    expect(bubbleSortRecursive(fixture1().unsorted, 10)).toEqual(fixture1().sorted)
+    expect(bubbleSortRecursive(fixture2().unsorted, 12)).toEqual(fixture2().sorted)
+    expect(bubbleSortRecursive(fixture3().unsorted, 2)).toEqual(fixture3().sorted)
+    expect(bubbleSortRecursive(fixture4().unsorted, 1)).toEqual(fixture4().sorted)
+    expect(bubbleSortRecursive(fixture5().unsorted, 2)).toEqual(fixture5().sorted)
   })
 })

@@ -1,4 +1,10 @@
-// 'use strict';
+describe('Functional Programming', () => {
+  describe('Algebra', () => {
+    it('[NOT YET IMPLIMENTED]', () => {
+    })
+  })
+})
+
 
 // const fl = require('.');
 // const {Id, equality, Sum, patch} = require('./internal');
