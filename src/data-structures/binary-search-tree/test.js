@@ -2,7 +2,7 @@
 
 describe('Binary Search Tree', () => {
   describe('General string regex', () => {
-    it('[NOT YET IMPLIMENTED]', () => {
+    it.skip('[NOT YET IMPLIMENTED]', () => {
     })
   })
 })

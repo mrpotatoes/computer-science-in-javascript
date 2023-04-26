@@ -1,6 +1,6 @@
 describe('Regex', () => {
   describe('General string regex', () => {
-    it('[NOT YET IMPLIMENTED]', () => {
+    it.skip('[NOT YET IMPLIMENTED]', () => {
     })
   })
 })

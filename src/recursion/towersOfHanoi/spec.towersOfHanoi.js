@@ -1,6 +1,6 @@
 describe('Recursion', () => {
   describe('Tower of Hanoi', () => {
-    it('[NOT YET IMPLIMENTED]', () => {
+    it.skip('[NOT YET IMPLIMENTED]', () => {
     })
   })
 })
