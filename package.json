@@ -11,10 +11,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "rollup --watch src/_sandbox/index.js",
+    "rhelp": "rollup --help",
+    "dev": "rollup --watch -i src/_sandbox/index.js",
     "build": "rollup src/_sandbox/index.js -f cjs",
     "build2": "rollup src/index.js -o bundle.js -f cjs",
-    "test": "jest",
+    "test": "jest --verbose",
     "test:watch": "jest --watchAll",
     "lessons": "./scripts/run-lesson.sh",
     "generate-hash": "babel-node src/hash-table/generate-hash-fixture.js",
@@ -31,7 +32,7 @@
     "test:recursion": "./scripts/run-lesson.sh recursion",
     "test:fp": "./scripts/run-lesson.sh functional-programming",
     "test:regex": "./scripts/run-lesson.sh regex",
-    "test:sorting": "./scripts/run-lesson.shsorting "
+    "test:sorting": "./scripts/run-lesson.shsorting"
   },
   "dependencies": {
     "babel-plugin-namespace": "^0.2.2",

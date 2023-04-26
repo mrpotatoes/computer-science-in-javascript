@@ -179,7 +179,7 @@ export default class BinarySearchTree {
     }
 
     // eslint-disable-next-line
-    console.log(string.slice(0, -2).trim())
+    return string.slice(0, -2).trim()
   }
 
   printByLevel () {

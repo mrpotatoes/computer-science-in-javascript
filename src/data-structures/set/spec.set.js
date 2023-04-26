@@ -2,50 +2,50 @@
 import SetDS from './set'
 
 describe('[Data Structure] Set', () => {
-  it.skip('add(1...3) find length()', () => {
+  it('add(1...3) find length()', () => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
 
     // Assertions.
-    set.length().should.equal(3)
-    set.values.should.deep.equal([1, 2, 3])
-    set.add(3).values.should.deep.equal([1, 2, 3])
+    expect(set.length()).toEqual(3)
+    expect(set.values).toEqual([1, 2, 3])
+    expect(set.add(3).values).toEqual([1, 2, 3])
   })
 
-  it.skip('add(1...3) and remove() 2 items from set', () => {
+  it('add(1...3) and remove() 2 items from set', () => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
 
     // Assertions.
-    set.length().should.equal(3)
-    set.values.should.deep.equal([1, 2, 3])
-    set.remove(3).values.should.deep.equal([1, 2])
-    set.remove(1).values.should.deep.equal([2])
+    expect(set.length()).toEqual(3)
+    expect(set.values).toEqual([1, 2, 3])
+    expect(set.remove(3).values).toEqual([1, 2])
+    expect(set.remove(1).values).toEqual([2])
   })
 
-  it.skip('add(1...3) and run contains()', () => {
+  it('add(1...3) and run contains()', () => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
 
     // Assertions.
-    expect(set.contains(3)).to.be.true
-    expect(set.contains(4)).to.be.false
+    expect(set.contains(3)).toEqual(true)
+    expect(set.contains(4)).toEqual(false)
   })
 
-  it.skip('add(1...3) and run contains()', () => {
+  it('add(1...3) and run contains()', () => {
     const set = new SetDS()
 
     set.add(1).add(2).add(3)
 
     // Assertions.
-    expect(set.contains(3)).to.be.true
-    expect(set.contains(4)).to.be.false
+    expect(set.contains(3)).toEqual(true)
+    expect(set.contains(4)).toEqual(false)
   })
 
-  it.skip('Create two sets and find the intersect() between the two', () => {
+  it('Create two sets and find the intersect() between the two', () => {
     const set1 = new SetDS()
     const set2 = new SetDS()
 
@@ -53,10 +53,10 @@ describe('[Data Structure] Set', () => {
     set2.add(1).add(2).add(3).add(10).add(11).add(12).add(13).add(14).add(15)
 
     // Assertions.
-    set1.intersect(set2).values.should.deep.equal([1, 2, 3, 15])
+    expect(set1.intersect(set2).values).toEqual([1, 2, 3, 15])
   })
 
-  it.skip('Create two sets and find the difference() between the two', () => {
+  it('Create two sets and find the difference() between the two', () => {
     const set1 = new SetDS()
     const set2 = new SetDS()
 
@@ -64,10 +64,10 @@ describe('[Data Structure] Set', () => {
     set2.add(1).add(2).add(3).add(10).add(11).add(12).add(13).add(14).add(15)
 
     // Assertions.
-    set1.difference(set2).values.should.deep.equal([4, 5, 6, 7, 8, 9])
+    expect(set1.difference(set2).values).toEqual([4, 5, 6, 7, 8, 9])
   })
 
-  it.skip('Create 3 new SetDS() and determine which are isSubset()', () => {
+  it('Create 3 new SetDS() and determine which are isSubset()', () => {
     const set1 = new SetDS()
     const set2 = new SetDS()
     const set3 = new SetDS()
@@ -77,7 +77,7 @@ describe('[Data Structure] Set', () => {
     set3.add(1).add(2).add(3).add(20)
 
     // Assertions
-    expect(set1.isSubset(set2)).to.be.true
-    expect(set1.isSubset(set3)).to.be.false
+    expect(set1.isSubset(set2)).toEqual(true)
+    expect(set1.isSubset(set3)).toEqual(false)
   })
 })

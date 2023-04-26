@@ -1,32 +1,32 @@
 import StackDS from './stack'
 
 describe('[Data Structure] Stack', () => {
-  it.skip('add(1...3) find length()', () => {
+  it('add(1...3) find length()', () => {
     const stack = new StackDS()
     stack.push(1).push(2).push(3)
 
     // Assertions
-    stack.length().should.equal(3)
-    stack.stack.should.deep.equal([1, 2, 3])
-    stack.print().should.equal('1 2 3')
+    expect(stack.length()).toEqual(3)
+    expect(stack.stack).toEqual([1, 2, 3])
+    expect(stack.print()).toEqual('1 2 3')
   })
 
-  it.skip('add(1...3) then peek() then add(1) and peek() again', () => {
+  it('add(1...3) then peek() then add(1) and peek() again', () => {
     const stack = new StackDS()
     stack.push(1).push(2).push(3)
 
     // Assertions
-    stack.peek().should.equal(3)
-    stack.push(2).peek().should.equal(2)
+    expect(stack.peek()).toEqual(3)
+    expect(stack.push(2).peek()).toEqual(2)
   })
 
-  it.skip('add(1...3) and pop()', () => {
+  it('add(1...3) and pop()', () => {
     const stack = new StackDS()
     stack.push(1).push(2).push(3).pop()
 
     // Assertions
-    stack.stack.should.deep.equal([1, 2])
-    stack.push(1).stack.should.deep.equal([1, 2, 1])
-    stack.length().should.equal(3)
+    expect(stack.stack).toEqual([1, 2])
+    expect(stack.push(1).stack).toEqual([1, 2, 1])
+    expect(stack.length()).toEqual(3)
   })
 })
