@@ -1,5 +1,7 @@
 Because we gotta, no?
 
+[![neetcode.io Big O](interview-questions.jpg)](https://www.youtube.com/watch?v=ft0owvS5tQA)
+
 Strings
 <pre>
 http://www.geeksforgeeks.org/category/data-structures/c-strings/
