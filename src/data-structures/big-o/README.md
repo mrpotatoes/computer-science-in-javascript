@@ -20,7 +20,7 @@ const constantTime = (num) =>  2 * num
   ![O(1) image](./assets/1-O-of-1-.png)
 </details>
 
-<br /><br />
+<br />
 
 ### `O(n)` - Linear time complexity
 **Why**: This is because in order for the function to do it's operations it must go through every item in the array.
@@ -38,7 +38,7 @@ const linear = (arr) => {
   ![O(n) image](./assets/2-O-linear.png)
 </details>
 
-<br /><br />
+<br />
 
 
 ### `O(n^2)` - Quadratic time complexity
@@ -60,7 +60,7 @@ const nSquared = (arr1, arr2) => {
   ![O(n^2) image](./assets/3-O-squared.png)
 </details>
 
-<br /><br />
+<br />
 
 
 ### `O(n^3)` - Cubed time complexity
@@ -84,7 +84,7 @@ const nCubed = (arr1, arr2, arr3) => {
   ![O(n^3) image](./assets/5-O-cubed.png)
 </details>
 
-<br /><br />
+<br />
 
 ### `O(log(n))` - Logarithmic time complexity
 **Why**: 
@@ -107,7 +107,7 @@ const logarithmic = (arr) => {
   ![O(log(n)) image](./assets/6-O-linear.png)
 </details>
 
-<br /><br />
+<br />
 
 ### `O(n log n)` - Linearithmic time complexity
 **Why**: It looks like it would be `O(n^2)` but we're doubling the input in the inner loop.
@@ -129,7 +129,7 @@ function linearithmic(n) {
   ![O(n log n) image](./assets/7-O-linearithmic.png)
 </details>
 
-<br /><br />
+<br />
 
 ### `O(2^n)` - Exponential time
 **Why**: When the number of operations doubles everytime we increase the input by 1. oof ...
@@ -152,7 +152,7 @@ const exponential = (num) => {
   ![O(2^n) image](./assets/O-exponential.png)
 </details>
 
-<br /><br />
+<br />
 
 ### `O(n!)` - Factorial time complexity
 **Why**: Stay away from these as these functions will annihilate your computer. A `factorial` is the product of every number UP TO that number. ie `3! → 1 x 2 x 3`. 
@@ -205,7 +205,7 @@ const factorial = (num) => {
   ![O(n!) image](./assets/O-factorial.png)
 </details>
 
-<br /><br />
+<br />
 
 
 ## Footnotes
