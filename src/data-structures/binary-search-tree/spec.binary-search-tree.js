@@ -1,11 +1,8 @@
 /* eslint-disable max-len */
-import chai from 'chai'
 import BST from './binary-search-tree'
 
-chai.should()
-
 describe('[Data Structure] Binary Search Tree', () => {
-  it('add(1...2) find length()', (done) => {
+  it('add(1...2) find length()', () => {
     const tree = new BST()
     tree.add(1)
     tree.add(2)
@@ -14,16 +11,13 @@ describe('[Data Structure] Binary Search Tree', () => {
     tree.add(5)
     tree.add(6)
     tree.add(7)
-    // tree.prettyPrint()
+
+    expect(tree.print()).toEqual('1 | 2 | 3 | 4 | 5 | 6 | 7')
     // eslint-disable-next-line
     // console.log(tree)
-
-    done()
   })
 
-  it.skip('add(1...4)', (done) => {
-    done()
-  })
+  it.skip('add(1...4)', () => { })
 })
 
 // const binarySearchTree = new BinarySearchTree()

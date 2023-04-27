@@ -1,0 +1,6 @@
+- https://ryanclark.me/rgb-to-hex-via-binary-shifting/
+- https://gist.github.com/ahmadalibaloch/d73c4144b0dcb28206c60a174c8a99a9
+- https://www.30secondsofcode.org/js/s/hex-to-rgb/
+- https://haacked.com/archive/2009/12/29/convert-rgb-to-hex.aspx/
+- https://codepen.io/pyrografix/pen/zGzyBP
+- https://oliverbenns.com/posts/hex-to-rgb/

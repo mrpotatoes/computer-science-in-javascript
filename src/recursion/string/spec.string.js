@@ -1,50 +1,45 @@
-import chai from 'chai'
 import { reverseString, reverseStringTernary, concat, isPalindromeLinear, isPalindrome } from './string'
-
-chai.should()
 
 describe('Recursion', () => {
   describe('Strings', () => {
     describe('Misc', () => {
-      it('reverseString(hello)', (done) => {
-        reverseString('hello world').should.equal('dlrow olleh')
-        done()
+      it('reverseString(hello)', () => {
+        expect(reverseString('hello world')).toEqual('dlrow olleh')
       })
 
-      it('reverseStringTernary(hello)', (done) => {
-        reverseStringTernary('hello world').should.equal('dlrow olleh')
-        done()
+      it('reverseStringTernary(hello)', () => {
+        expect(reverseStringTernary('hello world')).toEqual('dlrow olleh')
       })
 
       it('concat(hello, there, friend)', () => {
-        concat('hello', 'there', 'friend').should.equal(' hello there friend')
-        concat('hello').should.equal(' hello')
-        concat().should.equal('')
+        expect(concat('hello', 'there', 'friend')).toEqual(' hello there friend')
+        expect(concat('hello')).toEqual(' hello')
+        expect(concat()).toEqual('')
       })
     })
 
     describe('Palindromes', () => {
       it('isPalindromeLinear()', () => {
-        isPalindromeLinear('').should.equal(true)
-        isPalindromeLinear('o').should.equal(true)
-        isPalindromeLinear('noon').should.equal(true)
-        isPalindromeLinear('evve').should.equal(true)
-        isPalindromeLinear('level').should.equal(false)
-        isPalindromeLinear('n000000n').should.equal(true)
-        isPalindromeLinear('n0000000n').should.equal(false)
-        isPalindromeLinear('qqqq').should.equal(true)
+        expect(isPalindromeLinear('')).toEqual(true)
+        expect(isPalindromeLinear('o')).toEqual(true)
+        expect(isPalindromeLinear('noon')).toEqual(true)
+        expect(isPalindromeLinear('evve')).toEqual(true)
+        expect(isPalindromeLinear('level')).toEqual(false)
+        expect(isPalindromeLinear('n000000n')).toEqual(true)
+        expect(isPalindromeLinear('n0000000n')).toEqual(false)
+        expect(isPalindromeLinear('qqqq')).toEqual(true)
       })
 
       it('isPalindrome() - recursive version', () => {
-        isPalindrome('').should.equal(true)
-        isPalindrome('o').should.equal(true)
-        isPalindrome('noon').should.equal(true)
-        isPalindrome('eve').should.equal(true)
-        isPalindrome('evve').should.equal(true)
-        isPalindrome('level').should.equal(true)
-        isPalindrome('n000000n').should.equal(true)
-        isPalindrome('n0000000n').should.equal(true)
-        isPalindrome('qqqq').should.equal(true)
+        expect(isPalindrome('')).toEqual(true)
+        expect(isPalindrome('o')).toEqual(true)
+        expect(isPalindrome('noon')).toEqual(true)
+        expect(isPalindrome('eve')).toEqual(true)
+        expect(isPalindrome('evve')).toEqual(true)
+        expect(isPalindrome('level')).toEqual(true)
+        expect(isPalindrome('n000000n')).toEqual(true)
+        expect(isPalindrome('n0000000n')).toEqual(true)
+        expect(isPalindrome('qqqq')).toEqual(true)
       })
     })
   })
