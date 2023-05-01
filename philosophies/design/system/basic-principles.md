@@ -1,4 +1,4 @@
-# System Design
+# Basic Principles of System Design
 
 As this is a refresher all this information came from NeetCode's Youtube video which is why most of the headings are the same as the chapters in the video. Further examples originate from experiance, books or various websites.
 
