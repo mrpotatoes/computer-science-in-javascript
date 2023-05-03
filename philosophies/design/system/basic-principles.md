@@ -46,9 +46,9 @@ A `DNS` is a map of `IP`s to a domain name and is spread across the public netwo
 ## `HTTP`
 ### Protocols
 ## `TCP/IP`
-The networking layer. Important to know because ...
+`TCP/IP` breaks down the data that will be sent over the wire and they are ordered so that they can be reassembled on the requesting machine. It's a powerful and reliable network powerful for those reasons and is why `HTTP` & `Websockets`, for instance, are built on `TCP/IP`. `TCP/IP` also does retransmission. For instance if a packet is lost then the requester can re-request that specific packet because of the packet ID. This makes it hella reliable.
 
-`TCP/IP` breaks down the data that will be sent over the wire and they are ordered so that they can be reassembled on the requesting machine. It's a powerful and reliable network powerful for those reasons and is why `HTTP` & `Websockets`, for instance, are built on `TCP/IP`.
+Quick note on `UDP`. It is meant for speed. Used in applications like gaming, music/video streaming and calling. `TCP/IP` is great for data that needs to be in order and consistant but if you use it in something like meda streaming then it'll re-request packets and slow things down. Even worse it can make the audio sound really odd when it is getting back up to speed.
 
 #### Quick Tangent
 Q: Why is it important for software engineers to know the networking layers (at least `TCP/IP`)?

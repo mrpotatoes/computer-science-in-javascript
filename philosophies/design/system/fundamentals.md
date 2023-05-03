@@ -82,9 +82,6 @@ These prerequsites are what help us determine if our design is a good one or if 
 ## Networking
 Networking is so important as the Internet could not exist without it and all our devices (smart phones, computers, tablets, refrigerators etc) are interconnected via the Internet. Networking is so important to KNOW because if we intend to build application architectures for internet enabled applications we need to understand not only that data travels over the wire but how it does so and how it's deciphered on the other end.
 
-### Protocols
-### DNS
-
 ## APIs
 ### HTTP
 ### Websockets
