@@ -82,10 +82,79 @@ These prerequsites are what help us determine if our design is a good one or if 
 ## Networking
 Networking is so important as the Internet could not exist without it and all our devices (smart phones, computers, tablets, refrigerators etc) are interconnected via the Internet. Networking is so important to KNOW because if we intend to build application architectures for internet enabled applications we need to understand not only that data travels over the wire but how it does so and how it's deciphered on the other end.
 
+### `TCP/IP`
+`TCP/IP` breaks down the data that will be sent over the wire and they are ordered so that they can be reassembled on the requesting machine. It's a powerful and reliable network powerful for those reasons and is why `HTTP` & `Websockets`, for instance, are built on `TCP/IP`. `TCP/IP` also does retransmission. For instance if a packet is lost then the requester can re-request that specific packet because of the packet ID. This makes it hella reliable.
+
+Quick note on `UDP`. It is meant for speed. Used in applications like gaming, music/video streaming and calling. `TCP/IP` is great for data that needs to be in order and consistant but if you use it in something like meda streaming then it'll re-request packets and slow things down. Even worse it can make the audio sound really odd when it is getting back up to speed.
+
+### Basic Technology
+#### `RPC`
+`RPC` translates to Remote Procedure Call. 
+> Remote Procedure Call is a software communication protocol that one program can use to request a service from a program located in another computer on a network without having to understand the network's details. RPC is used to call other processes on the remote systems like a local system. - Tech Target [^rpc]
+
+It is a client → server model. This means that a client (your computer, a server et al) makes a request to another machine (server) in order to run a function on the server (procedure). 
+
+#### `HTTP`
+The Internet protocol. As engineers and architects we primarily use `TCP/IP`. `HTTP` is an application layer that is built on top of `TCP/IP`.  `HTTP` is stateless. `HTTP` uses "METHOD"s to tell the server _what_ behavior the requester wants. 
+
+| Common Methods[^http-methods] | Explaination |
+|---|---|
+| `GET`  | The `GET` method requests a representation of the specified resource. Requests using GET should only retrieve data. |
+| `PUT`  | The `PUT` method replaces all current representations of the target resource with the request payload |
+| `POST`  | The `POST` method submits an entity to the specified resource, often causing a change in state or side effects on the server |
+| `DELETE`  | The `DELETE` method deletes the specified resource |
+
+Quick note on security. HTTP on it's own isn't inherently secure so the `SSL` & `TLS` protocols were introduced. It's the `s` at the end of `https://`
+
+### Domain Name System
+A `DNS` is a map of `IP`s to a domain name and is spread across the public network. Also used in your router, NAS etc to remember which machine is which when they are being requested.
+
+#### Quick Tangent
+Q: Why is it important for software engineers to know the networking layers (at least `TCP/IP`)?
+
+Answers:
+1. Architecture Design: One must understandthe protocols so architectures can be designed to be performance and durable.
+1. Debugging/Bug fixing: There are times, not often, where a bug will surface and it comes down to an edge case in server communication (server-to-server, server-to-client etc)
+1. Websockets, REST, 
+1. Setting up containers with intercommunication
+1. The higher the traffic and application recieves he more important knowing the protocols will be. 
+
+*_NOTE_*: The instances where knowing the networking layers intimately are exceedingly rare but knowing at least the bases is important. Especially for interviews as, for some ungodly reason, people like to ask about the Layers. If so make sure to ask if engineers have to use that knowledge often. I would be annoyed if I have to as I prefer to work _inc deo_ versus being low level often.
+
+### Protocols
+
+There are a few protocols such as `SSH`, `FTP`, `SMTP` and `Websockets`. I will go over these quickly.
+
+#### `SSH`
+... TODO
+
+#### `FTP`
+... TODO
+
+#### `SMTP`
+... TODO
+
+#### `Websockets`
+`Websockets` is a way to open two-way communication between two machines. It is possible to do this with `HTTP` and polling but polling is an inefficient method of aquiring up-to-date data from a source. For instance with `HTTP` whenver a request is made the application (browser, server) is required to make a new network request each time and if the application being developed is, for instance, a chat app like `Discord` then polling will quickly get out of hand. A better method to achieve the same results is the `Websockets` techology.
+
+`Websockets` creates a "handshake" between the client and server which creates a persistent connection to the server. This allows for bi-direction communication. Think of it as an event pased communication between machines. One could say that `Websockets` are an outdated technology in the presense of `HTTP/2` as that new protocol added streaming.
+
 ## APIs
-### HTTP
-### Websockets
 ### Paradigms
+#### `REST`
+> Learn about the REST (Representational State Transfer) paradigm and how rest architecture streamlines communication between web components.
+
+`REST` is a web standard for communication from machine-to-machine. The biggest benefit is that it's human readable and [many] web languages have native support. It is bulky, tho, as it is just a string that is sent over the wire and even when it's compressed it can still be a hefty response. Another drawback is `REST` APIs [can] suffer from unwieldy architecture when the API becomes large. Oftentimes you will see/work with`REST` APIs that have similar responses for different endpoints (not via `HTTP METHOD`) as it will be easier to develop a new endpoint instead of modifying the existing one as it could introduce a breaking change. Many architectures leverage some sort of versioning system to handle breaking changes for the same endpoint.
+
+#### `GraphQL`
+Is another API standard for making requests from the server but is more targeted and works more like a schema. I will not go further into this one as it is a whole topic on it's own and I haven't really had a change to work with `GraphQL`. The benefit of `GraphQL` is instead of making multiple requests like `REST` one makes a single request for everything required for a request. `GraphQL` also won't "overfetch" as is comming in `REST` as, again, one only requests what is directly needed for any given request.
+
+This can also be done with `REST` but that requires one to develop those options whereas using `GraphQL` is simpler and already built out in order to do just that.
+
+#### `gRPC`
+Same as `GraphQL` I haven't used this in order to really say anything about it but NeetCode says:
+> Introduced by Google `gRPC` is used, typically, in server-to-server communication. It uses Protocol Buffers which is a way to send data as binary across the wire.
+
 ### Design
 
 ## Caching
@@ -113,4 +182,9 @@ Networking is so important as the Internet could not exist without it and all ou
 ## Citations
 
 [^app-arch]: lanars.com, [Web application architecture best practices](https://lanars.com/blog/web-application-architecture-best-practices)
+
 [^horscale]: Michael Wittig, [How to Choose the Best Way to Scale EC2 Instances](https://blog.cloudcraft.co/how-to-choose-the-best-way-to-scale-ec2-instances-when-faced-with-changing-demand/), 2021
+
+[^rpc]: [Remote Procedure Call (RPC)](https://www.techtarget.com/searchapparchitecture/definition/Remote-Procedure-Call-RPC)
+
+[^http-methods]: [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)

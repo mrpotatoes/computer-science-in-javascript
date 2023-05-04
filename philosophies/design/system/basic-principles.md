@@ -40,45 +40,9 @@ AAAAAAANYway, `Caching` can be done in different ways. For instance at the compu
 
 ### Tangent
 
-## Domain Name System
-A `DNS` is a map of `IP`s to a domain name and is spread across the public network. Also used in your router, NAS etc to remember which machine is which when they are being requested.
 
-## `HTTP`
-### Protocols
-## `TCP/IP`
-`TCP/IP` breaks down the data that will be sent over the wire and they are ordered so that they can be reassembled on the requesting machine. It's a powerful and reliable network powerful for those reasons and is why `HTTP` & `Websockets`, for instance, are built on `TCP/IP`. `TCP/IP` also does retransmission. For instance if a packet is lost then the requester can re-request that specific packet because of the packet ID. This makes it hella reliable.
 
-Quick note on `UDP`. It is meant for speed. Used in applications like gaming, music/video streaming and calling. `TCP/IP` is great for data that needs to be in order and consistant but if you use it in something like meda streaming then it'll re-request packets and slow things down. Even worse it can make the audio sound really odd when it is getting back up to speed.
 
-#### Quick Tangent
-Q: Why is it important for software engineers to know the networking layers (at least `TCP/IP`)?
-
-Answers:
-1. Architecture Design: One must understandthe protocols so architectures can be designed to be performance and durable.
-1. Debugging/Bug fixing: There are times, not often, where a bug will surface and it comes down to an edge case in server communication (server-to-server, server-to-client etc)
-1. Websockets, REST, 
-1. Setting up containers with intercommunication
-1. The higher the traffic and application recieves he more important knowing the protocols will be. 
-
-*_NOTE_*: The instances where knowing the networking layers intimately are exceedingly rare but knowing at least the bases is important. Especially for interviews as, for some ungodly reason, people like to ask about the Layers. If so make sure to ask if engineers have to use that knowledge often. I would be annoyed if I have to as I prefer to work _inc deo_ versus being low level often.
-
-### Machine-to-machine communication 
-#### `REST`
-> Learn about the REST (Representational State Transfer) paradigm and how rest architecture streamlines communication between web components.
-
-`REST` is a web standard for communication from machine-to-machine. The biggest benefit is that it's human readable and [many] web languages have native support. It is bulky, tho, as it is just a string that is sent over the wire and even when it's compressed it can still be a hefty response. Another drawback is `REST` APIs [can] suffer from unwieldy architecture when the API becomes large. Oftentimes you will see/work with`REST` APIs that have similar responses for different endpoints (not via `HTTP METHOD`) as it will be easier to develop a new endpoint instead of modifying the existing one as it could introduce a breaking change. Many architectures leverage some sort of versioning system to handle breaking changes for the same endpoint.
-
-#### `GraphQL`
-Is another API standard for making requests from the server but is more targeted and works more like a schema. I will not go further into this one as it is a whole topic on it's own and I haven't really had a change to work with `GraphQL`. The benefit of `GraphQL` is instead of making multiple requests like `REST` one makes a single request for everything required for a request. `GraphQL` also won't "overfetch" as is comming in `REST` as, again, one only requests what is directly needed for any given request.
-
-This can also be done with `REST` but that requires one to develop those options whereas using `GraphQL` is simpler and already built out in order to do just that.
-
-#### `gRPC`
-Same as `GraphQL` I haven't used this in order to really say anything about it but NeetCode says:
-> Introduced by Google `gRPC` is used, typically, in server-to-server communication. It uses Protocol Buffers which is a way to send data as binary across the wire.
-
-#### `WebSockets`
-Insead of using `polling` this protocol is a way to have constant bi-direction communication between application and server. Meaning that requests are immediatly sent to each device communicating with each other.
 
 ## Data Storage
 ### `SQL`
