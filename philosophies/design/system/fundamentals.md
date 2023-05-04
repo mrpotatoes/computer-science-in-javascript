@@ -1,29 +1,44 @@
 # Design Fundamentals
+
 - [Design Fundamentals](#design-fundamentals)
   * [About Computers](#about-computers)
-    + [Application Architecture](#application-architecture)
-      - [Were they good decisions?](#were-they-good-decisions-)
-      - [Horizontal Scaling](#horizontal-scaling)
+  * [Application Architecture](#application-architecture)
+    + [Horizontal Scaling](#horizontal-scaling)
+    + [Other Prerequsites](#other-prerequsites)
       - [Main bits of an architecture](#main-bits-of-an-architecture)
   * [Networking](#networking)
+    + [`TCP/IP`](#-tcp-ip-)
+    + [Basic Technology](#basic-technology)
+      - [`RPC`](#-rpc-)
+      - [`HTTP`](#-http-)
+    + [Domain Name System](#domain-name-system)
+      - [Quick Tangent](#quick-tangent)
     + [Protocols](#protocols)
-    + [DNS](#dns)
+      - [`SSH`](#-ssh-)
+      - [`FTP`](#-ftp-)
+      - [`SMTP`](#-smtp-)
+      - [`Websockets`](#-websockets-)
   * [APIs](#apis)
-    + [HTTP](#http)
-    + [Websockets](#websockets)
     + [Paradigms](#paradigms)
+      - [`REST`](#-rest-)
+      - [`GraphQL`](#-graphql-)
+      - [`gRPC`](#-grpc-)
     + [Design](#design)
   * [Caching](#caching)
-    + [CDNs](#cdns)
+    + [When `Caching` is appropriate and useful:](#when--caching--is-appropriate-and-useful-)
   * [Proxies](#proxies)
     + [Load Balancing](#load-balancing)
+    + [Content Delivery Networks (`CDN`)](#content-delivery-networks---cdn--)
     + [Consistent Hashing](#consistent-hashing)
   * [Persistent data](#persistent-data)
     + [Relational Databases (`SQL`)](#relational-databases---sql--)
-    + [NoSQL](#nosql)
+      - [`ACID`](#-acid-)
+    + [`NoSQL`](#-nosql-)
     + [Replication](#replication)
-    + [Sharding](#sharding)
-    + [`CAP`](#-cap-)
+    + [`Sharding`](#-sharding-)
+    + [Replication](#replication-1)
+    + [Last alternative](#last-alternative)
+    + [`CAP` Theorm](#-cap--theorm)
     + [Message Queues](#message-queues)
     + [`MapReduce`](#-mapreduce-)
   * [References](#references)
@@ -156,31 +171,112 @@ Same as `GraphQL` I haven't used this in order to really say anything about it b
 > Introduced by Google `gRPC` is used, typically, in server-to-server communication. It uses Protocol Buffers which is a way to send data as binary across the wire.
 
 ### Design
+I'm not going to write up an API design section since this is a very broad topic for this document so instead I'll share some links. Maybe in the future (most likely not) i'll update this or add a new document to go over the best pracices.
+
+- [REST API Best Practices and Standards in 2023](https://hevodata.com/learn/rest-api-best-practices/)
+- [REST API Best Practices – REST Endpoint Design Examples](https://www.freecodecamp.org/news/rest-api-best-practices-rest-endpoint-design-examples/)
+- [REST API Design Best Practices to Follow](https://document360.com/blog/api-design-best-practices/)
+- [Best Practices for Designing a Pragmatic RESTful API | Vinay Sahni](https://www.vinaysahni.com/best-practices-for-a-pragmatic-restful-api)
+- [Web API design best practices - Azure Architecture Center | Microsoft Learn](https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design)
 
 ## Caching
-### CDNs
+I personally do not like `Caching` in most instances but in one that I do feel it works well is a `CDN`. Another good time to cache is local development. For instance `nx` caches changes to code and tests so that things are compliled quicker. I typically do not like `Caching` for runtime software as it makes things more complicated and usually too difficult to implement correctly and as engineers our products will rarely benefit from writing (and sometimes using packages/services) is also troublesome as you don't want to be bug fixing this code. 
+
+AAAAAAANYway, `Caching` can be done in different ways. For instance at the computer level the computer can `Cache` operations/functions in `RAM` or in the `CPU`
+
+### When `Caching` is appropriate and useful:
+- `CDNs`
+- *_SOME_* DB queries
+- `Memoization` of functions
 
 ## Proxies
+![Server Proxy](./_server-proxy.png)
+[^server-proxy] - Image Attribution
+
+A proxy is a server in the middle of your back end. Simply.  
+
 ### Load Balancing
+![Load Balancer](./_load-balancing.png)
+[^load-bal] - Image Attribution
+
+A `Reverse Proxy` (note, I hate this name) _balances_ the load and spreads it across servers (in a horizontal setup). Goal is to split the requests to all the servers evenly. This can be done with a "Round Robin" approach (each request goes to a different server) or to use a hashing algorithm to determine which server the request will be relayed to. 
+
+If servers are in different locations across the world (or even just timezones) the `Load Balancer`(s) can direct traffic to nearest geographical server [cluster]. 
+
+### Content Delivery Networks (`CDN`)
+Like the previous sentence in the `Load Balancers` a `CDN` spaces out traffic across servers. A `CDN` does not run any application logic but rather serves up static files. They work by taking your uploaded static files and copies them across the `CDN` network. `CDN`s can push or pull. `Pushing` is copying to the network. An alterative approach is `Pulling` which works by copying the static files either "Just in Time" when there is a request or the origin server tells the others files are ready and then each `CDN` pulls the files from the origin.
+
 ### Consistent Hashing
+![Load Balancer](./_load-balancing.png)
+[^load-bal] - Image Attribution
+
+Consistent Hashing is a way to consistently route a request to the same server every time. Consistent Hashing does not guarantee that load will be "balanced" if you're employing a weak algoritm (re: unbalanced binary tree) but if each server can cache an IP's request then the benefit is easy to recognize. That requester that is always going to the same server will recieve their response quickly as it's pulling from the cache instead of running the function each time. This could be more difficult to achieve w/o consistent hashing.
+
+Simplistic algorithms will create more problems than they're worth (using server count/`%` for instance). If a server goes down then the hashing algo will change and now the request are going to different servers entirely.
+
+For more detailed info: [Designing Consistent Hashing](./design-consistent-hashing.md)
 
 ## Persistent data
 ### Relational Databases (`SQL`)
-### NoSQL
-### Replication
-### Sharding
-### `CAP`
-### Message Queues
-### `MapReduce`
+Storing data in a structured format. FYI databases use binary trees to store data and has [blazing] fast retrieval especially when the database is normalized well and properly indexed.
 
+#### `ACID`
+```
+A - Atomicity → Every transaction is "All or Nothing"
+C - Consistancy → FKs will always be enforced
+I - Isolation → Different concurrent transactions will not collide
+D - Durability → Data is saved so even if the database is restarted the data will still exist and is retrievable (unless in a container 😬)
+```
+
+### `NoSQL`
+Storing data in a non-structured format. Often uses `JSON` like `MongoDB`. I don't love this one for most uses but for logging, caching and/or copious amounts of non-relation data it's amazing. Big issue with data schema changes tho as the code would have to account for that and that usually means a ton of conditionals in code and that would make it very hard to decipher.
+
+`NoSQL` foregoes the foreign key constraints. This can also be done in a relational DB but requires the developers to be very cognizant of their query mutations so as to not make the data murky/inconsistant.
+
+### Replication
+### `Sharding`
+No, not a joke. `Sharding` is when one can break up a database as the foreign key constraint allows for this. Sharding keys are used to find where the data is located on each shard. 
+
+### Replication
+As Sharding can get complicated replication is a simpler way to handle data splitting. While easier it can be difficult to maintain in it's own right. "Leader → Follower Replication" DBs can have issues of replicating data and then the two are out of sync, for instance.
+
+### Last alternative
+Another approach is to use a CQRS-type design where the data is broken up by read & writes into different microservices and storing all the data into a large log database. This is an incredibly simplified explaination. 
+
+### `CAP` Theorm
+`CAP` Theorm is all about tradeoffs with determining how to build out a distributed database/system. 
+
+![Cap Therom Diagram](./_cap-theorm.png)
+[^cap-theorm] - Image Attribution
+
+| Part | Translation | Definition |
+|---|---|---|
+| `C`  | Consistency | In a consistent system, all nodes see the same data simultaneously. This means that the system is not "eventually consistent" but consistent at all times. |
+| `A`  | Availability  | When availability is present in a distributed system, it means that the system remains operational all of the time but this does not mean uptime like we normally would read this term. |
+| `P`  | Partition tolerance | To have partition tolerance, the system must replicate records across combinations of nodes and networks. |
+
+Cannot have all 3. 
+
+### Message Queues
+A Message Queue maintains durability (each message) and can be sharded or replicated. They maintain a queue of messages that can be processed as they come in or later (durability) if the system is restarted. Often used if the traffic is large and is more than an application can handle. Since the queue is maintained it can be processed as is needed. A benefit is that an application can be decoupled from each other (microservices).
+
+### `MapReduce`
+A powerful Big Data technique of splitting up data and allowing for computations to be spread across services.
+
+![Map Reduce Diagram]](./_map-reduce.jpg)
+[^map-reduce] - Image Attribution
+
+There are two ways to process data. `Batching` or `Streaming`. Batch processing the data is available on the outset and processed ad-hoc e.g., `REST` request, `ETL`. Streaming is realtime. In `MapReduce` the data is split up for performance to process large, large sets of data.
 
 ---
 ## References
-
----
+- NeetCode, [20 Concepts in 10 min](https://www.youtube.com/watch?v=i53Gi_K3o7I), 2023
+- Kousik Nath, [Understanding TCP internals step by step for Software Engineers and System Designers](https://codeburst.io/understanding-tcp-internals-step-by-step-for-software-engineers-system-designers-part-1-df0c10b86449), 2019
+- [yannis](https://softwareengineering.stackexchange.com/users/25936/yannis), [Should a web developer understand TCP/IP and how routers manage requests?](https://softwareengineering.stackexchange.com/questions/66569/should-a-web-developer-understand-tcp-ip-and-how-routers-manage-requests), 2011
+- Quora, [Do software engineers often need to know a lot about networks?](https://www.quora.com/Do-software-engineers-often-need-to-know-a-lot-about-networks), 2020
+- Codeccademy, https://www.codecademy.com/article/what-is-rest, [What is Rest?](https://www.codecademy.com/article/what-is-rest), 
 
 ## Citations
-
 [^app-arch]: lanars.com, [Web application architecture best practices](https://lanars.com/blog/web-application-architecture-best-practices)
 
 [^horscale]: Michael Wittig, [How to Choose the Best Way to Scale EC2 Instances](https://blog.cloudcraft.co/how-to-choose-the-best-way-to-scale-ec2-instances-when-faced-with-changing-demand/), 2021
@@ -188,3 +284,11 @@ Same as `GraphQL` I haven't used this in order to really say anything about it b
 [^rpc]: [Remote Procedure Call (RPC)](https://www.techtarget.com/searchapparchitecture/definition/Remote-Procedure-Call-RPC)
 
 [^http-methods]: [HTTP request methods](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods)
+
+[^server-proxy]: [Using HTTPS over a reverse proxy in Laravel](https://cylab.be/blog/122/using-https-over-a-reverse-proxy-in-laravel)
+
+[^load-bal]: [Load Balancing - KeyCDN Support](https://www.keycdn.com/support/load-balancing)
+
+[`cap-theorm]: [System design fundamentals: What is the CAP theorem?](https://www.educative.io/blog/what-is-cap-theorem)
+
+[^map-reduce]: [PPT - Sort in MapReduce PowerPoint Presentation, free download - ID:2492674](https://www.slideserve.com/teneil/sort-in-mapreduce)
