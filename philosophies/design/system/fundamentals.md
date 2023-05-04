@@ -263,7 +263,7 @@ A Message Queue maintains durability (each message) and can be sharded or replic
 ### `MapReduce`
 A powerful Big Data technique of splitting up data and allowing for computations to be spread across services.
 
-![Map Reduce Diagram]](./_map-reduce.jpg)
+![Map Reduce Diagram](./map)
 [^map-reduce] - Image Attribution
 
 There are two ways to process data. `Batching` or `Streaming`. Batch processing the data is available on the outset and processed ad-hoc e.g., `REST` request, `ETL`. Streaming is realtime. In `MapReduce` the data is split up for performance to process large, large sets of data.
@@ -289,6 +289,6 @@ There are two ways to process data. `Batching` or `Streaming`. Batch processing 
 
 [^load-bal]: [Load Balancing - KeyCDN Support](https://www.keycdn.com/support/load-balancing)
 
-[`cap-theorm]: [System design fundamentals: What is the CAP theorem?](https://www.educative.io/blog/what-is-cap-theorem)
+[^cap-theorm]: [System design fundamentals: What is the CAP theorem?](https://www.educative.io/blog/what-is-cap-theorem)
 
 [^map-reduce]: [PPT - Sort in MapReduce PowerPoint Presentation, free download - ID:2492674](https://www.slideserve.com/teneil/sort-in-mapreduce)
