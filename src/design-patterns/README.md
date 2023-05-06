@@ -66,3 +66,9 @@ Some patterns still need to be implemented using ES6 classes.
 
 ## Notes
 - All the short definitions used in this documentation were extracted from [here](https://en.wikipedia.org/wiki/Design_Patterns).
+
+<!-- 
+
+PERHAPS USEFUL? https://able.bio/drenther/javascript-design-patterns--89mv2af
+
+-->
