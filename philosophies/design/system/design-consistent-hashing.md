@@ -1,0 +1,6 @@
+- [System Design: Consistent Hashing - DEV Community](https://dev.to/karanpratapsingh/system-design-consistent-hashing-1dbl)
+- [System Design — Consistent Hashing | by Larry | Peng Yang | Computer Science Fundamentals | Medium](https://medium.com/must-know-computer-science/system-design-consistent-hashing-f66fa9b75f3f)
+- [Consistent Hashing in System Design](https://www.enjoyalgorithms.com/blog/consistent-hashing-in-system-design)
+- [The Ultimate Guide to Consistent Hashing | Toptal®](https://www.toptal.com/big-data/consistent-hashing)
+- https://www.youtube.com/watch?v=zaRkONvyGr8
+- https://www.youtube.com/watch?v=UF9Iqmg94tk
