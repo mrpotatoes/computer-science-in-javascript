@@ -1,6 +1,6 @@
 # Computer Science in JavaScript
-![Macbook with code on it](./docs/hero-image.jpg)
-Photo by [Clément Hélardot](https://unsplash.com/@clemhlrdt) [^hero-image]  
+![Macbook with code on it](./docs/hero-image.jpg) <br />
+*Photo by [Clément Hélardot](https://unsplash.com/@clemhlrdt)* [^hero-image]
 
 This is my personal reference for computer science (w/o the math sadly) with all the code written in `JavaScript`. It [will] build[s] to a [`Hugo`](https://gohugo.io/) powered static generator using the [`Docsy`](https://www.docsy.dev/) theme with some custom shortcodes. It is meant to store everything I've learned and even some stuff that I find interesting. I find it useful as a study guide and I hope everyone else that finds this repo does as well.
 
@@ -27,4 +27,4 @@ I use it as both a study guide and a reference.
 1. For all code or articles written within this repo, for which I have put in considerable effort, it needs to be known that I used many sources for **EVERY** article or code bit. I wanted to be as extensive as possible and I cited *everything* I used.
 
 ### Citations
-[^hero-image]:  [JavaScript in progress](https://unsplash.com/photos/95YRwf6CNw8) by [Clément Hélardot](https://unsplash.com/@clemhlrdt)
+[^hero-image]: [JavaScript in progress](https://unsplash.com/photos/95YRwf6CNw8) by [Clément Hélardot](https://unsplash.com/@clemhlrdt)
