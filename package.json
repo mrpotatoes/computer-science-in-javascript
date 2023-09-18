@@ -29,7 +29,7 @@
     "test:recursion": "./tools/run-lesson.sh recursion",
     "test:fp": "./tools/run-lesson.sh functional-programming",
     "test:regex": "./tools/run-lesson.sh regex",
-    "test:sorting": "./tools/run-lesson.shsorting"
+    "test:sorting": "./tools/run-lesson.sh sorting"
   },
   "dependencies": {
     "babel-plugin-namespace": "^0.2.2",

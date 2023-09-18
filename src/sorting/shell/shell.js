@@ -26,7 +26,7 @@ function shellsort (array) {
       array[last] = temp
     }
   }
-  console.log('outer:', countOuter, 'inner:', countInner, 'swap:', countSwap)
+
   return array
 }
 
