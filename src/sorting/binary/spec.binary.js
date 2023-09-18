@@ -1,6 +1,7 @@
-describe('Regex', () => {
-  describe('General string regex', () => {
-    it.skip('[NOT YET IMPLIMENTED]', () => {
+describe('Binary Search', () => {
+  describe('binaryIndexOf()', () => {
+    it('[NOT YET IMPLIMENTED]', () => {
+      expect(1).toEqual(0)
     })
   })
 })
