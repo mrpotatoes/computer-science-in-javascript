@@ -10,7 +10,7 @@ class TreeNode {
 }
 
 // Insert a new node and return the root of the BST.
-function insert(root, val) {
+export const insert = (root, val) => {
   if (root == null) {
     return new TreeNode(val);
   }
@@ -24,7 +24,7 @@ function insert(root, val) {
 }
 
 // Return the minimum value node of the BST.
-function minValueNode(root) {
+export const minValueNode = (root) => {
   let curr = root;
   while (curr != null && curr.left != null) {
     curr = curr.left;
@@ -33,7 +33,7 @@ function minValueNode(root) {
 }
 
 // Remove a node and return the root of the BST.
-function remove(root, val) {
+export const remove= (root, val) => {
   if (root == null) {
     return null;
   }
