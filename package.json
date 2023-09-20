@@ -11,11 +11,11 @@
   ],
   "license": "MIT",
   "scripts": {
-    "dev": "rollup --watch -i src/_sandbox/index.js",
-    "build": "rollup src/_sandbox/index.js -f cjs",
+    "dev": "nodemon src/_sandbox/index.js",
     "test": "jest --config=tools/jest.config.js --verbose",
     "test:watch": "jest --watchAll",
     "generate-hash": "babel-node src/hash-table/generate-hash-fixture.js",
+    "lesson": "./tools/run-lesson.sh",
     "test:bs": "./tools/run-lesson.sh bit-shifting",
     "test:compilers": "./tools/run-lesson.sh compilers",
     "test:crypto": "./tools/run-lesson.sh cryptography",
@@ -34,8 +34,9 @@
   "dependencies": {
     "babel-plugin-namespace": "^0.2.2",
     "jest": "^29.5.0",
+    "json-to-pretty-yaml": "^1.2.2",
     "mocha-clearscreen-reporter": "^1.0.1",
-    "rollup": "^3.21.0",
+    "nodemon": "^3.0.1",
     "ts-jest": "^29.1.0",
     "yargs": "^13.2.4"
   },
