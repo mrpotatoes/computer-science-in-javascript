@@ -1,123 +1,76 @@
 /* eslint-disable no-unused-expressions */
-import TreeDS from './tree'
-import { fullFixture, removedCtoFixture, removedCfoFixture } from './fixture.tree'
+import YAML from 'json-to-pretty-yaml'
+import { TreeNode, insert, remove, contains, min, max, inorder, preorder, postorder, bfs } from './binary'
+import * as fixtures from './_fixtures'
 
-describe('[Data Structure] Tree', () => {
-  it('TreeDS() root should be null', () => {
-    const tree = new TreeDS()
+describe('[Data Structure] Binary Tree', () => {
+  let tree = null
 
-    // Assertions.
-    expect(tree.root).toBeNull()
+  beforeEach(() => { tree = fixtures.binaryTree() })
+  afterEach(() => { tree = null })
+
+  describe('insert(root, val)', () => {
+    it('was inserted', () => {
+      let newTree = JSON.parse(JSON.stringify(tree));
+
+      // Assertions.
+      newTree = insert(newTree, 404)
+
+      expect(tree).not.toEqual(newTree)
+      expect(newTree).toHaveProperty('right.right.val', 404)
+    })
   })
 
-  it('Should not be able to remove from an empty tree.', () => {
-    const tree = new TreeDS()
+  describe('remove(root, val)', () => {
+    it('was removed', () => {
+      // Prove it exists first
+      expect(tree).toHaveProperty('right.val', 300)
 
-    // Assertions.
-    expect(tree.remove('nothing here')).toEqual(tree)
+      // Show it doesn't exist anymore
+      expect(remove(tree, 300)).not.toHaveProperty('right.val', 300)
+    })
+
+    it('value does not exist to be removed', () => {
+      expect(tree).toEqual(remove(tree, 321321321))
+    })
   })
 
-  it('add(1...2) and should not be able to reset root node', () => {
-    const tree = new TreeDS()
-    tree.add('thing')
-
-    // Assertions.
-    expect(tree.add.bind(tree, 'another')).toThrow('Root node is already assigned')
+  describe('min() & max()', () => {
+    it('min(root, val)', () => {
+      // Assertions.
+      expect(min(tree).val).toBe(-1)
+    })
+    it('max(root, val)', () => {
+      // Assertions.
+      expect(max(tree).val).toBe(300)
+    })
   })
 
-  it('add(1...8) compare tree', () => {
-    const tree = new TreeDS()
-    tree.add('ceo')
-    tree.add('cto', 'ceo')
-    tree.add('cfo', 'ceo')
-    tree.add('cmo', 'ceo')
-    tree.add('dev1', 'cto')
-    tree.add('dev2', 'cto')
-    tree.add('dev3', 'cto')
-    tree.add('accountant', 'cfo')
+  describe('contains(root, val)', () => {
+    it('contains', () => {
+      expect(contains(tree, 10)).toBe(true)
+    })
 
-    // Assertions.
-    expect(tree.getTree()).toEqual(fullFixture)
+    it('contains', () => {
+      expect(contains(tree, 15)).toBe(false)
+    })
   })
 
-  it('add(1...8) remove(cto), remove(cfo), remove(ceo), ', () => {
-    const tree = new TreeDS()
-    tree.add('ceo')
-    tree.add('cto', 'ceo')
-    tree.add('cfo', 'ceo')
-    tree.add('cmo', 'ceo')
-    tree.add('dev1', 'cto')
-    tree.add('dev2', 'cto')
-    tree.add('dev3', 'cto')
-    tree.add('accountant', 'cfo')
+  describe('Traversals', () => {
+    it('inorder(TreeNode, [])', () => {
+      expect(inorder(tree)).toEqual([ -1, 10, 20, 80, 100, 101, 115, 200, 201, 300 ])
+    })
 
-    // Assertions.
-    expect(tree.remove('cto').getTree()).toEqual(removedCtoFixture)
-    expect(tree.remove('cfo').getTree()).toEqual(removedCfoFixture)
-    expect(tree.remove('ceo').getTree()).toBeNull()
+    it('preorder(TreeNode, [])', () => {
+      expect(preorder(tree)).toEqual([ 100, 10, -1, 20, 80, 300, 101, 200, 115, 201 ])
+    })
+
+    it('postorder(TreeNode, [])', () => {
+      expect(postorder(tree)).toEqual([ -1, 80, 20, 10, 115, 201, 200, 101, 300, 100 ])
+    })
+
+    it('bfs(TreeNode)', () => {
+      expect(bfs(tree)).toEqual([ 100, 10, 300, -1, 20, 101, 80, 200, 115, 201 ])
+    })
   })
-
-  it('add(1...8) remove(ceo), ', () => {
-    const tree = new TreeDS()
-    tree.add('ceo')
-    tree.add('cto', 'ceo')
-    tree.add('cfo', 'ceo')
-    tree.add('cmo', 'ceo')
-    tree.add('dev1', 'cto')
-    tree.add('dev2', 'cto')
-    tree.add('dev3', 'cto')
-    tree.add('accountant', 'cfo')
-
-    // Assertions.
-    // @todo I would need to get confirmation but I think that since this destroys the
-    // reference to the root it should be garbage colleted later.
-    expect(tree.remove('ceo').getTree()).toBeNull()
-  })
-
-  it('add(1...8) remove(ceo), ', () => { })
-
-  it('add(1...8) contains(ceo), ', () => { })
-
-  it('add(1...8) findBFS(ceo), ', () => { })
-
-  it('add(1...8) preOrder(ceo), ', () => { })
-
-  it('add(1...8) postOrder(ceo), ', () => { })
-
-  it('add(1...8) traverseDFS(ceo), ', () => { })
-
-  it('add(1...8) traverseBFS(ceo), ', () => { })
-
-  it('add(1...8) getTree(ceo), ', () => { })
 })
-
-// const tree = new Tree()
-// tree.add('ceo')
-// tree.add('cto', 'ceo')
-// tree.add('dev1', 'cto')
-// tree.add('dev2', 'cto')
-// tree.add('dev3', 'cto')
-// tree.add('cfo', 'ceo')
-// tree.add('accountant', 'cfo')
-// tree.add('cmo', 'ceo')
-// tree.print()
-//    => ceo | cto cfo cmo | dev1 dev2 dev3 accountant
-// tree.printByLevel()
-//    => ceo \n cto cfo cmo \n dev1 dev2 dev3 accountant
-// console.log('tree contains dev1 is true:', tree.contains('dev1'))
-//    => true
-// console.log('tree contains dev4 is false:', tree.contains('dev4'))
-//    => false
-// console.log('--- BFS')
-// tree.traverseBFS((node) => { console.log(node.data) })
-//    => ceo cto cfo cmo dev1 dev2 dev3 accountant
-// console.log('--- DFS preOrder')
-// tree.traverseDFS((node) => { console.log(node.data) }, 'preOrder')
-//    => ceo cto dev1 dev2 dev3 cfo accountant cmo
-// console.log('--- DFS postOrder')
-// tree.traverseDFS((node) => { console.log(node.data) }, 'postOrder')
-//    => dev1 dev2 dev3 cto accountant cfo cmo ceo
-// tree.remove('cmo')
-// tree.print() // => ceo | cto cfo | dev1 dev2 dev3 accountant
-// tree.remove('cfo')
-// tree.print() // => ceo | cto | dev1 dev2 dev3
