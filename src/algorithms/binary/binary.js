@@ -27,7 +27,7 @@ export const binarySearchArray = (list, target) => {
       return mid
     }
 
-    // We compare the guess to the target. If it's higer we'll go left.
+    // We compare the guess to the target. If it's higher we'll go left.
     // Otherwise we will search the right side.
     if (guess > target) {
       high = mid - 1
