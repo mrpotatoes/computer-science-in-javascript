@@ -84,3 +84,4 @@ Reading the code helps but I think it's important to, at the very minimum, to dr
 - https://www.youtube.com/watch?v=ndGFKqf-CRc
 - https://softwareengineering.stackexchange.com/questions/113289/why-do-we-need-a-heap-if-everything-can-be-done-much-more-efficiently-on-the-sta
 - https://www.mimuw.edu.pl/~erykk/algovis/heapsort.html
+- [Visualization: HeapSort](https://www.mimuw.edu.pl/~erykk/algovis/heapsort.html)
