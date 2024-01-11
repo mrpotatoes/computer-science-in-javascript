@@ -1,5 +1,9 @@
-# [Heading](wiki-link)
-Wiki intro text.
+# [Graphs](wiki-link)
+
+### DFS
+[Depth First Search](./depth-first.md)
+
+<!-- Wiki intro text.
 
 ## Credit
 Most of this is from https://github.com/mgechev/javascript-algorithms but converted to ES6 with my own tests and a ton of comments.
@@ -48,4 +52,4 @@ ___
 * https://khan4019.github.io/front-end-Interview-Questions/graph.html
 * https://khan4019.github.io/front-end-Interview-Questions/tree.html
 * https://github.com/trekhleb/javascript-algorithms/tree/master/src/data-structures/hash-table
-* https://www.baeldung.com/cs/graph-adjacency-and-incidence
+* https://www.baeldung.com/cs/graph-adjacency-and-incidence -->
