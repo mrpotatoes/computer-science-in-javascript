@@ -21,7 +21,6 @@
     "test:crypto": "./tools/run-lesson.sh cryptography",
     "test:ds": "./tools/run-lesson.sh data-structures",
     "test:patterns": "./tools/run-lesson.sh design-patterns",
-    "test:essentialjs": "./tools/run-lesson.sh essential-javascript",
     "test:interview": "./tools/run-lesson.sh interview-questions",
     "test:javascript": "./tools/run-lesson.sh javascript",
     "test:math": "./tools/run-lesson.sh math",
