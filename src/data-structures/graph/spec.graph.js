@@ -2,6 +2,17 @@ import { validPaths } from './depth-first'
 
 describe('[Data Structure] Graph', () => {
   describe('Depth first search', () => {
+    it('has 1 valid path', () => {
+      const matrix = [
+        [0, 0, 0, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 0],
+        [1, 1, 1, 0],
+      ]
+
+      expect(validPaths(matrix)).toEqual(1)
+    })
+
     it('has 2 valid paths', () => {
       const matrix = [
         [0, 0, 0, 0],
@@ -50,6 +61,15 @@ describe('[Data Structure] Graph', () => {
         [0, 1, 1],
         [1, 1, 1],
         [1, 1, 1],
+      ]
+
+      expect(validPaths(matrix)).toEqual(0)
+    })
+
+    it('has no valid paths 3', () => {
+      const matrix = [
+        [0, 0],
+        [0, 0],
       ]
 
       expect(validPaths(matrix)).toEqual(0)

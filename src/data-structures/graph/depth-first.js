@@ -18,13 +18,15 @@ export const isInvalidPath = (grid) => (r, c) => (
  * The number of all valid paths from top-left to bottom-right
  *
  * @param {[]} grid
- * @returns int
+ *
+ * @returns The cumulative result of all paths
  */
 export const validPaths = (grid) => {
   const ROWS = grid.length
   const COLS = grid[0].length
 
   const helper = (r, c, visited) => {
+    // Predicates for bounds checking
     const isDirectionValid = isInvalidPath(grid)
     const wasVisited = visited.has(`${r}-${c}`)
     const isRowOutofBounds = r === ROWS
@@ -56,5 +58,6 @@ export const validPaths = (grid) => {
     return count
   }
 
+  // Our starting point is top-left. We could easily change this but would be a lot more effort 😬
   return helper(0, 0, new Set(), ROWS, COLS, grid)
 }
