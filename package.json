@@ -16,6 +16,8 @@
     "test": "jest --config=tools/jest.config.js --verbose",
     "test:watch": "jest --watchAll",
     "generate-hash": "babel-node src/hash-table/generate-hash-fixture.js",
+    "test:algos": "./tools/run-lesson.sh algorithms",
+    "test:list": "./tools/run-lesson.sh list",
     "test:bs": "./tools/run-lesson.sh bit-shifting",
     "test:compilers": "./tools/run-lesson.sh compilers",
     "test:crypto": "./tools/run-lesson.sh cryptography",

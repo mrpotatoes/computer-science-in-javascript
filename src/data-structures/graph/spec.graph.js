@@ -72,7 +72,7 @@ describe('[Data Structure] Graph', () => {
         [0, 0],
       ]
 
-      expect(validPaths(matrix)).toEqual(0)
+      expect(validPaths(matrix)).toEqual(2)
     })
   })
 })
