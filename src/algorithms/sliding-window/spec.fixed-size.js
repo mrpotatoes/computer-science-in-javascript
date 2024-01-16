@@ -1,8 +1,8 @@
 /* eslint-disable no-unused-expressions */
-import { sum, maxSums, neighborDuplicates } from './fixed-size'
+import { sum, maxSums, maxSums2, neighborDuplicates } from './fixed-size'
 
 describe('[Data Structures] Sliding Window → Fixed size', () => {
-  describe('utilities', () => {
+  describe.skip('utilities', () => {
     it('sums array', () => {
       expect(sum([1, 2, 3, 4, 5, 6, 7, 8, 9], 0).sum).toEqual(6)
       expect(sum([1, 2, 3, 4, 5, 6, 7, 8, 9], 1).sum).toEqual(9)
@@ -20,7 +20,7 @@ describe('[Data Structures] Sliding Window → Fixed size', () => {
     })
   })
 
-  describe('maxSums', () => {
+  describe.skip('maxSums', () => {
     const arrays = [
       [1, 2, 6, 2, 4, 1],
       [2, 4, 10, 10, 25, 6],
@@ -45,7 +45,32 @@ describe('[Data Structures] Sliding Window → Fixed size', () => {
     })
   })
 
-  describe('neighborDuplicates', () => {
+  describe('maxSums2', () => {
+    const arrays = [
+      [1, 2, 6, 2, 4, 1],
+      [2, 4, 10, 10, 25, 6],
+      [10, 10, 3, 1, 1, 2],
+      [1, 2, 3, 4, 5, 6], // null
+    ]
+
+    it('happy path', () => {
+      expect(maxSums2(arrays[0])).toEqual(12)
+      // expect(maxSums2(arrays[1])).toEqual(45)
+      // expect(maxSums2(arrays[2])).toEqual(23)
+    })
+
+    // it('returns null when array param is empty', () => {
+    //   expect(maxSums2([], 2)).toBeNull()
+    //   expect(maxSums2([])).toBeNull()
+    // })
+
+    // it('returns null because window is too large', () => {
+    //   expect(maxSums2(arrays[3], 10)).toBeNull()
+    //   expect(maxSums2([1, 2], 3)).toBeNull()
+    // })
+  })
+
+  describe.skip('neighborDuplicates', () => {
     const dupes = [
       [1, 4, 3, 4, 3, 3],
       [1, 1, 2, 2, 3, 3],

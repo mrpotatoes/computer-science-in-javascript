@@ -38,6 +38,24 @@ export const maxSums = (arr, window = 3) => {
   }
 }
 
+export const maxSums2 = (arr, window = 3) => {
+  if (arr.length < window) {
+    return null
+  }
+
+  // Initial sum
+  let curr = sum(arr, 0).sum
+  let max = curr
+
+  // Start the index at the window size as to not have to calculate everything, I guess.
+  for (let i = window; i < arr.length; i++) {
+    curr += (arr[i] - arr[i - window])
+    max = Math.max(curr, max)
+  }
+
+  return max
+}
+
 /**
  * Find duplicates that are within the array window (3)
  *
