@@ -72,3 +72,14 @@
     - Updating feeds
       - If user with many followers (e.g. User w/100M followers on high end)
       - Cache might be a bad option here
+
+Karan Pratap Singh
+- https://leanpub.com/systemdesign
+- https://github.com/karanpratapsingh/system-design
+- https://dev.to/karanpratapsingh/system-design-twitter-865
+
+Donne Martin
+- https://www.geeksforgeeks.org/design-twitter-a-system-design-interview-question/
+
+Misc
+- https://github.com/donnemartin/system-design-primer/
