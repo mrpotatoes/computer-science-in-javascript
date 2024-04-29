@@ -1,4 +1,4 @@
-# Discord
+# Social Newsfeed
 ## Features
 1. 
 

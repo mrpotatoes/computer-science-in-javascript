@@ -1,4 +1,4 @@
-# Maps
+# Chat Application
 ## Features
 1. 
 

@@ -1,4 +1,4 @@
-# TinyURL
+# Music Streaming Service
 ## Features
 1. 
 

@@ -1,4 +1,4 @@
-# Maps
+# Consistent Hashing
 ## Features
 1. 
 
