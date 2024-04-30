@@ -1,3 +1,36 @@
+<!-- # Social Newsfeed
+- [Social Newsfeed](#social-newsfeed)
+  - [Overview](#overview)
+  - [Solution](#solution)
+  - [Features](#features)
+  - [Functional Requirements](#functional-requirements)
+  - [System](#system)
+  - [Links](#links)
+
+## Overview
+
+## Solution
+<details>
+  <summary>Diagram</summary>
+  
+  ![](./_assets/twitter.png)
+</details>
+
+## Features
+1. 
+
+## Functional Requirements
+1. 
+
+## System
+- 
+
+---
+## Links
+- [`donnemartin/system-design-primer`](https://github.com/donnemartin/system-design-primer/tree/master)
+- [Twitter System Design - YouTube](https://www.youtube.com/watch?v=EkudBdvbDhs)
+- [Twitter System Design - Medium](https://medium.com/@karan99/system-design-twitter-793ab06c9355) -->
+
 # Designing Twitter
 
 # Features
