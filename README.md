@@ -28,4 +28,39 @@ This is my personal reference for computer science (w/o the math sadly) with all
 - Create my own designs
 - Merge `system-design/designing-applications/topics/` with `./philosophies/system-design/core/`
 - Recreate all the diagrams into my own (draw.io)
+- Rename all `README.md` files to `index.md` except for repo-root one
+- Redo the tables in `designing-applications/` `README.md` so it doesn't look so wierd
 
+
+```
+.
+|____docs
+| |____interview-questions
+| | |____general
+| | |____interview-questions.jpg
+| | |____leet-code
+| |____anti-patterns
+| | |____software-development-antipatterns
+| | |____project-management-antipatterns
+| |____systems-patterns
+| | |____microservices
+| | |____cqrs
+| | |____ddd
+| | |____code-apis
+| | |____event-sourcing
+| | |____rest
+| | |____hypermedia
+| | |____pseudocode
+| |____big-o
+| |____system-design
+| | |____basics
+| | |____core
+| | |____designs
+| | |_____assets
+| | |____topics
+| |____best-practices
+| | |____typescript
+| | |____code-styles
+| | |____react
+| | |____functional
+```
