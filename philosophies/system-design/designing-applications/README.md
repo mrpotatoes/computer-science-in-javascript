@@ -16,7 +16,6 @@
   - [Credits](#credits)
   - [License](#license)
 
-
 ## TODOs
 - [ ] Consolidate all relevant sources to the bottom of each page
 - [ ] Images
