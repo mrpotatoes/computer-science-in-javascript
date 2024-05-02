@@ -2,7 +2,7 @@
 ## General
 - [ ] Recreate all the diagrams into my own (draw.io)
 
-## System Design
+## System Design Exercises
 > Do these in the suggested order below
 
 - [ ] Take the content in [`fundamentals`](docs/system-design/basics/fundamentals.md) and figure out what to do with it
@@ -18,7 +18,7 @@
 
 ## Diagrams
 <details>
-  <summary>System Design</summary>
+  <summary>Click to open</summary>
   <table>
     <thead>
       <tr>
