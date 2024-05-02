@@ -52,22 +52,26 @@ Learning how to design scalable systems will help you become a better engineer. 
 ## Interview Questions
 | Design a ...                               | Solution                                                           |
 | ------------------------------------------ | ------------------------------------------------------------------ |
-| Url Shortener                              | [Solution](./designs/url-shortener.md)                             |
 | Social feed                                | [Solution](./designs/social-feed.md)                               |
-| Web crawler                                | [Solution](./designs/web-crawler.md)                               |
-| Social Network Graph                       | [Solution](./designs/social-network-graph.md)                      |
-| Amazon's sales ranking by category feature | [Solution](./designs/amazons-sales-ranking-by-category-feature.md) |
-| Infra to scale to millions                 | [Solution](./designs/infra-to-scale-to-millions.md)                |
+| Url Shortener                              | [Solution](./designs/url-shortener.md)                             |
+| Scaling AWS                                | [Solution](./designs/scaling-aws.md)                               |
 | Chat App                                   | [Solution](./designs/chat-app.md)                                  |
+| Collaborative Document Editing             | [Solution](./designs/collaborative-document-editing.md)            |
 | Cloud Storage                              | [Solution](./designs/cloud-storage.md)                             |
 | Maps                                       | [Solution](./designs/maps.md)                                      |
+| Streaming service                          | [Solution](./designs/streaming-service.md)                         |
+
+<!--
+
+| Consistent Hashing                         | [Solution](./designs/consistent-hashing.md)                        |
+| Web crawler                                | [Solution](./designs/web-crawler.md)                               |
+| Typeahead                                  | [Solution](./designs/typeahead.md)                                 |
 | Rate Limiter                               | [Solution](./designs/rate-limiter.md)                              |
 | Key Value Store                            | [Solution](./designs/key-value-store.md)                           |
+| Infra to scale to millions                 | [Solution](./designs/infra-to-scale-to-millions.md)                |
 | Distributed Message Queue                  | [Solution](./designs/distributed-message-queue.md)                 |
-| Streaming service                          | [Solution](./designs/streaming-service.md)                         |
-| Typeahead                                  | [Solution](./designs/typeahead.md)                                 |
-| Consistent Hashing                         | [Solution](./designs/consistent-hashing.md)                        |
-| Collaborative Document Editing             | [Solution](./designs/collaborative-document-editing.md)            |
+
+-->
 
 ## Credits
 - Credits and sources are provided throughout this repo. Special thanks to Donne Martin ([`donnemartin/system-design-primer`](https://github.com/donnemartin/system-design-primer))

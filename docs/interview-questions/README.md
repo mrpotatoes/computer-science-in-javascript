@@ -1,42 +1,155 @@
-## Interview Questions
+# Interview Questions
 > Coding Questions
 
-- Leetcode
-- Other?
+## General
+<details>
+  <summary>Exercises</summary>
+  <table>
+    <thead>
+      <tr>
+        <th>Easy</th>
+        <th>Intermediate</th>
+        <th>Difficult</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr valign="top">
+        <td>
+          <ul>
+            <li><a href="https://leetcode.com/problems/two-sum/">Two Sum</a></li>
+            <li><a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">Find the Index of the First Occurrence in a String</a></li>
+            <li><a href="https://leetcode.com/problems/remove-element/">Remove Element</a></li>
+            <li><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-array/">Remove Duplicates from Sorted Array</a></li>
+            <li><a href="https://leetcode.com/problems/merge-two-sorted-lists/">Merge Two Sorted Lists</a></li>
+            <li><a href="https://leetcode.com/problems/valid-parentheses/">Valid Parentheses</a></li>
+            <li><a href="https://leetcode.com/problems/longest-common-prefix/">Longest Common Prefix</a></li>
+            <li><a href="https://leetcode.com/problems/roman-to-integer/">Roman to Integer</a></li>
+            <li><a href="https://leetcode.com/problems/palindrome-number/">Palindrome Number</a></li>
+            <li><a href="https://leetcode.com/problems/add-binary/">Add Binary</a></li>
+            <li><a href="https://leetcode.com/problems/sqrtx/">Sqrt(x)</a></li>
+            <li><a href="https://leetcode.com/problems/climbing-stairs/">Climbing Stairs</a></li>
+            <li><a href="https://leetcode.com/problems/remove-duplicates-from-sorted-list/">Remove Duplicates from Sorted List</a></li>
+            <li><a href="https://leetcode.com/problems/merge-sorted-array/">Merge Sorted Array</a></li>
+            <li><a href="https://leetcode.com/problems/binary-tree-inorder-traversal/">Binary Tree Inorder Traversal</a></li>
+            <li><a href="https://leetcode.com/problems/same-tree/">Same Tree</a></li>
+            <li><a href="https://leetcode.com/problems/symmetric-tree/">Symmetric Tree</a></li>
+            <li><a href="https://leetcode.com/problems/maximum-depth-of-binary-tree/">Maximum Depth of Binary Tree</a></li>
+            <li><a href="https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/">Convert Sorted Array to Binary Search Tree</a></li>
+            <li><a href="https://leetcode.com/problems/plus-one/">Plus One</a></li>
+            <li><a href="https://leetcode.com/problems/length-of-last-word/">Length of Last Word</a></li>
+            <li><a href="https://leetcode.com/problems/search-insert-position/">Search Insert Position</a></li>
+            <li><a href="https://leetcode.com/problems/find-the-index-of-the-first-occurrence-in-a-string/">Find the Index of the First Occurrence in a String</a></li>
+            <li><a href="https://leetcode.com/problems/linked-list-cycle/">Linked List Cycle</a></li>
+            <li><a href="https://leetcode.com/problems/pascals-triangle/">Pascal&#39;s Triangle</a></li>
+            <li><a href="https://leetcode.com/problems/path-sum/">Path Sum</a></li>
+            <li><a href="https://leetcode.com/problems/same-tree/">Same Tree</a></li>
+          </ul>
+        </td>      
+        <td>
+          <ul>
+            <li><a href="https://leetcode.com/problems/smallest-string-starting-from-leaf/">Smallest String Starting From Leaf</a></li>
+            <li><a href="https://leetcode.com/problems/reverse-integer/">Reverse Integer</a></li>
+            <li><a href="https://leetcode.com/problems/longest-substring-without-repeating-characters/">Longest Substring Without Repeating Characters</a></li>
+            <li><a href="https://leetcode.com/problems/add-two-numbers/">Add Two Numbers</a></li>
+            <li><a href="https://leetcode.com/problems/reverse-integer/">Reverse Integer</a></li>
+            <li><a href="https://leetcode.com/problems/zigzag-conversion/">Zigzag Conversion</a></li>
+            <li><a href="https://leetcode.com/problems/longest-palindromic-substring/">Longest Palindromic Substring</a></li>
+            <li><a href="https://leetcode.com/problems/word-search/">Word Search</a></li>
+            <li><a href="https://leetcode.com/problems/simplify-path/">Simplify Path</a></li>
+            <li><a href="https://leetcode.com/problems/group-anagrams/">Group Anagrams</a></li>
+            <li><a href="https://leetcode.com/problems/powx-n/">Pow(x, n)</a></li>
+            <li><a href="https://leetcode.com/problems/maximum-subarray/">Maximum Subarray</a></li>
+            <li><a href="https://leetcode.com/problems/jump-game-ii/">Jump Game II</a></li>
+            <li><a href="https://leetcode.com/problems/combination-sum/">Combination Sum</a></li>
+            <li><a href="https://leetcode.com/problems/count-and-say/">Count and Say</a></li>
+            <li><a href="https://leetcode.com/problems/next-permutation/">Next Permutation</a></li>
+            <li><a href="https://leetcode.com/problems/swap-nodes-in-pairs/">Swap Nodes in Pairs</a></li>
+          </ul>
+        </td>      
+        <td>
+          <ul>
+            <li><a href="https://leetcode.com/problems/longest-increasing-subsequence-ii/">Longest Increasing Subsequence II</a></li>
+            <li><a href="https://leetcode.com/problems/number-of-beautiful-integers-in-the-range/">Number of Beautiful Integers in the Range</a></li>
+            <li><a href="https://leetcode.com/problems/count-of-smaller-numbers-after-self/">Count of Smaller Numbers After Self</a></li>
+            <li><a href="https://leetcode.com/problems/frog-jump/">Frog Jump</a></li>
+            <li><a href="https://leetcode.com/problems/split-array-largest-sum/">Split Array Largest Sum</a></li>
+            <li><a href="https://leetcode.com/problems/maximum-average-subarray-ii/">Maximum Average Subarray II</a></li>
+            <li><a href="https://leetcode.com/problems/maximum-average-subarray-ii/">Maximum Average Subarray II</a></li>
+            <li><a href="https://leetcode.com/problems/unique-paths-iii/">Unique Paths III</a></li>
+            <li><a href="https://leetcode.com/problems/median-of-two-sorted-arrays/">Median of Two Sorted Arrays</a></li>
+            <li><a href="https://leetcode.com/problems/merge-k-sorted-lists/">Merge k Sorted Lists</a></li>
+            <li><a href="https://leetcode.com/problems/sudoku-solver/">Sudoku Solver</a></li>
+            <li><a href="https://leetcode.com/problems/trapping-rain-water/">Trapping Rain Water</a></li>
+            <li><a href="https://leetcode.com/problems/swap-nodes-in-pairs/">Swap Nodes in Pairs</a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
-<!-- Because we gotta, no?
+## Amazon
+<details>
+  <summary>Exercises</summary>
+  <table>
+    <thead>
+      <tr>
+        <th width="500px">Easy</th>
+        <th width="500px">Intermediate</th>
+        <th width="500px">Difficult</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr width="600px">
+        <td>
+          <ul>
+            <li><a href="#">Todo</a></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><a href="#">Todo</a></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><a href="#">Todo</a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</details>
 
-[![neetcode.io Big O](interview-questions.jpg)](https://www.youtube.com/watch?v=ft0owvS5tQA)
-
-Strings
-<pre>
-http://www.geeksforgeeks.org/category/data-structures/c-strings/
-http://javarevisited.blogspot.com/2015/01/top-20-string-coding-interview-question-programming-interview.html
-https://www.careercup.com/page?pid=string-manipulation-interview-questions
-http://javaconceptoftheday.com/java-interview-programs-on-strings/
-http://www.journaldev.com/1321/java-string-interview-questions-and-answers
-http://blog.codingforinterviews.com/string-questions/
-http://www.mytechinterviews.com/category/string-manipulation
-https://www.hackerrank.com/domains/algorithms/strings
-https://www.quora.com/What-are-the-most-important-string-manipulation-questions-every-Computer-Science-student-should-know
-
-Compress String
-https://www.glassdoor.com/Interview/Given-a-string-aaabbbcc-compress-it-a3b3c2-Given-that-output-string-s-length-is-always-smaller-than-input-string-QTN_239712.htm
-  - Do this with loop [and possibly recursion?]
-
-http://javascriptissexy.com/understand-javascript-closures-with-ease/
-http://javascriptissexy.com/understand-javascript-closures-with-ease/
-https://hackernoon.com/functional-javascript-decoupling-methods-from-their-objects-aa3ca13d7ae8
-https://medium.com/javascript-scene/why-composition-is-harder-with-classes-c3e627dcd0aa
-https://www.sitepoint.com/currying-in-functional-javascript/
-https://medium.com/@kbrainwave/currying-in-javascript-ce6da2d324fe
-https://stackoverflow.com/questions/111102/how-do-javascript-closures-work
-https://medium.com/javascript-scene/elements-of-javascript-style-caa8821cb99f
-https://medium.com/javascript-scene/reduce-composing-software-fe22f0c39a1d
-https://medium.com/javascript-scene/how-to-land-your-first-development-job-in-5-simple-steps-4e9fb73314c
-https://medium.com/tag/learnjs
-https://medium.com/javascript-scene/learn-javascript-b631a4af11f2
-https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
-https://medium.com/@_ericelliott/latest
-
-<pre> -->
+## Google
+<details>
+  <summary>Exercises</summary>
+  <table>
+    <thead>
+      <tr>
+        <th width="500px">Easy</th>
+        <th width="500px">Intermediate</th>
+        <th width="500px">Difficult</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr width="600px">
+        <td>
+          <ul>
+            <li><a href="#">Todo</a></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><a href="#">Todo</a></li>
+          </ul>
+        </td>
+        <td>
+          <ul>
+            <li><a href="#">Todo</a></li>
+          </ul>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</details>
