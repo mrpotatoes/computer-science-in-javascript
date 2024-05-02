@@ -1,4 +1,4 @@
-Table of COntents
+Table of Contents
 - [Basics concepts](./basic-principles.md)
 - [Fundamentals](./fundamentals.md.md)
 - [Design problems](./problems.md)
