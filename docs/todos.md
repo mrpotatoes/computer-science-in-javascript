@@ -1,4 +1,21 @@
 # Todos
+## Engineer Exercises
+> [`Note`]: I will check each of these later to see what I want to do or want to remove i.e. `./src/javascript/*`
+
+- [ ] `./src/algorithms`
+- [ ] `./src/bit-shifting`
+- [ ] `./src/compilers`
+- [ ] `./src/cryptography`
+- [ ] `./src/data-structures`
+- [ ] `./src/dependency-injection`
+- [ ] `./src/javascript`
+  - I have the cheatsheets website. This is probably redundant.
+- [ ] `./src/math`
+- [ ] `./src/operating-systems`
+- [ ] `./src/recursion`
+- [ ] `./src/regex`
+- [ ] `./src/streams`
+
 ## Coding Exercises
 - [ ] [General](./interview-questions/README.md#general)
 - [ ] [Amazon](./interview-questions/README.md#amazon)
@@ -103,3 +120,14 @@
   </table>
 </details>
 
+## Misc
+- [ ] Delete the `babel-plugin-namespace` plugin
+- [ ] Convert to `TypeScript`
+  - [ ] This removes the `Babel` requirement
+  - [ ] Use `Rollup.js` to make my life easier
+  - [ ] `ts-node` to run `--watch` on changes
+  - [ ] Path aliases to make `import`s cleaner.
+- [ ] Upgrade all packages
+- [ ] Run spell check on 
+- [ ] All documents in `./docs`
+- [ ] All code in `./src`
