@@ -1,4 +1,7 @@
 
+- [Fanout Pattern - YouTube](https://www.youtube.com/watch?v=zSncRUcucEU)
+- [Twitter Timeline Architecture | Fanout | System Design](https://www.youtube.com/watch?v=FEkXjNFrL1o)
+
 
 - [A Gentle Introduction To The Fan-out Design Pattern](https://www.linkedin.com/pulse/gentle-introduction-fan-out-design-pattern-sanjoy-kumar-malik/)
 - [What is Fan-Out Software?](https://www.pubnub.com/guides/what-is-fan-out-software/)

@@ -134,10 +134,10 @@
 * $10B$ searches $/$ month
 * Size $/$ post
   * `post_id` - $8b$
-  * `user_id` - 32 bytes
-  * `text` - 140 bytes
-  * `media` - 10 KB average
-  * Total: ~10 KB
+  * `uid` - $32b$
+  * `text` - $140b$
+  * `media` - $10kb$
+  * Total: $~10kb$
 * $150TB$ posts $/$ month
   * $10KB\ /\ post\ \times\ 500M\ posts/day\ \times 30\ days/month$
   * $5.4PB$ of new content every 3 years
@@ -154,142 +154,110 @@
 ![Initial Design](../_assets/social-feed-initial.png)
 
 ## Step 3: Design core components
-### Use case: User submits post
+### Use case: Create post
+Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../topics/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a **NoSQL database** or **Memory Cache**. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an **[Object Store](../topics/database.md#document-store)**.
 
-We could store the user's own posts to populate the user timeline (activity from the user) in a [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We should discuss the [use cases and tradeoffs between choosing SQL or NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql).
+* `Client` submits a post to the `Web Server` (**[reverse proxy](../topics/reverse-proxy-web-server.md)** in this case)
+  * `Web Server` forwards  request to the `Write Service`
+    * `Write Service` stores the post in user's timeline in a **`SQL database`**
+    * `Write Service` submits (or `POST`s) to the **[Fanout Service](../topics/fanout-service.md)**
+      * Query `User Graph Service` to find `Client`s followers in **[Memory Cache](../topics/cache.md#application-caching)**
+      * Save post in ***home timeline of user's followers*** in **Memory Cache**
+        * $O(n)$: $1K$ followers $=$ $1K$ lookups & inserts
+      * Store media in the [Object Store](../topics/database.md#document-store)
+      * Uses the `Notification Service`
 
-Delivering posts and building the home timeline (activity from people the user is following) is trickier.  Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms).  We'll probably want to choose a data store with fast writes such as a **NoSQL database** or **Memory Cache**.  Reading 1 MB sequentially from memory takes about 250 microseconds, while reading from SSD takes 4x and from disk takes 80x longer.<sup><a href=https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know>1</a></sup>
+A public [`REST API`](../topics/communication.md#representational-state-transfer-rest) would be used to submit a new post all user timelines in the user's relationship graph.
 
-We could store media such as photos or videos on an **Object Store**.
-
-* The **Client** posts a tweet to the **Web Server**, running as a [reverse proxy](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* The **Web Server** forwards the request to the **Write API** server
-* The **Write API** stores the tweet in the user's timeline on a **SQL database**
-* The **Write API** contacts the **Fan Out Service**, which does the following:
-    * Queries the **User Graph Service** to find the user's followers stored in the **Memory Cache**
-    * Stores the tweet in the *home timeline of the user's followers* in a **Memory Cache**
-        * O(n) operation:  1,000 followers = 1,000 lookups and inserts
-    * Stores the tweet in the **Search Index Service** to enable fast searching
-    * Stores media in the **Object Store**
-    * Uses the **Notification Service** to send out push notifications to followers:
-        * Uses a **Queue** (not pictured) to asynchronously send out notifications
-
-**Clarify with your interviewer how much code you are expected to write**.
-
-If our **Memory Cache** is Redis, we could use a native Redis list with the following structure:
-
-```
-           tweet n+2                   tweet n+1                   tweet n
-| 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte | 8 bytes   8 bytes  1 byte |
-| tweet_id  user_id  meta   | tweet_id  user_id  meta   | tweet_id  user_id  meta   |
+Submitting
+```js
+api.post('https://example.com/api/v1/post', {
+  'uid': '123',
+  'auth_token': 'ABC123',
+  'content': 'hello world!',
+  'media_id': 'ABC987'
+})
 ```
 
-The new tweet would be placed in the **Memory Cache**, which populates the user's home timeline (activity from people the user is following).
-
-We'll use a public [**REST API**](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest):
-
-```
-$ curl -X POST --data '{ "user_id": "123", "auth_token": "ABC123", \
-    "status": "hello world!", "media_ids": "ABC987" }' \
-    https://twitter.com/api/v1/tweet
-```
-
-Response:
-
-```
+Response
+```json
 {
-    "created_at": "Wed Sep 05 00:37:15 +0000 2012",
-    "status": "hello world!",
-    "tweet_id": "987",
-    "user_id": "123",
-    ...
+  "created_at": "Wed Sep 05 00:37:15 +0000 2012",
+  "status": "hello world!",
+  "pid": "987",
+  "uid": "123",
 }
 ```
 
-For internal communications, we could use [Remote Procedure Calls](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc).
+Internal `API` calls may use either a **[`Remote Procedure Call`](../topics/communication.md#remote-procedure-call-rpc)** or simply a service request to an `API Gateway` to route to the.
 
 ### Use case: User views the home timeline
+* `Client` requests a home timeline from `Web Server`
+  * `Web Server` forwards request to `Read API` server
+    * `Read API` server contacts `Timeline Service`
+      * `Get`s timeline data in `Memory Cache` (containing `pid`s and `uid`s - $O(1)$ )
+      * Query `Post Info Service` → metadata about `pid`s - $O(n)$
+      * Query `User Info Service` → metadata about `uid`s - $O(n)$
 
-* The **Client** posts a home timeline request to the **Web Server**
-* The **Web Server** forwards the request to the **Read API** server
-* The **Read API** server contacts the **Timeline Service**, which does the following:
-    * Gets the timeline data stored in the **Memory Cache**, containing tweet ids and user ids - O(1)
-    * Queries the **Tweet Info Service** with a [multiget](http://redis.io/commands/mget) to obtain additional info about the tweet ids - O(n)
-    * Queries the **User Info Service** with a multiget to obtain additional info about the user ids - O(n)
-
-REST API:
-
+REST API
+```js
+api.get('https://example.com/api/v1/home-timeline', {
+  'uid': '123'
+})
 ```
-$ curl https://twitter.com/api/v1/home_timeline?user_id=123
-```
 
-Response:
-
-```
+Response
+```json
 {
-    "user_id": "456",
-    "tweet_id": "123",
-    "status": "foo"
+    "uid": "456",
+    "post": "123",
+    "status": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas."
 },
 {
-    "user_id": "789",
-    "tweet_id": "456",
-    "status": "bar"
+    "uid": "789",
+    "post": "456",
+    "status": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas."
 },
 {
-    "user_id": "789",
-    "tweet_id": "579",
-    "status": "baz"
+    "uid": "789",
+    "post": "579",
+    "status": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fermentum lacinia egestas."
 },
 ```
 
 ### Use case: User views the user timeline
+> This Use Case is similar to the home timeline except all posts would be from the user and not the users the user is following.
 
-* The **Client** posts a user timeline request to the **Web Server**
-* The **Web Server** forwards the request to the **Read API** server
-* The **Read API** retrieves the user timeline from the **SQL Database**
-
-The REST API would be similar to the home timeline, except all posts would come from the user as opposed to the people the user is following.
+* `Client` requests (`GET`) another user's timeline to `Web Server`
+  * `Web Server` forwards request to `Read API`
+    * `Read API` retrieves user timeline from `SQL Database`
 
 ### Use case: User searches keywords
+* `Client` requests a search to `Web Server`
+  * `Web Server` forwards request to `Search API`
+    * `Search API` contacts `Search Service`
+      * Parses/tokenizes input query and determines what needs to be searched
+        * Merges, ranks, sorts and returns results
 
-* The **Client** sends a search request to the **Web Server**
-* The **Web Server** forwards the request to the **Search API** server
-* The **Search API** contacts the **Search Service**, which does the following:
-    * Parses/tokenizes the input query, determining what needs to be searched
-        * Removes markup
-        * Breaks up the text into terms
-        * Fixes typos
-        * Normalizes capitalization
-        * Converts the query to use boolean operations
-    * Queries the **Search Cluster** (ie [Lucene](https://lucene.apache.org/)) for the results:
-        * [Scatter gathers](https://github.com/donnemartin/system-design-primer#under-development) each server in the cluster to determine if there are any results for the query
-        * Merges, ranks, sorts, and returns the results
-
-REST API:
-
+REST API
+```js
+api.get('https://example.com/api/v1/search?query=hello+world', {
+  'uid': '123'
+})
 ```
-$ curl https://twitter.com/api/v1/search?query=hello+world
-```
-
-The response would be similar to that of the home timeline, except for posts matching the given query.
 
 ## Step 4: Scale the design
-
-> Identify and address bottlenecks, given the constraints.
+> > It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them. For example, what issues are addressed by adding a `Load Balancer` with multiple Web Servers? `CDN`? `Master-Slave Replicas`? What are the alternatives and **Trade-Offs** for each?
 
 ![Scaled Design](../_assets/social-feed-scaled.png)
 
-**Important: Do not simply jump right into the final design from the initial design!**
+First steps could be
+1. Benchmark/Load Test
+1. Profile for bottlenecks 
+2. Address bottlenecks while evaluating alternatives and trade-offs 
+3. Repeat. See [Design a system that scales to millions of users on AWS](../scaling_aws/) as a sample on how to iteratively scale the initial design.
 
-State you would 1) **Benchmark/Load Test**, 2) **Profile** for bottlenecks 3) address bottlenecks while evaluating alternatives and trade-offs, and 4) repeat.  See [Design a system that scales to millions of users on AWS](../scaling_aws/README.md) as a sample on how to iteratively scale the initial design.
-
-It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them.  For example, what issues are addressed by adding a **Load Balancer** with multiple **Web Servers**?  **CDN**?  **Master-Slave Replicas**?  What are the alternatives and **Trade-Offs** for each?
-
-We'll introduce some components to complete the design and to address scalability issues.  Internal load balancers are not shown to reduce clutter.
-
-*To avoid repeating discussions*, refer to the following [system design topics](https://github.com/donnemartin/system-design-primer#index-of-system-design-topics) for main talking points, tradeoffs, and alternatives:
-
+### Other items to consider using
 * [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
 * [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
 * [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
@@ -303,90 +271,71 @@ We'll introduce some components to complete the design and to address scalabilit
 * [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
 * [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
 
-The **Fanout Service** is a potential bottleneck.  Twitter users with millions of followers could take several minutes to have their posts go through the fanout process.  This could lead to race conditions with @replies to the tweet, which we could mitigate by re-ordering the posts at serve time.
+The `Fanout Service` is a potential bottleneck. Users with millions of followers could take several minutes to have their posts go through the fanout process. This could lead to race conditions with `@replies` to the post, which we could mitigate by re-ordering the posts at serve time. We could also avoid fanning out posts from highly-followed users. Instead, we could search to find posts for highly-followed users, merge the search results with the user's home timeline results, then re-order the posts at serve time.
 
-We could also avoid fanning out posts from highly-followed users.  Instead, we could search to find posts for highly-followed users, merge the search results with the user's home timeline results, then re-order the posts at serve time.
+### Additional optimizations
+* Keep only several hundred posts for each timeline in `Memory Cache`
+* Keep only active users' home timeline info in the `Memory Cache`
+  * If a user was not previously active in the past 30 days, we could rebuild the timeline from the `SQL Database`
+    * Query the `User Graph` service to determine who the user is following
+    * Get the posts from the `SQL Database` and add them to the `Memory Cache`
+* Store only a month/week of posts in the `Post Info` service
+* Store only active users in the `User Info` service
+* The `Search Cluster` would likely need to keep the posts in memory to keep latency low
 
-Additional optimizations include:
-
-* Keep only several hundred posts for each home timeline in the **Memory Cache**
-* Keep only active users' home timeline info in the **Memory Cache**
-    * If a user was not previously active in the past 30 days, we could rebuild the timeline from the **SQL Database**
-        * Query the **User Graph Service** to determine who the user is following
-        * Get the posts from the **SQL Database** and add them to the **Memory Cache**
-* Store only a month of posts in the **Tweet Info Service**
-* Store only active users in the **User Info Service**
-* The **Search Cluster** would likely need to keep the posts in memory to keep latency low
-
-We'll also want to address the bottleneck with the **SQL Database**.
-
-Although the **Memory Cache** should reduce the load on the database, it is unlikely the **SQL Read Replicas** alone would be enough to handle the cache misses.  We'll probably need to employ additional SQL scaling patterns.
-
-The high volume of writes would overwhelm a single **SQL Write Master-Slave**, also pointing to a need for additional scaling techniques.
+### `SQL Database` bottlenecks
+Although the `Memory Cache` should reduce the load on the database, it is unlikely the `SQL Read Replicas` alone would be enough to handle the cache misses. We'll probably need to employ additional SQL scaling patterns. The high volume of writes would overwhelm a single `SQL Write Master-Slave`, also pointing to a need for additional scaling techniques.
 
 * [Federation](https://github.com/donnemartin/system-design-primer#federation)
 * [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
 * [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
 * [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
 
-We should also consider moving some data to a **NoSQL Database**.
+We should also consider moving some data to a `NoSQL Database`.
 
 ## Additional talking points
-
-> Additional topics to dive into, depending on the problem scope and time remaining.
-
-#### NoSQL
-
-* [Key-value store](https://github.com/donnemartin/system-design-primer#key-value-store)
-* [Document store](https://github.com/donnemartin/system-design-primer#document-store)
-* [Wide column store](https://github.com/donnemartin/system-design-primer#wide-column-store)
-* [Graph database](https://github.com/donnemartin/system-design-primer#graph-database)
-* [SQL vs NoSQL](https://github.com/donnemartin/system-design-primer#sql-or-nosql)
+### NoSQL
+* [Key-value store](../topics/system-design-primer#key-value-store)
+* [Document store](../topics/system-design-primer#document-store)
+* [Wide column store](../topics/system-design-primer#wide-column-store)
+* [Graph database](../topics/system-design-primer#graph-database)
+* [SQL vs NoSQL](../topics/system-design-primer#sql-or-nosql)
 
 ### Caching
-
 * Where to cache
-    * [Client caching](https://github.com/donnemartin/system-design-primer#client-caching)
-    * [CDN caching](https://github.com/donnemartin/system-design-primer#cdn-caching)
-    * [Web server caching](https://github.com/donnemartin/system-design-primer#web-server-caching)
-    * [Database caching](https://github.com/donnemartin/system-design-primer#database-caching)
-    * [Application caching](https://github.com/donnemartin/system-design-primer#application-caching)
+  * [Client caching](../topics/system-design-primer#client-caching)
+  * [CDN caching](../topics/system-design-primer#cdn-caching)
+  * [Web server caching](../topics/system-design-primer#web-server-caching)
+  * [Database caching](../topics/system-design-primer#database-caching)
+  * [Application caching](../topics/system-design-primer#application-caching)
 * What to cache
-    * [Caching at the database query level](https://github.com/donnemartin/system-design-primer#caching-at-the-database-query-level)
-    * [Caching at the object level](https://github.com/donnemartin/system-design-primer#caching-at-the-object-level)
+  * [Caching at the database query level](../topics/system-design-primer#caching-at-the-database-query-level)
+  * [Caching at the object level](../topics/system-design-primer#caching-at-the-object-level)
 * When to update the cache
-    * [Cache-aside](https://github.com/donnemartin/system-design-primer#cache-aside)
-    * [Write-through](https://github.com/donnemartin/system-design-primer#write-through)
-    * [Write-behind (write-back)](https://github.com/donnemartin/system-design-primer#write-behind-write-back)
-    * [Refresh ahead](https://github.com/donnemartin/system-design-primer#refresh-ahead)
+  * [Cache-aside](../topics/system-design-primer#cache-aside)
+  * [Write-through](../topics/system-design-primer#write-through)
+  * [Write-behind (write-back)](../topics/system-design-primer#write-behind-write-back)
+  * [Refresh ahead](../topics/system-design-primer#refresh-ahead)
 
 ### Asynchronism and microservices
-
-* [Message queues](https://github.com/donnemartin/system-design-primer#message-queues)
-* [Task queues](https://github.com/donnemartin/system-design-primer#task-queues)
-* [Back pressure](https://github.com/donnemartin/system-design-primer#back-pressure)
-* [Microservices](https://github.com/donnemartin/system-design-primer#microservices)
+* [Message queues](../topics/system-design-primer#message-queues)
+* [Task queues](../topics/system-design-primer#task-queues)
+* [Back pressure](../topics/system-design-primer#back-pressure)
+* [Microservices](../topics/system-design-primer#microservices)
 
 ### Communications
-
-* Discuss tradeoffs:
-    * External communication with clients - [HTTP APIs following REST](https://github.com/donnemartin/system-design-primer#representational-state-transfer-rest)
-    * Internal communications - [RPC](https://github.com/donnemartin/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](https://github.com/donnemartin/system-design-primer#service-discovery)
+* Tradeoffs
+  * External communication with clients - [HTTP APIs following REST](../topics/system-design-primer#representational-state-transfer-rest)
+  * Internal communications - [RPC](../topics/system-design-primer#remote-procedure-call-rpc)
+* [Service discovery](../topics/system-design-primer#service-discovery)
 
 ### Security
-
-Refer to the [security section](https://github.com/donnemartin/system-design-primer#security).
+Refer to the [security section](../topics/system-design-primer#security).
 
 ### Latency numbers
+See [Latency numbers every programmer should know](../topics/system-design-primer#latency-numbers-every-programmer-should-know).
 
-See [Latency numbers every programmer should know](https://github.com/donnemartin/system-design-primer#latency-numbers-every-programmer-should-know).
-
-### Footnotes
-
-* Continue benchmarking and monitoring your system to address bottlenecks as they come up
-* Scaling is an iterative process
-
+## Footnotes
 [^conversion-guide]: Handy conversion guide
     - 2.5 million seconds per month
     - 1 request per second = 2.5 million requests per month
@@ -394,122 +343,4 @@ See [Latency numbers every programmer should know](https://github.com/donnemarti
     - 400 requests per second = 1 billion requests per month
     - Scaling is an iterative process
 [^fanout]: [System Design: Fan-Out with Twitter](https://medium.com/@gitaeklee/system-design-fan-out-with-twitter-d071a6799893)
-
-<!-- # Social Newsfeed
-- [Social Newsfeed](#social-newsfeed)
-  - [Overview](#overview)
-  - [Solution](#solution)
-  - [Features](#features)
-  - [Functional Requirements](#functional-requirements)
-  - [System](#system)
-  - [Links](#links)
-
-## Overview
-
-## Solution
-<details>
-  <summary>Diagram</summary>
-  
-  ![](./_assets/twitter.png)
-</details>
-
-## Features
-1. 
-
-## Functional Requirements
-1. 
-
-## System
-- 
-
----
-## Links
-- [`donnemartin/system-design-primer`](https://github.com/donnemartin/system-design-primer/tree/master)
-- [Twitter System Design - YouTube](https://www.youtube.com/watch?v=EkudBdvbDhs)
-- [Twitter System Design - Medium](https://medium.com/@karan99/system-design-twitter-793ab06c9355) -->
-
-<!-- # Designing Twitter
-
-# Features
-1. Follow others
-1. Create tweets
-    - 140 Character limit
-    - Images
-    - Videos
-1. View Feed
-
-## Functional Requirements
-1. Users
-    - 500M totals users
-    - 200M active users
-    - 100 reads / day
-      - 200M * 100 => 20B reads / day
-        - 1mb reads per tweet => 20pb data read / day
-          - 1M * 20G * 1000 * 1000 => 20pb
-    - Eventual Consistancy is preferred for this much data
-
-## System
-- Application Servers
-  - Database options
-    - Relation database
-      - If `join`s are needed
-      - Can shard
-      - [CockroachDB](https://www.cockroachlabs.com/) is amazing for this
-    - GraphDB database
-      - Great for finding relations
-  - Caching
-    - In front of the database
-      - Object storage for hella fast reads
-      - CDN Network tied to Object Storage
-        - Polling as immediate writes to the CDN aren't overloaded
-        - Also because different locations are looking at different tweets
-  - Interactions
-    - Create tweet
-      - `uid`
-      - text
-      - media
-    - Getting Feed
-      - `uid`
-    - Follow
-      - `uid`
-  - Database Tables
-    - Tweets
-      - Timestamp
-      - Media
-        - Not in DB => Object storage
-    - Follows
-      - followee
-      - follower
-        - Index on follower
-          - Because read heavy
-    - 50GB per day
-      - 500 writes / second
-      - Read only replicas
-        - Sharding
-          - Okay if not on time
-          - Sharding on `uid`
-            - If on `tweetid` we don't know which shard to hit
-              - Would be pretty expensive
-            - Need to order based on created
-              - Can wait on scroll not all immediatly
-            - Latency would also be an issue
-              - Can create news feed asynchronously
-                - Cuz 200M isn't a lot with tweets this small
-    - Can use `pub/sub`
-      - [Apache Kafka](https://kafka.apache.org/) could be an amazing option here
-    - Save all feeds at once
-      - Will want to shard cache
-    - Updating feeds
-      - If user with many followers (e.g. User w/100M followers on high end)
-      - Cache might be a bad option here
-
-Karan Pratap Singh
-- https://leanpub.com/systemdesign
-- https://github.com/karanpratapsingh/system-design
-- https://dev.to/karanpratapsingh/system-design-twitter-865
-
-Donne Martin
-- https://www.geeksforgeeks.org/design-twitter-a-system-design-interview-question/
-
-Misc
-- https://github.com/donnemartin/system-design-primer/ -->
+[^latency]: Latency numbers every programmer should know](../basics/additional.md#latency-numbers-every-programmer-should-know)

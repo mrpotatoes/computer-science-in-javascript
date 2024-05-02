@@ -1,7 +1,7 @@
 # Reverse proxy (web server)
 
 <p align="center">
-  <img src="images/n41Azff.png">
+  <img src="../_assets/topics/reverse-proxy-1.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
