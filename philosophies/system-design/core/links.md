@@ -1,6 +1,0 @@
-- https://www.educative.io/blog/complete-guide-to-system-design
-- https://www.educative.io/blog/new-to-system-design-where-to-start
-- https://www.freecodecamp.org/news/system-design-interview-practice-tutorial/
-- https://www.youtube.com/watch?v=m8Icp_Cid5o (1.5hr)
-- https://workat.tech/system-design/article/system-design-interview-template-sxk5oafe1oty
-- https://towardsdatascience.com/system-design-101-b8f15162ef7c
