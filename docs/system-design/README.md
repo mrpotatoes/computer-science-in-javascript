@@ -1,11 +1,11 @@
-# Designing Applications
+# System Design
 > Learn how to design large-scale systems.
 >
 > Prep for the system design interview.
 
 <p align="center"><img src="./_assets/hero-image.jpg"></p>
 
-- [Designing Applications](#designing-applications)
+- [System Design](#system-design)
   - [TODOs](#todos)
   - [Start Here](#start-here)
   - [Core Topics](#core-topics)
