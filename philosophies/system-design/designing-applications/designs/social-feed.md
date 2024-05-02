@@ -157,14 +157,14 @@
 
 ## Step 3: Design core components
 ### Use case: Create post
-Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../topics/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a **NoSQL database** or **Memory Cache**. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an **[Object Store](../topics/database.md#document-store)**.
+Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../topics/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a `NoSQL database` or `Memory Cache`. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an `[Object Store](../topics/database.md#document-store)`.
 
-* `Client` submits a post to the `Web Server` (**[reverse proxy](../topics/reverse-proxy-web-server.md)** in this case)
+* `Client` submits a post to the `Web Server` (`[reverse proxy](../topics/reverse-proxy-web-server.md)` in this case)
   * `Web Server` forwards  request to the `Write Service`
-    * `Write Service` stores the post in user's timeline in a **`SQL database`**
-    * `Write Service` submits (or `POST`s) to the **[Fanout Service](../topics/fanout-service.md)**
-      * Query `User Graph Service` to find `Client`s followers in **[Memory Cache](../topics/cache.md#application-caching)**
-      * Save post in ***home timeline of user's followers*** in **Memory Cache**
+    * `Write Service` stores the post in user's timeline in a ``SQL database``
+    * `Write Service` submits (or `POST`s) to the `[Fanout Service](../topics/fanout-service.md)`
+      * Query `User Graph Service` to find `Client`s followers in `[Memory Cache](../topics/cache.md#application-caching)`
+      * Save post in ***home timeline of user's followers*** in `Memory Cache`
         * $O(n)$: $1K$ followers $=$ $1K$ lookups & inserts
       * Store media in the [Object Store](../topics/database.md#document-store)
       * Uses the `Notification Service`
@@ -191,7 +191,7 @@ Response
 }
 ```
 
-Internal `API` calls may use either a **[`Remote Procedure Call`](../topics/communication.md#remote-procedure-call-rpc)** or simply a service request to an `API Gateway` to route to the.
+Internal `API` calls may use either a [`Remote Procedure Call`](../topics/communication.md#remote-procedure-call-rpc) or simply a service request to an `API Gateway` to route to the.
 
 ### Use case: User views the home timeline
 * `Client` requests a home timeline from `Web Server`
@@ -249,7 +249,7 @@ api.get('https://example.com/api/v1/search?query=hello+world', {
 ```
 
 ## Step 4: Scale the design
-> > It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them. For example, what issues are addressed by adding a `Load Balancer` with multiple Web Servers? `CDN`? `Master-Slave Replicas`? What are the alternatives and **Trade-Offs** for each?
+> > It's important to discuss what bottlenecks you might encounter with the initial design and how you might address each of them. For example, what issues are addressed by adding a `Load Balancer` with multiple Web Servers? `CDN`? `Master-Slave Replicas`? What are the alternatives and `Trade-Offs` for each?
 
 ![Scaled Design](../_assets/social-feed-scaled.png)
 
@@ -260,18 +260,18 @@ First steps could be
 3. Repeat. See [Design a system that scales to millions of users on AWS](../scaling_aws/) as a sample on how to iteratively scale the initial design.
 
 ### Other items to consider using
-* [DNS](https://github.com/donnemartin/system-design-primer#domain-name-system)
-* [CDN](https://github.com/donnemartin/system-design-primer#content-delivery-network)
-* [Load balancer](https://github.com/donnemartin/system-design-primer#load-balancer)
-* [Horizontal scaling](https://github.com/donnemartin/system-design-primer#horizontal-scaling)
-* [Web server (reverse proxy)](https://github.com/donnemartin/system-design-primer#reverse-proxy-web-server)
-* [API server (application layer)](https://github.com/donnemartin/system-design-primer#application-layer)
-* [Cache](https://github.com/donnemartin/system-design-primer#cache)
-* [Relational database management system (RDBMS)](https://github.com/donnemartin/system-design-primer#relational-database-management-system-rdbms)
-* [SQL write master-slave failover](https://github.com/donnemartin/system-design-primer#fail-over)
-* [Master-slave replication](https://github.com/donnemartin/system-design-primer#master-slave-replication)
-* [Consistency patterns](https://github.com/donnemartin/system-design-primer#consistency-patterns)
-* [Availability patterns](https://github.com/donnemartin/system-design-primer#availability-patterns)
+* [DNS](../topics/domain-name-system.md)
+* [CDN](../topics/content-delivery-network.md)
+* [Load balancer](../topics/load-balancer.md)
+* [Horizontal scaling](../topics/load-balancer.md#horizontal-scaling)
+* [Web server (reverse proxy)](../topics/reverse-proxy-web-server.md)
+* [API server (application layer)](../topics/application-layer.md)
+* [Cache](../topics/cache.md)
+* [Relational database management system (RDBMS)](../topics/database.md)
+* [SQL write master-slave failover](../topics/availability-patterns.md#fail-over)
+* [Master-slave replication](../topics/database.md#master-master-replication)
+* [Consistency patterns](../topics/consistency-patterns.md)
+* [Availability patterns](../topics/availability-patterns.md)
 
 The `Fanout Service` is a potential bottleneck. Users with millions of followers could take several minutes to have their posts go through the fanout process. This could lead to race conditions with `@replies` to the post, which we could mitigate by re-ordering the posts at serve time. We could also avoid fanning out posts from highly-followed users. Instead, we could search to find posts for highly-followed users, merge the search results with the user's home timeline results, then re-order the posts at serve time.
 
@@ -288,10 +288,10 @@ The `Fanout Service` is a potential bottleneck. Users with millions of followers
 ### `SQL Database` bottlenecks
 Although the `Memory Cache` should reduce the load on the database, it is unlikely the `SQL Read Replicas` alone would be enough to handle the cache misses. We'll probably need to employ additional SQL scaling patterns. The high volume of writes would overwhelm a single `SQL Write Master-Slave`, also pointing to a need for additional scaling techniques.
 
-* [Federation](https://github.com/donnemartin/system-design-primer#federation)
-* [Sharding](https://github.com/donnemartin/system-design-primer#sharding)
-* [Denormalization](https://github.com/donnemartin/system-design-primer#denormalization)
-* [SQL Tuning](https://github.com/donnemartin/system-design-primer#sql-tuning)
+* [Federation](../topics/database.md#federation)
+* [Sharding](../topics/database.md#sharding)
+* [Denormalization](../topics/database.md#denormalization)
+* [SQL Tuning](../topics/database.md#sql-tuning)
 
 We should also consider moving some data to a `NoSQL Database`.
 
