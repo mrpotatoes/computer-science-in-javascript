@@ -1,9 +1,9 @@
 # Interview Questions
 > Coding Questions
 
-## General Coding Exercises
+## General
 <details>
-  <summary>Exercise List</summary>
+  <summary>Exercises</summary>
   <table>
     <thead>
       <tr>
@@ -88,9 +88,9 @@
   </table>
 </details>
 
-## Amazon Coding Exercises
+## Amazon
 <details>
-  <summary>Exercise List</summary>
+  <summary>Exercises</summary>
   <table>
     <thead>
       <tr>
@@ -121,9 +121,9 @@
   </table>
 </details>
 
-## Google Coding Exercises
+## Google
 <details>
-  <summary>Exercise List</summary>
+  <summary>Exercises</summary>
   <table>
     <thead>
       <tr>

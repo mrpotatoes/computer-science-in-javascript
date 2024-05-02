@@ -1,10 +1,26 @@
 # Todos
-## General
-- [ ] Recreate all the diagrams into my own (draw.io)
+## Coding Exercises
+- [ ] [General](./interview-questions/README.md#general)
+- [ ] [Amazon](./interview-questions/README.md#amazon)
+- [ ] [Google](./interview-questions/README.md#google)
 
-## System Design Exercises
+### System Design
 > Do these in the suggested order below
 
+#### Basics/Core
+- [ ] House Cleaning
+  - [ ] Break up documents into smaller chuncks
+  - [ ] Clean up documents
+  - [ ] Link to documents correctly
+- [ ] Remove [`./additional-designs.md`](system-design/basics/additional-designs.md). I will never do these, let's be real
+
+#### Topics
+- [ ] These all need to be cleaned up
+- [ ] May need to merge with my older fundamentals
+- [ ] Rename `./topics` to `./core-systems`
+  - [ ] Make sure all links still work
+
+#### Designs
 - [ ] Take the content in [`fundamentals`](docs/system-design/basics/fundamentals.md) and figure out what to do with it
 - [ ] [Back of the Envelope](docs/system-design/basics/__back-of-the-envelope.md), do something with this
 - [ ] Url Shortener
@@ -14,9 +30,11 @@
 - [ ] Maps
 - [ ] Streaming service
 - [ ] Scaling AWS
-- [x] Social feed
+- [x] ~~Social feed~~
 
 ## Diagrams
+> [`Note`]: Some of the docments in System Design should have diagrams
+
 <details>
   <summary>Click to open</summary>
   <table>
