@@ -25,6 +25,8 @@
 > Do these in the suggested order below
 
 #### Basics/Core
+- [ ] Take the content in [`fundamentals`](docs/system-design/basics/fundamentals.md) and figure out what to do with it
+- [ ] [Back of the Envelope](docs/system-design/basics/__back-of-the-envelope.md), do something with this
 - [ ] House Cleaning
   - [ ] Break up documents into smaller chuncks
   - [ ] Clean up documents
@@ -38,8 +40,6 @@
   - [ ] Make sure all links still work
 
 #### Designs
-- [ ] Take the content in [`fundamentals`](docs/system-design/basics/fundamentals.md) and figure out what to do with it
-- [ ] [Back of the Envelope](docs/system-design/basics/__back-of-the-envelope.md), do something with this
 - [ ] Url Shortener
 - [ ] Chat App
 - [ ] Collaborative Document Editing
