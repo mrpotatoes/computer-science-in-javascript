@@ -1,4 +1,5 @@
-# Docs
+# Documentation
+> Thoughts & study guides for computer science that isn't coding focused.
 
 - [Anti Patterns](./anti-patterns/README.md)
 - [Architecture Patterns](./architecture-patterns/README.md)

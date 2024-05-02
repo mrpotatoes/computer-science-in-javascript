@@ -1,8 +1,13 @@
 # Big O Notation
-![Neet Code Big O Thumbnail](./_assets/big-o.jpg)
+![Neet Code Big O Thumbnail](./_assets/hero-image.jpg)
 
 ## Overview
 It's been a long time since I've had to do real math. Either way `Big O` notation is a useful if not a quick bird's eye view of the time and space complexity of a function.
+<details>
+  <summary>Click to open diagram</summary>
+
+  ![](./_assets/diagram-image.png)
+</details>
 
 ## Explanations
 All images are pulled from [CodePal's Big O Analyzer](https://codepal.ai/big-o-analyzer)
@@ -204,11 +209,12 @@ const factorial = (num) => {
 
   ![O(n!) image](./_assets/O-factorial.png)
 </details>
-
 <br />
 
-
-## Footnotes
+## Footnotes & References
 - Doable Danny, [Big O Notation in JavaScript | The Ultimate Beginners Guide with Examples](https://www.doabledanny.com/big-o-notation-in-javascript). 2021
 - Şahin Arslan, [Comprehensive Big O Notation Guide in Plain English, using Javascript](https://www.sahinarslan.tech/posts/comprehensive-big-o-notation-guide-in-plain-english-using-javascript). 2021
-
+- Kavyashree Arun, [Big O: The ultimate pillar of Programming](https://medium.com/codex/big-o-the-ultimate-pillar-of-programming-f8777c898f21). 2021
+- [Know Thy Complexities](https://www.bigocheatsheet.com/)
+- [Big O Notation and Time Complexity (Data Structures & Algorithms)](https://www.youtube.com/watch?v=Qn16oJ49AtM)
+- [Cheatsheet diagram](./_assets/cheatsheet.pdf)
