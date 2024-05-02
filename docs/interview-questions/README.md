@@ -43,7 +43,7 @@
             <li><a href="https://leetcode.com/problems/pascals-triangle/">Pascal&#39;s Triangle</a></li>
             <li><a href="https://leetcode.com/problems/path-sum/">Path Sum</a></li>
             <li><a href="https://leetcode.com/problems/same-tree/">Same Tree</a></li>
-            </ul>
+          </ul>
         </td>      
         <td>
           <ul>
@@ -64,7 +64,7 @@
             <li><a href="https://leetcode.com/problems/count-and-say/">Count and Say</a></li>
             <li><a href="https://leetcode.com/problems/next-permutation/">Next Permutation</a></li>
             <li><a href="https://leetcode.com/problems/swap-nodes-in-pairs/">Swap Nodes in Pairs</a></li>
-            </ul>
+          </ul>
         </td>      
         <td>
           <ul>
@@ -81,7 +81,7 @@
             <li><a href="https://leetcode.com/problems/sudoku-solver/">Sudoku Solver</a></li>
             <li><a href="https://leetcode.com/problems/trapping-rain-water/">Trapping Rain Water</a></li>
             <li><a href="https://leetcode.com/problems/swap-nodes-in-pairs/">Swap Nodes in Pairs</a></li>
-            </ul>
+          </ul>
         </td>
       </tr>
     </tbody>
