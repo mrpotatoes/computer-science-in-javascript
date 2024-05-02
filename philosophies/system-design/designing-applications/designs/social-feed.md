@@ -157,7 +157,7 @@
 
 ## Step 3: Design core components
 ### Use case: Create post
-Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../topics/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a `NoSQL database` or `Memory Cache`. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an `[Object Store](../topics/database.md#document-store)`.
+Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../topics/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a `NoSQL database` or `Memory Cache`. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an [`Object Store`](../topics/database.md#document-store).
 
 * `Client` submits a post to the `Web Server` (`[reverse proxy](../topics/reverse-proxy-web-server.md)` in this case)
   * `Web Server` forwards  request to the `Write Service`
@@ -297,45 +297,45 @@ We should also consider moving some data to a `NoSQL Database`.
 
 ## Additional talking points
 ### NoSQL
-* [Key-value store](../topics/system-design-primer#key-value-store)
-* [Document store](../topics/system-design-primer#document-store)
-* [Wide column store](../topics/system-design-primer#wide-column-store)
-* [Graph database](../topics/system-design-primer#graph-database)
-* [SQL vs NoSQL](../topics/system-design-primer#sql-or-nosql)
+* [Key-value store](../topics/database.md#key-value-store)
+* [Document store](../topics/database.md#document-store)
+* [Wide column store](../topics/database.md#wide-column-store)
+* [Graph database](../topics/database.md#graph-database)
+* [SQL vs NoSQL](../topics/database.md#sql-or-nosql)
 
 ### Caching
 * Where to cache
-  * [Client caching](../topics/system-design-primer#client-caching)
-  * [CDN caching](../topics/system-design-primer#cdn-caching)
-  * [Web server caching](../topics/system-design-primer#web-server-caching)
-  * [Database caching](../topics/system-design-primer#database-caching)
-  * [Application caching](../topics/system-design-primer#application-caching)
+  * [Client caching](../topics/cache.md#client-caching)
+  * [CDN caching](../topics/cache.md#cdn-caching)
+  * [Web server caching](../topics/cache.md#web-server-caching)
+  * [Database caching](../topics/cache.md#database-caching)
+  * [Application caching](../topics/cache.md#application-caching)
 * What to cache
-  * [Caching at the database query level](../topics/system-design-primer#caching-at-the-database-query-level)
-  * [Caching at the object level](../topics/system-design-primer#caching-at-the-object-level)
+  * [Caching at the database query level](../topics/cache.md#caching-at-the-database-query-level)
+  * [Caching at the object level](../topics/cache.md#caching-at-the-object-level)
 * When to update the cache
-  * [Cache-aside](../topics/system-design-primer#cache-aside)
-  * [Write-through](../topics/system-design-primer#write-through)
-  * [Write-behind (write-back)](../topics/system-design-primer#write-behind-write-back)
-  * [Refresh ahead](../topics/system-design-primer#refresh-ahead)
+  * [Cache-aside](../topics/cache.md#cache-aside)
+  * [Write-through](../topics/cache.md#write-through)
+  * [Write-behind (write-back)](../topics/cache.md#write-behind-write-back)
+  * [Refresh ahead](../topics/cache.md#refresh-ahead)
 
 ### Asynchronism and microservices
-* [Message queues](../topics/system-design-primer#message-queues)
-* [Task queues](../topics/system-design-primer#task-queues)
-* [Back pressure](../topics/system-design-primer#back-pressure)
-* [Microservices](../topics/system-design-primer#microservices)
+* [Message queues](../topics/asynchronism.md#message-queues)
+* [Task queues](../topics/asynchronism.md#task-queues)
+* [Back pressure](../topics/asynchronism.md#back-pressure)
+* [Microservices](../topics/asynchronism.md#microservices)
 
 ### Communications
 * Tradeoffs
-  * External communication with clients - [HTTP APIs following REST](../topics/system-design-primer#representational-state-transfer-rest)
-  * Internal communications - [RPC](../topics/system-design-primer#remote-procedure-call-rpc)
-* [Service discovery](../topics/system-design-primer#service-discovery)
+  * External communication with clients - [HTTP APIs following REST](../topics/communication.md#representational-state-transfer-rest)
+  * Internal communications - [RPC](../topics/communication.md#remote-procedure-call-rpc)
+* [Service discovery](../topics/application-layer.md#service-discovery)
 
 ### Security
-Refer to the [security section](../topics/system-design-primer#security).
+Refer to the [security section](../topics/security.md).
 
 ### Latency numbers
-See [Latency numbers every programmer should know](../topics/system-design-primer#latency-numbers-every-programmer-should-know).
+See [Latency numbers every programmer should know](../basics/additional.md#latency-numbers-every-programmer-should-know).
 
 ## Footnotes
 [^conversion-guide]: Handy conversion guide
@@ -345,4 +345,4 @@ See [Latency numbers every programmer should know](../topics/system-design-prime
     - 400 requests per second = 1 billion requests per month
     - Scaling is an iterative process
 [^fanout]: [System Design: Fan-Out with Twitter](https://medium.com/@gitaeklee/system-design-fan-out-with-twitter-d071a6799893)
-[^latency]: Latency numbers every programmer should know](../basics/additional.md#latency-numbers-every-programmer-should-know)
+[^latency]: [Latency numbers every programmer should know](../basics/additional.md#latency-numbers-every-programmer-should-know)
