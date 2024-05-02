@@ -1,4 +1,10 @@
-Because we gotta, no?
+## Interview Questions
+> Coding Questions
+
+- Leetcode
+- Other?
+
+<!-- Because we gotta, no?
 
 [![neetcode.io Big O](interview-questions.jpg)](https://www.youtube.com/watch?v=ft0owvS5tQA)
 
@@ -33,4 +39,4 @@ https://medium.com/javascript-scene/learn-javascript-b631a4af11f2
 https://medium.com/javascript-scene/master-the-javascript-interview-what-is-functional-programming-7f218c68b3a0
 https://medium.com/@_ericelliott/latest
 
-<pre>
+<pre> -->

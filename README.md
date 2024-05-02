@@ -12,10 +12,10 @@ This is my personal reference for computer science (w/o the math sadly) with all
 1. System design secttion is heavily influenced by [Donne Martin's](https://github.com/donnemartin/system-design-primer) work
 
 ## Todos
-- [ ] Reorganize `./philosophies/`
-  - [x] Branch: `feature/reorg-docs`
-  - [x] `./philosophies/` → `./docs`
-- [ ] Merge `system-design/designing-applications/topics/` with `./philosophies/system-design/core/`
 - [ ] Recreate all the diagrams into my own (draw.io)
-- [ ] Rename all `README.md` files to `index.md` except for root one
+- [ ] Reorganize `./philosophies/`
+  - [x] ~~Branch: `feature/reorg-docs`~~
+  - [x] ~~`./philosophies/` → `./docs`~~
+- [ ] Merge `system-design/designing-applications/topics/` with `./philosophies/system-design/core/`
+- [x] ~~Rename all `README.md` files to `index.md` except for root one~~
 - [ ] Redo the tables in `designing-applications/` `README.md` so it doesn't look so wierd
