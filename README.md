@@ -35,10 +35,19 @@ This is my personal reference for computer science (w/o the math sadly) with all
 1. System design secttion is heavily influenced by [Donne Martin's](https://github.com/donnemartin/system-design-primer) work
 
 ## Todos
+### General
 - [ ] Recreate all the diagrams into my own (draw.io)
-- [x] ~~Reorganize `./philosophies/`~~
-  - [x] ~~Branch: `feature/reorg-docs`~~
-  - [x] ~~`./philosophies/` → `./docs`~~
-- [x] ~~Rename all `README.md` files to `index.md` except for root one~~
-- [x] ~~Merge `system-design/designing-applications/topics/` with `./philosophies/system-design/core/`~~
-- [x] ~~Redo the tables in `designing-applications/` `README.md` so it doesn't look so wierd~~
+
+### System Design
+> Do these in the suggested order below
+
+- [ ] Take the content in [`fundamentals`](docs/system-design/basics/fundamentals.md) and figure out what to do with it
+- [ ] [Back of the Envelope](docs/system-design/basics/__back-of-the-envelope.md), do something with this
+- [ ] Url Shortener
+- [ ] Chat App
+- [ ] Collaborative Document Editing
+- [ ] Cloud Storage
+- [ ] Maps
+- [ ] Streaming service
+- [ ] Scaling AWS
+- [x] Social feed
