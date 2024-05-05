@@ -131,3 +131,4 @@
 - [ ] Run spell check on 
 - [ ] All documents in `./docs`
 - [ ] All code in `./src`
+- [ ] Delete `./docs/system-design/basics/additional-designs.md` since I'm not interested in doing those
