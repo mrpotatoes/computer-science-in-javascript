@@ -66,22 +66,22 @@
       <tr valign="top">
         <td>
           <ul>
-            <li><a href="./system-design/topics/application-layer.md">application-layer.md</a></li>
-            <li><a href="./system-design/topics/asynchronism.md">asynchronism.md</a></li>
-            <li><a href="./system-design/topics/availability-patterns.md">availability-patterns.md</a></li>
-            <li><a href="./system-design/topics/availability-vs-consistency.md">availability-vs-consistency.md</a></li>
-            <li><a href="./system-design/topics/cache.md">cache.md</a></li>
-            <li><a href="./system-design/topics/communication.md">communication.md</a></li>
-            <li><a href="./system-design/topics/consistency-patterns.md">consistency-patterns.md</a></li>
-            <li><a href="./system-design/topics/content-delivery-network.md">content-delivery-network.md</a></li>
-            <li><a href="./system-design/topics/database.md">database.md</a></li>
-            <li><a href="./system-design/topics/domain-name-system.md">domain-name-system.md</a></li>
-            <li><a href="./system-design/topics/fanout-service.md">fanout-service.md</a></li>
-            <li><a href="./system-design/topics/latency-vs-throughput.md">latency-vs-throughput.md</a></li>
-            <li><a href="./system-design/topics/load-balancer.md">load-balancer.md</a></li>
-            <li><a href="./system-design/topics/performance-vs-scalability.md">performance-vs-scalability.md</a></li>
-            <li><a href="./system-design/topics/reverse-proxy-web-server.md">reverse-proxy-web-server.md</a></li>
-            <li><a href="./system-design/topics/security.md">security.md</a></li>
+            <li><a href="./system-design/systems/application-layer.md">application-layer.md</a></li>
+            <li><a href="./system-design/systems/asynchronism.md">asynchronism.md</a></li>
+            <li><a href="./system-design/systems/availability-patterns.md">availability-patterns.md</a></li>
+            <li><a href="./system-design/systems/availability-vs-consistency.md">availability-vs-consistency.md</a></li>
+            <li><a href="./system-design/systems/cache.md">cache.md</a></li>
+            <li><a href="./system-design/systems/communication.md">communication.md</a></li>
+            <li><a href="./system-design/systems/consistency-patterns.md">consistency-patterns.md</a></li>
+            <li><a href="./system-design/systems/content-delivery-network.md">content-delivery-network.md</a></li>
+            <li><a href="./system-design/systems/database.md">database.md</a></li>
+            <li><a href="./system-design/systems/domain-name-system.md">domain-name-system.md</a></li>
+            <li><a href="./system-design/systems/fanout-service.md">fanout-service.md</a></li>
+            <li><a href="./system-design/systems/latency-vs-throughput.md">latency-vs-throughput.md</a></li>
+            <li><a href="./system-design/systems/load-balancer.md">load-balancer.md</a></li>
+            <li><a href="./system-design/systems/performance-vs-scalability.md">performance-vs-scalability.md</a></li>
+            <li><a href="./system-design/systems/reverse-proxy-web-server.md">reverse-proxy-web-server.md</a></li>
+            <li><a href="./system-design/systems/security.md">security.md</a></li>
           </ul>
         </td>      
         <td>
@@ -96,23 +96,23 @@
         </td>      
         <td>
           <ul>
-            <li><a href="./system-design/designs/chat-app.md">chat-app.md</a></li>
-            <li><a href="./system-design/designs/cloud-storage.md">cloud-storage.md</a></li>
-            <li><a href="./system-design/designs/collaborative-document-editing.md">collaborative-document-editing.md</a></li>
-            <li><a href="./system-design/designs/consistent-hashing.md">consistent-hashing.md</a></li>
-            <li><a href="./system-design/designs/distributed-message-queue.md">distributed-message-queue.md</a></li>
-            <li><a href="./system-design/designs/infra-to-scale-to-millions.md">infra-to-scale-to-millions.md</a></li>
-            <li><a href="./system-design/designs/key-value-store.md">key-value-store.md</a></li>
-            <li><a href="./system-design/designs/maps.md">maps.md</a></li>
-            <li><a href="./system-design/designs/proximity-service.md">proximity-service.md</a></li>
-            <li><a href="./system-design/designs/rate-limiter-2.md">rate-limiter-2.md</a></li>
-            <li><a href="./system-design/designs/rate-limiter.md">rate-limiter.md</a></li>
-            <li><a href="./system-design/designs/scaling-aws.md">scaling-aws.md</a></li>
-            <li><a href="./system-design/designs/social-feed.md">social-feed.md</a></li>
-            <li><a href="./system-design/designs/streaming-service.md">streaming-service.md</a></li>
-            <li><a href="./system-design/designs/typeahead.md">typeahead.md</a></li>
-            <li><a href="./system-design/designs/url-shortener.md">url-shortener.md</a></li>
-            <li><a href="./system-design/designs/web-crawler.md">web-crawler.md</a></li>
+            <li><a href="./system-design/architectures/chat-app.md">chat-app.md</a></li>
+            <li><a href="./system-design/architectures/cloud-storage.md">cloud-storage.md</a></li>
+            <li><a href="./system-design/architectures/collaborative-document-editing.md">collaborative-document-editing.md</a></li>
+            <li><a href="./system-design/architectures/consistent-hashing.md">consistent-hashing.md</a></li>
+            <li><a href="./system-design/architectures/distributed-message-queue.md">distributed-message-queue.md</a></li>
+            <li><a href="./system-design/architectures/infra-to-scale-to-millions.md">infra-to-scale-to-millions.md</a></li>
+            <li><a href="./system-design/architectures/key-value-store.md">key-value-store.md</a></li>
+            <li><a href="./system-design/architectures/maps.md">maps.md</a></li>
+            <li><a href="./system-design/architectures/proximity-service.md">proximity-service.md</a></li>
+            <li><a href="./system-design/architectures/rate-limiter-2.md">rate-limiter-2.md</a></li>
+            <li><a href="./system-design/architectures/rate-limiter.md">rate-limiter.md</a></li>
+            <li><a href="./system-design/architectures/scaling-aws.md">scaling-aws.md</a></li>
+            <li><a href="./system-design/architectures/social-feed.md">social-feed.md</a></li>
+            <li><a href="./system-design/architectures/streaming-service.md">streaming-service.md</a></li>
+            <li><a href="./system-design/architectures/typeahead.md">typeahead.md</a></li>
+            <li><a href="./system-design/architectures/url-shortener.md">url-shortener.md</a></li>
+            <li><a href="./system-design/architectures/web-crawler.md">web-crawler.md</a></li>
           </ul>
         </td>
       </tr>
