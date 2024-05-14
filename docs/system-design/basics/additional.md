@@ -1,11 +1,10 @@
 # Additional Information
-- [Additional Information](#additional-information)
-  - [Powers of two table](#powers-of-two-table)
-    - [Source(s) and further reading](#sources-and-further-reading)
-  - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-    - [Latency numbers visualized](#latency-numbers-visualized)
-    - [Source(s) and further reading](#sources-and-further-reading-1)
-  - [Real world architectures](#real-world-architectures)
+- [Powers of two table](#powers-of-two-table)
+  - [Source(s) and further reading](#sources-and-further-reading)
+- [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+  - [Latency numbers visualized](#latency-numbers-visualized)
+  - [Source(s) and further reading](#sources-and-further-reading-1)
+- [Real world architectures](#real-world-architectures)
 
 
 You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
@@ -115,4 +114,3 @@ Handy metrics based on numbers above:
 | Misc            | **Dapper** - Distributed systems tracing infrastructure                          | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)                                |
 | Misc            | **Kafka** - Pub/sub message queue from LinkedIn                                  | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug)                                                                          |
 | Misc            | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)                                                       |
-|                 | Add an architecture                                                              | [Contribute](#contributing)                                                                                                                    |

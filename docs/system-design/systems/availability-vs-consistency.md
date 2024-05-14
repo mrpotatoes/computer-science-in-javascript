@@ -1,11 +1,10 @@
 # Availability vs Consistency
-- [Availability vs Consistency](#availability-vs-consistency)
-  - [CAP theorem](#cap-theorem)
-    - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
-    - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
-  - [Source(s) and further reading](#sources-and-further-reading)
+- [CAP Theorem](#cap-theorem)
+  - [CP - consistency and partition tolerance](#cp---consistency-and-partition-tolerance)
+  - [AP - availability and partition tolerance](#ap---availability-and-partition-tolerance)
+- [Source(s) and further reading](#sources-and-further-reading)
 
-## CAP theorem
+## CAP Theorem
 
 <p align="center">
   <img src="images/bgLMI2u.png">
@@ -13,11 +12,18 @@
   <i><a href=http://robertgreiner.com/2014/08/cap-theorem-revisited>Source: CAP theorem revisited</a></i>
 </p>
 
+`CAP` Theorem is all about tradeoffs with determining how to build out a distributed database/system. 
+
+![Cap Theorem Diagram](./_cap-theorm.png)
+[^cap-theorm] - Image Attribution
+
 In a distributed computer system, you can only support two of the following guarantees:
 
-* **Consistency** - Every read receives the most recent write or an error
-* **Availability** - Every request receives a response, without guarantee that it contains the most recent version of the information
-* **Partition Tolerance** - The system continues to operate despite arbitrary partitioning due to network failures
+| Part | Translation         | Definition                                                                                                                                                                                                                                                                                                |
+| ---- | ------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `C`  | Consistency         | Every read receives the most recent write or an error. In a consistent system, all nodes see the same data simultaneously. This means that the system is not "eventually consistent" but consistent at all times.                                                                                         |
+| `A`  | Availability        | Every request receives a response, without guarantee that it contains the most recent version of the information. When availability is present in a distributed system, it means that the system remains operational all of the time but this does not mean uptime like we normally would read this term. |
+| `P`  | Partition tolerance | The system continues to operate despite arbitrary partitioning due to network failures. To have partition tolerance, the system must replicate records across combinations of nodes and networks.                                                                                                         |
 
 *Networks aren't reliable, so you'll need to support partition tolerance.  You'll need to make a software tradeoff between consistency and availability.*
 
