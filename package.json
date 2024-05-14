@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "nodemon src/_sandbox/index.js",
     "build": "rollup src/_sandbox/index.js -f cjs",
+    "link-check": "find ./docs ./src -name \\*.md -print0 | xargs -0 -n1 markdown-link-check",
     "test": "jest --config=tools/jest.config.js --verbose",
     "test:watch": "jest --watchAll",
     "generate-hash": "babel-node src/hash-table/generate-hash-fixture.js",
@@ -49,7 +50,10 @@
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
-    "eslint-plugin-react": "^6.9.0"
+    "eslint-plugin-react": "^6.9.0",
+    "install": "^0.13.0",
+    "markdown-link-check": "^3.12.1",
+    "npm": "^10.7.0"
   },
   "babel": {
     "presets": [

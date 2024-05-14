@@ -157,19 +157,19 @@
 
 ## Step 3: Design core components
 ### Use case: Create post
-Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../topics/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a `NoSQL database` or `Memory Cache`. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an [`Object Store`](../topics/database.md#document-store).
+Delivering posts and building the user's timeline is nuanced. Fanning out posts to all followers (60 thousand posts delivered on fanout per second) will overload a traditional [relational database](../architectures/database.md#relational-database-management-system-rdbms). We'll probably want to choose a data store with fast writes such as a `NoSQL database` or `Memory Cache`. Reading `1MB` sequentially from memory takes about 250 microseconds, while reading from `SSD` takes $4x$ and from disk takes $80x$ longer[^latency]. Lastly mediacan be stored in an [`Object Store`](../architectures/database.md#document-store).
 
-* `Client` submits a post to the `Web Server` (`[reverse proxy](../topics/reverse-proxy-web-server.md)` in this case)
+* `Client` submits a post to the `Web Server` (`[reverse proxy](../architectures/reverse-proxy-web-server.md)` in this case)
   * `Web Server` forwards  request to the `Write Service`
     * `Write Service` stores the post in user's timeline in a ``SQL database``
-    * `Write Service` submits (or `POST`s) to the `[Fanout Service](../topics/fanout-service.md)`
-      * Query `User Graph Service` to find `Client`s followers in `[Memory Cache](../topics/cache.md#application-caching)`
+    * `Write Service` submits (or `POST`s) to the `[Fanout Service](../architectures/fanout-service.md)`
+      * Query `User Graph Service` to find `Client`s followers in `[Memory Cache](../architectures/cache.md#application-caching)`
       * Save post in ***home timeline of user's followers*** in `Memory Cache`
         * $O(n)$: $1K$ followers $=$ $1K$ lookups & inserts
-      * Store media in the [Object Store](../topics/database.md#document-store)
+      * Store media in the [Object Store](../architectures/database.md#document-store)
       * Uses the `Notification Service`
 
-A public [`REST API`](../topics/communication.md#representational-state-transfer-rest) would be used to submit a new post all user timelines in the user's relationship graph.
+A public [`REST API`](../architectures/communication.md#representational-state-transfer-rest) would be used to submit a new post all user timelines in the user's relationship graph.
 
 Submitting
 ```js
@@ -191,7 +191,7 @@ Response
 }
 ```
 
-Internal `API` calls may use either a [`Remote Procedure Call`](../topics/communication.md#remote-procedure-call-rpc) or simply a service request to an `API Gateway` to route to the.
+Internal `API` calls may use either a [`Remote Procedure Call`](../architectures/communication.md#remote-procedure-call-rpc) or simply a service request to an `API Gateway` to route to the.
 
 ### Use case: User views the home timeline
 * `Client` requests a home timeline from `Web Server`
@@ -260,18 +260,18 @@ First steps could be
 3. Repeat. See [Design a system that scales to millions of users on AWS](../scaling_aws/) as a sample on how to iteratively scale the initial design.
 
 ### Other items to consider using
-* [DNS](../topics/domain-name-system.md)
-* [CDN](../topics/content-delivery-network.md)
-* [Load balancer](../topics/load-balancer.md)
-* [Horizontal scaling](../topics/load-balancer.md#horizontal-scaling)
-* [Web server (reverse proxy)](../topics/reverse-proxy-web-server.md)
-* [API server (application layer)](../topics/application-layer.md)
-* [Cache](../topics/cache.md)
-* [Relational database management system (RDBMS)](../topics/database.md)
-* [SQL write master-slave failover](../topics/availability-patterns.md#fail-over)
-* [Master-slave replication](../topics/database.md#master-master-replication)
-* [Consistency patterns](../topics/consistency-patterns.md)
-* [Availability patterns](../topics/availability-patterns.md)
+* [DNS](../architectures/domain-name-system.md)
+* [CDN](../architectures/content-delivery-network.md)
+* [Load balancer](../architectures/load-balancer.md)
+* [Horizontal scaling](../architectures/load-balancer.md#horizontal-scaling)
+* [Web server (reverse proxy)](../architectures/reverse-proxy-web-server.md)
+* [API server (application layer)](../architectures/application-layer.md)
+* [Cache](../architectures/cache.md)
+* [Relational database management system (RDBMS)](../architectures/database.md)
+* [SQL write master-slave failover](../architectures/availability-patterns.md#fail-over)
+* [Master-slave replication](../architectures/database.md#master-master-replication)
+* [Consistency patterns](../architectures/consistency-patterns.md)
+* [Availability patterns](../architectures/availability-patterns.md)
 
 The `Fanout Service` is a potential bottleneck. Users with millions of followers could take several minutes to have their posts go through the fanout process. This could lead to race conditions with `@replies` to the post, which we could mitigate by re-ordering the posts at serve time. We could also avoid fanning out posts from highly-followed users. Instead, we could search to find posts for highly-followed users, merge the search results with the user's home timeline results, then re-order the posts at serve time.
 
@@ -288,51 +288,51 @@ The `Fanout Service` is a potential bottleneck. Users with millions of followers
 ### `SQL Database` bottlenecks
 Although the `Memory Cache` should reduce the load on the database, it is unlikely the `SQL Read Replicas` alone would be enough to handle the cache misses. We'll probably need to employ additional SQL scaling patterns. The high volume of writes would overwhelm a single `SQL Write Master-Slave`, also pointing to a need for additional scaling techniques.
 
-* [Federation](../topics/database.md#federation)
-* [Sharding](../topics/database.md#sharding)
-* [Denormalization](../topics/database.md#denormalization)
-* [SQL Tuning](../topics/database.md#sql-tuning)
+* [Federation](../architectures/database.md#federation)
+* [Sharding](../architectures/database.md#sharding)
+* [Denormalization](../architectures/database.md#denormalization)
+* [SQL Tuning](../architectures/database.md#sql-tuning)
 
 We should also consider moving some data to a `NoSQL Database`.
 
 ## Additional talking points
 ### NoSQL
-* [Key-value store](../topics/database.md#key-value-store)
-* [Document store](../topics/database.md#document-store)
-* [Wide column store](../topics/database.md#wide-column-store)
-* [Graph database](../topics/database.md#graph-database)
-* [SQL vs NoSQL](../topics/database.md#sql-or-nosql)
+* [Key-value store](../architectures/database.md#key-value-store)
+* [Document store](../architectures/database.md#document-store)
+* [Wide column store](../architectures/database.md#wide-column-store)
+* [Graph database](../architectures/database.md#graph-database)
+* [SQL vs NoSQL](../architectures/database.md#sql-or-nosql)
 
 ### Caching
 * Where to cache
-  * [Client caching](../topics/cache.md#client-caching)
-  * [CDN caching](../topics/cache.md#cdn-caching)
-  * [Web server caching](../topics/cache.md#web-server-caching)
-  * [Database caching](../topics/cache.md#database-caching)
-  * [Application caching](../topics/cache.md#application-caching)
+  * [Client caching](../architectures/cache.md#client-caching)
+  * [CDN caching](../architectures/cache.md#cdn-caching)
+  * [Web server caching](../architectures/cache.md#web-server-caching)
+  * [Database caching](../architectures/cache.md#database-caching)
+  * [Application caching](../architectures/cache.md#application-caching)
 * What to cache
-  * [Caching at the database query level](../topics/cache.md#caching-at-the-database-query-level)
-  * [Caching at the object level](../topics/cache.md#caching-at-the-object-level)
+  * [Caching at the database query level](../architectures/cache.md#caching-at-the-database-query-level)
+  * [Caching at the object level](../architectures/cache.md#caching-at-the-object-level)
 * When to update the cache
-  * [Cache-aside](../topics/cache.md#cache-aside)
-  * [Write-through](../topics/cache.md#write-through)
-  * [Write-behind (write-back)](../topics/cache.md#write-behind-write-back)
-  * [Refresh ahead](../topics/cache.md#refresh-ahead)
+  * [Cache-aside](../architectures/cache.md#cache-aside)
+  * [Write-through](../architectures/cache.md#write-through)
+  * [Write-behind (write-back)](../architectures/cache.md#write-behind-write-back)
+  * [Refresh ahead](../architectures/cache.md#refresh-ahead)
 
 ### Asynchronism and microservices
-* [Message queues](../topics/asynchronism.md#message-queues)
-* [Task queues](../topics/asynchronism.md#task-queues)
-* [Back pressure](../topics/asynchronism.md#back-pressure)
-* [Microservices](../topics/asynchronism.md#microservices)
+* [Message queues](../architectures/asynchronism.md#message-queues)
+* [Task queues](../architectures/asynchronism.md#task-queues)
+* [Back pressure](../architectures/asynchronism.md#back-pressure)
+* [Microservices](../architectures/asynchronism.md#microservices)
 
 ### Communications
 * Tradeoffs
-  * External communication with clients - [HTTP APIs following REST](../topics/communication.md#representational-state-transfer-rest)
-  * Internal communications - [RPC](../topics/communication.md#remote-procedure-call-rpc)
-* [Service discovery](../topics/application-layer.md#service-discovery)
+  * External communication with clients - [HTTP APIs following REST](../architectures/communication.md#representational-state-transfer-rest)
+  * Internal communications - [RPC](../architectures/communication.md#remote-procedure-call-rpc)
+* [Service discovery](../architectures/application-layer.md#service-discovery)
 
 ### Security
-Refer to the [security section](../topics/security.md).
+Refer to the [security section](../architectures/security.md).
 
 ### Latency numbers
 See [Latency numbers every programmer should know](../basics/additional.md#latency-numbers-every-programmer-should-know).

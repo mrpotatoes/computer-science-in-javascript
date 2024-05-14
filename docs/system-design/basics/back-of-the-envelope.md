@@ -41,26 +41,6 @@ Absolute accuracy isn't important. Getting "close enough" is fine.
       - 10^3 = 10^8 * 10^5 => 10^(8-5)
     - 1.5 * 10^3 => 1500 tweets created / second
 
-### Data storage of tweets
-
-
-<!-- ### Example 1
-- Web service
-  - 10^6 requests / seconds
-- Server
-  - 10^4 requests / seconds
-- Load balancer
-  - 10^6 queries / second
-  - 100 servers
-
-### Example 2
-- 10 queries / second
-- Single database server
-  - No need for sharding -->
-
-
-
-
 ## Links
 ### Byte Calculator
 I refuse to remember the formula to convert bytes. It's a dumb thing to memorize. Besides it's not like we live in a world bereft of [tools](https://calcuworld.com/business-calculators/bytes-calculator/) (online or otherise) that exist for free that can handle these conversions. It is simply not useful to keep this in my brain just for doing these calculations for `Back of envelope calculations`. 
