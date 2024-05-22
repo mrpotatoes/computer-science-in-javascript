@@ -5,22 +5,14 @@
 
 <p align="center"><img src="./_assets/hero-image.jpg"></p>
 
-- [TODOs](#todos)
-- [Start Here](#start-here)
-- [Core Systems](#core-systems)
-- [Interview Questions](#interview-questions)
-- [Credits](#credits)
-- [License](#license)
-
 ## TODOs
 - [ ] Consolidate all relevant sources to the bottom of each page
 - [ ] Images
-  - [ ] Pull in all images
+  - [x] Pull in all images
   - [ ] Rename to be discoverable
   - [ ] Relink all images
 - [ ] Remake all diagrams using [draw.io](https://draw.io/)
 - [ ] Add each system design document
-- [ ] Rewrite content into my own words
 
 ## Start Here
 Learning how to design scalable systems will help you become a better engineer. System design is a broad topic. There is a vast amount of resources scattered throughout the web on system design principles.
@@ -33,47 +25,120 @@ Learning how to design scalable systems will help you become a better engineer. 
 1. [Back of the Envelope Calculations](./basics/back-of-the-envelope.md)
 
 ## [Core Systems](README.md)
-| Systems                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-| ----------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| [Application Layer](./systems/application-layer.md)                     | Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently. Adding a new API results in adding application servers without necessarily adding additional web servers. The **single responsibility principle** advocates for small and autonomous services that work together. Small teams with small services can plan more aggressively for rapid growth. |
-| [Asynchronism](./systems/asynchronism.md)                               | Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line                                                                                                                                                                                                                                                                                                                                |
-| [Availability Patterns](./systems/availability-patterns.md)             | There are two complementary patterns to support high availability: `fail-over` and `replication`                                                                                                                                                                                                                                                                                                                                                   |
-| [Availability Vs Consistency](./systems/availability-vs-consistency.md) | Pick one: Consistency, Availability, Partition Tolerance                                                                                                                                                                                                                                                                                                                                                                                           |
-| [Cache](./systems/cache.md)                                             | Caching improves page load times and can reduce the load on your servers and databases                                                                                                                                                                                                                                                                                                                                                             |
-| [Communication](./systems/communication.md)                             | HTTP methods, but, like, there's more to it                                                                                                                                                                                                                                                                                                                                                                                                        |
-| [Consistency Patterns](./systems/consistency-patterns.md)               | Basically synchronization                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| [Content Delivery Network](./systems/content-delivery-network.md)       | A globally distributed network of proxy servers                                                                                                                                                                                                                                                                                                                                                                                                    |
-| [Database](./systems/database.md)                                       | Data storage                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-| [Domain Name System](./systems/domain-name-system.md)                   | DNS translates a domain name to an IP address                                                                                                                                                                                                                                                                                                                                                                                                      |
-| [Latency Vs Throughput](./systems/latency-vs-throughput.md)             | Just read it, the simplest topic in here                                                                                                                                                                                                                                                                                                                                                                                                           |
-| [Load Balancer](./systems/load-balancer.md)                             | Load balancers distribute incoming client requests to computing resources                                                                                                                                                                                                                                                                                                                                                                          |
-| [Performance Vs Scalability](./systems/performance-vs-scalability.md)   | We all know this ...                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| [Reverse Proxy Web Server](./systems/reverse-proxy-web-server.md)       | A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public                                                                                                                                                                                                                                                                                                                                   |
-| [Security](./systems/security.md)                                       | ... security?                                                                                                                                                                                                                                                                                                                                                                                                                                      |
+<table>
+  <thead>
+    <tr>
+      <th width="20%">Systems</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="./systems/application-layer.md">Application Layer</a></td>
+      <td>Separating out the web layer from the application layer (also known as platform layer) allows you to scale and configure both layers independently. Adding a new API results in adding application servers without necessarily adding additional web servers. The <strong>single responsibility principle</strong> advocates for small and autonomous services that work together. Small teams with small services can plan more aggressively for rapid growth.</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/asynchronism.md">Asynchronism</a></td>
+      <td>Asynchronous workflows help reduce request times for expensive operations that would otherwise be performed in-line</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/availability-patterns.md">Availability Patterns</a></td>
+      <td>There are two complementary patterns to support high availability: <code>fail-over</code> and <code>replication</code></td>
+    </tr>
+    <tr>
+      <td><a href="./systems/availability-vs-consistency.md">Availability Vs Consistency</a></td>
+      <td>Pick one: Consistency, Availability, Partition Tolerance</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/cache.md">Cache</a></td>
+      <td>Caching improves page load times and can reduce the load on your servers and databases</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/communication.md">Communication</a></td>
+      <td>HTTP methods, but, like, there&#39;s more to it</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/consistency-patterns.md">Consistency Patterns</a></td>
+      <td>Basically synchronization</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/content-delivery-network.md">Content Delivery Network</a></td>
+      <td>A globally distributed network of proxy servers</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/database.md">Database</a></td>
+      <td>Data storage</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/domain-name-system.md">Domain Name System</a></td>
+      <td>DNS translates a domain name to an IP address</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/latency-vs-throughput.md">Latency Vs Throughput</a></td>
+      <td>Just read it, the simplest topic in here</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/load-balancer.md">Load Balancer</a></td>
+      <td>Load balancers distribute incoming client requests to computing resources</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/performance-vs-scalability.md">Performance Vs Scalability</a></td>
+      <td>We all know this ...</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/reverse-proxy-web-server.md">Reverse Proxy Web Server</a></td>
+      <td>A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public</td>
+    </tr>
+    <tr>
+      <td><a href="./systems/security.md">Security</a></td>
+      <td>... security?</td>
+    </tr>
+  </tbody>
+</table>
 
 ## Interview Questions
-| Design a ...                   | Solution                                                     |
-| ------------------------------ | ------------------------------------------------------------ |
-| Social feed                    | [Solution](./archtectures/social-feed.md)                    |
-| Url Shortener                  | [Solution](./archtectures/url-shortener.md)                  |
-| Scaling AWS                    | [Solution](./archtectures/scaling-aws.md)                    |
-| Chat App                       | [Solution](./archtectures/chat-app.md)                       |
-| Collaborative Document Editing | [Solution](./archtectures/collaborative-document-editing.md) |
-| Cloud Storage                  | [Solution](./archtectures/cloud-storage.md)                  |
-| Maps                           | [Solution](./archtectures/maps.md)                           |
-| Streaming service              | [Solution](./archtectures/streaming-service.md)              |
-
-<!--
-
-| Consistent Hashing         | [Solution](./archtectures/consistent-hashing.md)         |
-| W------------------------r | [------------------------------------------------------) |
-| Typeahead                  | [Solution](./archtectures/typeahead.md)                  |
-| Rate Limiter               | [Solution](./archtectures/rate-limiter.md)               |
-| Key Value Store            | [Solution](./archtectures/key-value-store.md)            |
-| Infra to scale to millions | [Solution](./archtectures/infra-to-scale-to-millions.md) |
-| Distributed Message Queue  | [Solution](./archtectures/distributed-message-queue.md)  |
-
--->
+<table>
+  <thead>
+    <tr>
+      <th width="20%">Design a ...</th>
+      <th>Solution</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Social feed</td>
+      <td><a href="./archtectures/social-feed.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Url Shortener</td>
+      <td><a href="./archtectures/url-shortener.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Scaling AWS</td>
+      <td><a href="./archtectures/scaling-aws.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Chat App</td>
+      <td><a href="./archtectures/chat-app.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Collaborative Document Editing</td>
+      <td><a href="./archtectures/collaborative-document-editing.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Cloud Storage</td>
+      <td><a href="./archtectures/cloud-storage.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Maps</td>
+      <td><a href="./archtectures/maps.md">Solution</a></td>
+    </tr>
+    <tr>
+      <td>Streaming service</td>
+      <td><a href="./archtectures/streaming-service.md">Solution</a></td>
+    </tr>
+  </tbody>
+</table>
 
 ## Credits
 - Credits and sources are provided throughout this repo. Special thanks to Donne Martin ([`donnemartin/system-design-primer`](https://github.com/donnemartin/system-design-primer))

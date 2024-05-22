@@ -1,30 +1,29 @@
 # Design a social media feed
 
-- [Design a social media feed](#design-a-social-media-feed)
-  - [Step 1: Determine Use Cases \& Constraints](#step-1-determine-use-cases--constraints)
-    - [Use cases](#use-cases)
-      - [In Scope](#in-scope)
-      - [Out of scope](#out-of-scope)
-    - [Constraints](#constraints)
-      - [Usage \& Space \[^conversion-guide\]](#usage--space-conversion-guide)
-  - [Step 2: Create a high level design](#step-2-create-a-high-level-design)
-  - [Step 3: Design core components](#step-3-design-core-components)
-    - [Use case: Create post](#use-case-create-post)
-    - [Use case: User views the home timeline](#use-case-user-views-the-home-timeline)
-    - [Use case: User views the user timeline](#use-case-user-views-the-user-timeline)
-    - [Use case: User searches keywords](#use-case-user-searches-keywords)
-  - [Step 4: Scale the design](#step-4-scale-the-design)
-    - [Other items to consider using](#other-items-to-consider-using)
-    - [Additional optimizations](#additional-optimizations)
-    - [`SQL Database` bottlenecks](#sql-database-bottlenecks)
-  - [Additional talking points](#additional-talking-points)
-    - [NoSQL](#nosql)
-    - [Caching](#caching)
-    - [Asynchronism and microservices](#asynchronism-and-microservices)
-    - [Communications](#communications)
-    - [Security](#security)
-    - [Latency numbers](#latency-numbers)
-  - [Footnotes](#footnotes)
+- [Step 1: Determine Use Cases \& Constraints](#step-1-determine-use-cases--constraints)
+  - [Use cases](#use-cases)
+    - [In Scope](#in-scope)
+    - [Out of scope](#out-of-scope)
+  - [Constraints](#constraints)
+    - [Usage \& Space \[^conversion-guide\]](#usage--space-conversion-guide)
+- [Step 2: Create a high level design](#step-2-create-a-high-level-design)
+- [Step 3: Design core components](#step-3-design-core-components)
+  - [Use case: Create post](#use-case-create-post)
+  - [Use case: User views the home timeline](#use-case-user-views-the-home-timeline)
+  - [Use case: User views the user timeline](#use-case-user-views-the-user-timeline)
+  - [Use case: User searches keywords](#use-case-user-searches-keywords)
+- [Step 4: Scale the design](#step-4-scale-the-design)
+  - [Other items to consider using](#other-items-to-consider-using)
+  - [Additional optimizations](#additional-optimizations)
+  - [`SQL Database` bottlenecks](#sql-database-bottlenecks)
+- [Additional talking points](#additional-talking-points)
+  - [NoSQL](#nosql)
+  - [Caching](#caching)
+  - [Asynchronism and microservices](#asynchronism-and-microservices)
+  - [Communications](#communications)
+  - [Security](#security)
+  - [Latency numbers](#latency-numbers)
+- [Footnotes](#footnotes)
 
 ## Step 1: Determine Use Cases & Constraints
 > Gather requirements and scope the problem.
@@ -41,35 +40,35 @@
     </tr>
   </thead>
   <tbody>
-    <tr width="600px">
+    <tr>
       <td>User</td>
       <td>Shares new content</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>User</td>
       <td>Views home timeline</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>User</td>
       <td>Views another user's timeline</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>User</td>
       <td>Runs a search</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Service</td>
       <td>Push content to followers</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Service</td>
       <td>Push notification(s)</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Service</td>
       <td>Sends emails</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Service</td>
       <td>High availability</td>
     </tr>
@@ -85,15 +84,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr width="600px">
+    <tr>
       <td>Service</td>
       <td>Content parsing</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Service</td>
       <td>Service integrations</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>General</td>
       <td>Analytics</td>
     </tr>
@@ -109,15 +108,15 @@
     </tr>
   </thead>
   <tbody>
-    <tr width="600px">
+    <tr>
       <td>Traffic</td>
       <td>Traffic is not evenly distributed. Posting a tweet should be fast. Fanning out a tweet to all of your followers should be fast, unless you have millions of followers</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Searching</td>
       <td>Needs is read-heavy but should still be fast</td>
     </tr>
-    <tr width="600px">
+    <tr>
       <td>Timeline</td>
       <td>Viewing the timeline should be fast. Social feeds are more read heavy than write heavy therefore you must optimize for fast reads of posts. Ingesting posts is write</td>
     </tr>
