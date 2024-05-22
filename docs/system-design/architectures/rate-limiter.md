@@ -54,7 +54,7 @@ But
 
 A rate limiter needs to _remember_ who is who when they are making a request so decisions can be made based on that requester. Basically we need to save that ID somehow and since we want extremely low so it wouldn't behoove of us to use a disk storage mechanism to save that data. Not even a database (that's disk IO). Instead using `System Memory` (`RAM`) would be the most performant. 
 
-Just remember, you'll need to know _HOW_ much RAM you'll need and that depends on the hash you'd use to identify requester IDs. Servers (or even AWS components) can easily handle 132GB of memory[^memory-angent]! 😳😳😳. 
+Just remember, you'll need to know _HOW_ much RAM you'll need and that depends on the hash you'd use to identify requester IDs. Servers (or even AWS components) can easily handle 132GB of memory[^memory-management]! 😳😳😳. 
 
 About storage. `User + Requests Count`
 
@@ -107,27 +107,23 @@ In either case authentication to the component/service would be re-enabled once 
 2. How to handle spikes?
 
 ### Fixed Window & Sliding Window
-<p align="center">
-  <img src="../_assets/architectures/_fixed-window.png">
-</p>
-
-[^fixed-window] - Image Attribution
+![](../_assets/architectures/_fixed-window.png)
+<br />
+[^fixed-window] Fixed Window - Image Attribution
 
 The `Fixed Window` algorithm is one of the easier algorithms to implement for a rate limiter but doing this would introduce spikes that could become an annoyance or even these spikes could harm the system over time as the requests aren't spread out. The benefit is that it's really easy to impliment but it isn't accurate as there could be spikes it is much easier on resoures (memory in this case).
 
 An alternative is the `Sliding Window` algorithm. Instead of disreguarding the history of a user's requests this algorithm takes that into account. A drawback is storage. For every IP if we want to store the date of the last x requests (if our rule allows for 100 requests per second then we'd store 100 timestamps @ 4 bytes 😳😬😬). 
 
 ### Token Bucket
-<p align="center">
-  <img src="../_assets/architectures/_token-bucket.png">
-</p>
-[^bucket]: Image Attribution
+![](../_assets/architectures/_token-bucket.png)
+<br />
+[^bucket] Token - Image Attribution
 
 ### Leaky Bucket
-<p align="center">
-  <img src="../_assets/architectures/_leaky-bucket.png">
-</p>
-[^bucket]: Image Attribution
+![](../_assets/architectures/_leaky-bucket.png)
+<br />
+[^bucket] Leaky - Image Attribution
 
 ### Counter
 ### Sliding-Window Counter
@@ -141,7 +137,6 @@ An alternative is the `Sliding Window` algorithm. Instead of disreguarding the h
 - [Design a Distributed Scalable API Rate Limiter](https://systemsdesign.cloud/SystemDesign/RateLimiter)
 - [Scaling your API with rate limiters](https://stripe.com/blog/rate-limiters)
 
-- [^bucket]: [What is Token Bucket and Leaky Bucket algorithms | Hans Blog](https://hansliu.com/posts/2020/11/what-is-token-bucket-and-leaky-bucket-algorithms.html)
-- [^memory-angent]: Even though your hardware (virtual or physical) you'll need to account for the operational costs of the hardware used even at the firewall level and this depends on the traffic your system recieves and the money you can spend on this component of your entire system.
-- [^fixed-window]: [Sliding Window- Fixed Rate : Practical Rate Limiting for Web APIs | by msingh | Medium](https://software-factotum.medium.com/sliding-window-fixed-rate-practical-rate-limiting-for-web-apis-c8408a070e4c)
-
+[^bucket]: [What is Token Bucket and Leaky Bucket algorithms | Hans Blog](https://hansliu.com/posts/2020/11/what-is-token-bucket-and-leaky-bucket-algorithms.html)
+[^memory-management]: Even though your hardware (virtual or physical) you'll need to account for the operational costs of the hardware used even at the firewall level and this depends on the traffic your system recieves and the money you can spend on this component of your entire system.
+[^fixed-window]: [Sliding Window- Fixed Rate : Practical Rate Limiting for Web APIs | by msingh | Medium](https://software-factotum.medium.com/sliding-window-fixed-rate-practical-rate-limiting-for-web-apis-c8408a070e4c)

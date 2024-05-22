@@ -1,8 +1,7 @@
 # Application Architecture
-- [Application Architecture](#application-architecture)
-  - [Horizontal Scaling](#horizontal-scaling)
-  - [Other Prerequsites](#other-prerequsites)
-    - [Main bits of an architecture](#main-bits-of-an-architecture)
+- [Horizontal Scaling](#horizontal-scaling)
+- [Other Prerequsites](#other-prerequsites)
+  - [Main bits of an architecture](#main-bits-of-an-architecture)
 
 I'm going to breeze through this section because if you've worked in a professional setting for at least 6 months you'll know most of this already just from experience.
 
@@ -10,11 +9,11 @@ If the basic building blocks of a computer are used in tandem to create a machin
 
 One example is beefing up a computer's components. For instance adding a bigger CPU, a beefier graphics card or more and specialized RAM. Anotrher common (for applications that will serve many users) example of this is `Horizontal Scaling` of systems. This allows for better/easier scaling. Essentially computer replicas that work together. Both approaches can also be used. Building really beefy machines and replicating them. There is sort of the benefit of both but this is something costly to maintain and difficult to scale.
 
-![Web Application Architecture](./_web-arch.png)
+![Web Application Architecture](../_assets/basics/_web-arch.png)
 [^app-arch] - Image Attribution
 
 ## Horizontal Scaling
-![Horizontal Scaling Diagram](./_horiz-scale.png)
+![Horizontal Scaling Diagram](../_assets/basics/_horiz-scale.png)
 [^horscale] - Image Attribution
 
 ## Other Prerequsites

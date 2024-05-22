@@ -48,7 +48,7 @@ I refuse to remember the formula to convert bytes. It's a dumb thing to memorize
   - [Latency](#latency)
 - [Real World Architectures](#real-world-architectures)
   - [Twitter Example](#twitter-example)
-- [References](#references)
+- [Citations \& Footnotes](#citations--footnotes)
 
 ## Back of the Envelope Calculations
 You'll sometimes be asked to do `back-of-the-envelope` estimates. For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take. The **Powers of two table** and **Latency numbers every programmer should know** above are handy references. Absolute accuracy isn't important. Getting "close enough" is fine **i.e.** estimate.
@@ -190,7 +190,7 @@ Math it up!
 | Misc            | **Kafka** - Pub/sub message queue from LinkedIn                                  | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug)                                                                          |
 | Misc            | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)                                                       |
 
-## References
+## Citations & Footnotes
 - [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 - [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 - [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
