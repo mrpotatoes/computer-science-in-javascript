@@ -28,8 +28,8 @@ Learning how to design scalable systems will help you become a better engineer. 
 <table>
   <thead>
     <tr>
-      <th width="20%">Systems</th>
-      <th>Description</th>
+      <th width="250px">Systems</th>
+      <th width="800px">Description</th>
     </tr>
   </thead>
   <tbody>
@@ -100,8 +100,8 @@ Learning how to design scalable systems will help you become a better engineer. 
 <table>
   <thead>
     <tr>
-      <th width="20%">Design a ...</th>
-      <th>Solution</th>
+      <th width="250px">Design a ...</th>
+      <th width="800px">Solution</th>
     </tr>
   </thead>
   <tbody>
