@@ -7,6 +7,7 @@
 
 ## TODOs
 - [ ] Consolidate all relevant sources to the bottom of each page
+  - [ ] Call them to "`## Citations & Footnotes`"
 - [ ] Images
   - [x] Pull in all images
   - [ ] Rename to be discoverable

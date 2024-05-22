@@ -2,7 +2,7 @@
 
 > Suggested topics to review based on your interview timeline (short, medium, long).
 
-![Imgur](../_assets/study-guide.png)
+![Imgur](../_assets/basics/study-guide.png)
 
 **Q: For interviews, do I need to know everything here?**
 
