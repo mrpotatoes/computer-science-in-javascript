@@ -1,16 +1,30 @@
 # Additional Information
+- [Back of the Envelope Calculations](#back-of-the-envelope-calculations)
+  - [Common Inputs](#common-inputs)
 - [Powers of two table](#powers-of-two-table)
-  - [Source(s) and further reading](#sources-and-further-reading)
 - [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
   - [Latency numbers visualized](#latency-numbers-visualized)
-  - [Source(s) and further reading](#sources-and-further-reading-1)
 - [Real world architectures](#real-world-architectures)
+- [References](#references)
 
+## Back of the Envelope Calculations
+You'll sometimes be asked to do `back-of-the-envelope` estimates. For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take. The **Powers of two table** and **Latency numbers every programmer should know** above are handy references. Absolute accuracy isn't important. Getting "close enough" is fine **i.e.** estimate.
 
-You'll sometimes be asked to do 'back-of-the-envelope' estimates.  For example, you might need to determine how long it will take to generate 100 image thumbnails from disk or how much memory a data structure will take.  The **Powers of two table** and **Latency numbers every programmer should know** are handy references.
+### Common Inputs
+- Monthly Active Users (MAU)
+- Daily Active Users (DAU)
+  - Usage per DAU
+    - e.g. Twitter
+      - 300M active users
+      - 10 - 25% create tweets
+  - Scaling factor
+    - Useage rate over the day
+    - e.g. Google Maps
+      - Peak usage -> 5x average
+    - e.g. Uber
+      - Peak usage -> 2x average
 
 ## Powers of two table
-
 ```
 Power           Exact Value         Approx Value        Bytes
 ---------------------------------------------------------------
@@ -24,12 +38,7 @@ Power           Exact Value         Approx Value        Bytes
 40              1,099,511,627,776   1 trillion           1 TB
 ```
 
-### Source(s) and further reading
-
-* [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
-
 ## Latency numbers every programmer should know
-
 ```
 Latency Comparison Numbers
 --------------------------
@@ -66,18 +75,9 @@ Handy metrics based on numbers above:
 * 2,000 round trips per second within a data center
 
 ### Latency numbers visualized
-
 ![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
 
-### Source(s) and further reading
-
-* [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
-* [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
-* [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
-* [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
-
 ## Real world architectures
-
 > Articles on how real world systems are designed.
 
 <p align="center">
@@ -114,3 +114,10 @@ Handy metrics based on numbers above:
 | Misc            | **Dapper** - Distributed systems tracing infrastructure                          | [research.google.com](http://static.googleusercontent.com/media/research.google.com/en//pubs/archive/36356.pdf)                                |
 | Misc            | **Kafka** - Pub/sub message queue from LinkedIn                                  | [slideshare.net](http://www.slideshare.net/mumrah/kafka-talk-tri-hug)                                                                          |
 | Misc            | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)                                                       |
+
+## References
+- [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
+- [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
+- [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
+- [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
+- [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)

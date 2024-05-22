@@ -25,13 +25,12 @@
 ## Start Here
 Learning how to design scalable systems will help you become a better engineer. System design is a broad topic. There is a vast amount of resources scattered throughout the web on system design principles.
 
-- [Study Guide](./basics/study-guide.md)
-- [How to approach](./basics/how-to-approach.md)
-- [Application Architecture](./basics/application-architecture.md)
-- [Networking](./basics/networking.md)
-- [APIs](./basics/apis.md)
-- [Additional Information](./basics/additional-designs.md)
-- [Back of the Envelope Calculations](./basics/back-of-the-envelope.md)
+1. [Study Guide](./basics/study-guide.md)
+1. [How to approach](./basics/how-to-approach.md)
+1. [Application Architecture](./basics/application-architecture.md)
+1. [Networking](./basics/networking.md)
+1. [APIs](./basics/apis.md)
+1. [Back of the Envelope Calculations](./basics/back-of-the-envelope.md)
 
 ## [Core Systems](README.md)
 | Systems                                                                 | Description                                                                                                                                                                                                                                                                                                                                                                                                                                        |
