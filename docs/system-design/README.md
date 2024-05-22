@@ -5,15 +5,32 @@
 
 <p align="center"><img src="./_assets/hero-image.jpg"></p>
 
-## TODOs
-- [ ] Consolidate all relevant sources to the bottom of each page
-  - [ ] Call them to "`## Citations & Footnotes`"
-- [ ] Images
-  - [x] Pull in all images
-  - [ ] Rename to be discoverable
-  - [ ] Relink all images
-- [ ] Remake all diagrams using [draw.io](https://draw.io/)
-- [ ] Add each system design document
+<details>
+  <summary style="font-size: 1.5em;">Todos</summary>
+  
+  ### Tasks for each document
+  - [ ] Consolidate all relevant sources to the bottom of each page
+    - [ ] Call them to "`## Citations & Footnotes`"
+  - [ ] Images
+    - [x] Pull in all images
+    - [ ] Rename to be discoverable
+    - [ ] Relink all images
+  - [ ] Remake all diagrams using [draw.io](https://draw.io/)
+  - [ ] Add each system design document
+
+  ### System docs to finish
+  - [systems/asynchronism.md](systems/asynchronism.md)
+  - [systems/performance-vs-scalability.md](systems/performance-vs-scalability.md)
+  - [systems/latency-vs-throughput.md](systems/latency-vs-throughput.md)
+  - [systems/fanout-service.md](systems/fanout-service.md)
+  - [systems/domain-name-system.md](systems/domain-name-system.md)
+  - [systems/content-delivery-network.md](systems/content-delivery-network.md)
+  - [systems/consistency-patterns.md](systems/consistency-patterns.md)
+  - [systems/consistency-patterns.md](systems/consistency-patterns.md)
+  - [systems/cache.md](systems/cache.md)
+  - [systems/availability-vs-consistency.md](systems/availability-vs-consistency.md)
+  - [systems/availability-patterns.md](systems/availability-patterns.md)
+</details>
 
 ## Start Here
 Learning how to design scalable systems will help you become a better engineer. System design is a broad topic. There is a vast amount of resources scattered throughout the web on system design principles.
