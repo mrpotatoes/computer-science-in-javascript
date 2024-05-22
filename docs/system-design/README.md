@@ -6,7 +6,7 @@
 <p align="center"><img src="./_assets/hero-image.jpg"></p>
 
 <details>
-  <summary style="font-size: 1.5em;">Todos</summary>
+  <summary>Todos</summary>
   
   ### Tasks for each document
   - [ ] Consolidate all relevant sources to the bottom of each page
@@ -30,6 +30,13 @@
   - [systems/cache.md](systems/cache.md)
   - [systems/availability-vs-consistency.md](systems/availability-vs-consistency.md)
   - [systems/availability-patterns.md](systems/availability-patterns.md)
+
+  ### Useful Links
+  > Delete me once I've converted all the docs
+
+  - https://markdowntohtml.com/
+  - https://codebeautify.org/html-to-markdown
+  - https://www.freeformatter.com/html-formatter.html
 </details>
 
 ## Start Here
