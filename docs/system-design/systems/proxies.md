@@ -1,5 +1,5 @@
 # Proxies
-![Server Proxy](./_server-proxy.png)
+![Server Proxy](../_assets/systems/_server-proxy.png)
 
 - [Content Delivery Networks (`CDN`)](#content-delivery-networks-cdn)
 - [Load balancer](#load-balancer)
@@ -12,7 +12,7 @@
   - [Load balancer vs reverse proxy](#load-balancer-vs-reverse-proxy)
   - [Disadvantage(s): reverse proxy](#disadvantages-reverse-proxy)
 - [Consistent Hashing](#consistent-hashing)
-- [Source(s) and further reading](#sources-and-further-reading)
+- [Citations \& Footnotes](#citations--footnotes)
 
 [^server-proxy] - Image Attribution
 
@@ -22,9 +22,8 @@ A proxy is a server in the middle of your back end. Simply.
 Like the previous sentence in the `Load Balancers` a `CDN` spaces out traffic across servers. A `CDN` does not run any application logic but rather serves up static files. They work by taking your uploaded static files and copies them across the `CDN` network. `CDN`s can push or pull. `Pushing` is copying to the network. An alterative approach is `Pulling` which works by copying the static files either "Just in Time" when there is a request or the origin server tells the others files are ready and then each `CDN` pulls the files from the origin.
 
 ## Load balancer
-
 <p align="center">
-  <img src="images/h81n9iK.png">
+  <img src="../_assets/systems/load-balancer.png">
   <br/>
   <i><a href=http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html>Source: Scalable system design patterns</a></i>
 </p>
@@ -77,19 +76,16 @@ Load balancers can also help with horizontal scaling, improving performance and 
 * A single load balancer is a single point of failure, configuring multiple load balancers further increases complexity.
 
 ## Reverse Proxy
-![Load Balancer](./_load-balancing.png)
-[^load-bal] - Image Attribution
-
-A `Reverse Proxy` (note, I hate this name) _balances_ the load and spreads it across servers (in a horizontal setup). Goal is to split the requests to all the servers evenly. This can be done with a "Round Robin" approach (each request goes to a different server) or to use a hashing algorithm to determine which server the request will be relayed to. 
-
-If servers are in different locations across the world (or even just timezones) the `Load Balancer`(s) can direct traffic to nearest geographical server [cluster]. 
-
 <p align="center">
   <img src="../_assets/systems/reverse-proxy-1.png">
   <br/>
   <i><a href=https://upload.wikimedia.org/wikipedia/commons/6/67/Reverse_proxy_h2g2bob.svg>Source: Wikipedia</a></i>
   <br/>
 </p>
+
+A `Reverse Proxy` (note, I hate this name) _balances_ the load and spreads it across servers (in a horizontal setup). Goal is to split the requests to all the servers evenly. This can be done with a "Round Robin" approach (each request goes to a different server) or to use a hashing algorithm to determine which server the request will be relayed to. 
+
+If servers are in different locations across the world (or even just timezones) the `Load Balancer`(s) can direct traffic to nearest geographical server [cluster]. 
 
 A reverse proxy is a web server that centralizes internal services and provides unified interfaces to the public.  Requests from clients are forwarded to a server that can fulfill it before the reverse proxy returns the server's response to the client.
 
@@ -117,18 +113,15 @@ Additional benefits include:
 * A single reverse proxy is a single point of failure, configuring multiple reverse proxies (ie a [failover](https://en.wikipedia.org/wiki/Failover)) further increases complexity.
 
 ## Consistent Hashing
-![Load Balancer](./_load-balancing.png)
-[^load-bal] - Image Attribution
+<p align="center">
+  <img src="../_assets/systems/_consistent-hashing.png">
+</p>
 
 Consistent Hashing is a way to consistently route a request to the same server every time. Consistent Hashing does not guarantee that load will be "balanced" if you're employing a weak algoritm (re: unbalanced binary tree) but if each server can cache an IP's request then the benefit is easy to recognize. That requester that is always going to the same server will recieve their response quickly as it's pulling from the cache instead of running the function each time. This could be more difficult to achieve w/o consistent hashing.
 
 Simplistic algorithms will create more problems than they're worth (using server count/`%` for instance). If a server goes down then the hashing algo will change and now the request are going to different servers entirely.
 
-For more detailed info: [Designing Consistent Hashing](./design-consistent-hashing.md)
-
----
-
-## Source(s) and further reading
+## Citations & Footnotes
 * [Reverse proxy vs load balancer](https://www.nginx.com/resources/glossary/reverse-proxy-vs-load-balancer/)
 * [NGINX architecture](https://www.nginx.com/blog/inside-nginx-how-we-designed-for-performance-scale/)
 * [HAProxy architecture guide](http://www.haproxy.org/download/1.2/doc/architecture.txt)
@@ -140,3 +133,5 @@ For more detailed info: [Designing Consistent Hashing](./design-consistent-hashi
 * [Layer 4 load balancing](https://www.nginx.com/resources/glossary/layer-4-load-balancing/)
 * [Layer 7 load balancing](https://www.nginx.com/resources/glossary/layer-7-load-balancing/)
 * [ELB listener config](http://docs.aws.amazon.com/elasticloadbalancing/latest/classic/elb-listener-config.html)
+
+[^load-balancer]: [Source: Scalable system design patterns](http://horicky.blogspot.com/2010/10/scalable-system-design-patterns.html)
