@@ -10,12 +10,13 @@
   
   ### Tasks for each document
   - [ ] Consolidate all relevant sources to the bottom of each page
-    - [ ] Call them to "`## Citations & Footnotes`"
+    - [ ] Call them "`## Citations & Footnotes`"
   - [ ] Images
     - [x] Pull in all images
     - [ ] Rename to be discoverable
-    - [ ] Relink all images
   - [ ] Remake all diagrams using [draw.io](https://draw.io/)
+  - [ ] Use `LaTeX` for numbers n' shit
+  - [ ] Change communication.md's table's code content to be proper html formatted with newlines & tabs
   - [ ] Add each system design document
 
   ### System docs to finish
