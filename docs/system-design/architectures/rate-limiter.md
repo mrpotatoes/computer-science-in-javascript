@@ -1,19 +1,24 @@
 # Designing a Rate Limiter
 
-- [Designing a Rate Limiter](#designing-a-rate-limiter)
-  * [Benefits of Rate Limiting](#benefits-of-rate-limiting)
-    + [When to use](#when-to-use)
-    + [Complications](#complications)
-  * [Some questions to ask before starting the exercise](#some-questions-to-ask-before-starting-the-exercise)
-  * [Considerations](#considerations)
-    + [If limiter component fails](#if-limiter-component-fails)
-  * [Algos](#algos)
-    + [Token Bucket](#token-bucket)
-    + [Leaky Bucket](#leaky-bucket)
-    + [Counter](#counter)
-    + [Sliding-Window Counter](#sliding-window-counter)
-    + [Backoff (relazing limit)](#backoff--relazing-limit-)
-    + [Performance & Optimization](#performance---optimization)
+- [Benefits of Rate Limiting](#benefits-of-rate-limiting)
+  - [When to use](#when-to-use)
+  - [Complications](#complications)
+- [Questions to ask about requirements](#questions-to-ask-about-requirements)
+  - [Functional requirements](#functional-requirements)
+  - [Non-Functional requirements](#non-functional-requirements)
+    - [Initial thoughts on requirements](#initial-thoughts-on-requirements)
+- [Considerations](#considerations)
+  - [Limiting Basis](#limiting-basis)
+  - [If limiter component fails](#if-limiter-component-fails)
+- [Algos](#algos)
+  - [Fixed Window \& Sliding Window](#fixed-window--sliding-window)
+  - [Token Bucket](#token-bucket)
+  - [Leaky Bucket](#leaky-bucket)
+  - [Counter](#counter)
+  - [Sliding-Window Counter](#sliding-window-counter)
+  - [Backoff (relazing limit)](#backoff-relazing-limit)
+  - [Performance \& Optimization](#performance--optimization)
+- [Citations \& Footnotes](#citations--footnotes)
 
 Rate limiting is an approach to restricting the quantity of requests to a service within a given time range. A basic example is mitigating the effects of a `DDOS` attack. There are two options when deciding to use a rate limiter. The first option is to limit indiscriminately based on _n_ requests per _period_ (`Request Rate Limiter`) and the second makes it's decision based on the status of the entire system which is called a `load shedder`. The latter is used when part of the system has the potential to be uavailable or a service is processing slower than usual.
 
@@ -49,7 +54,7 @@ But
 
 A rate limiter needs to _remember_ who is who when they are making a request so decisions can be made based on that requester. Basically we need to save that ID somehow and since we want extremely low so it wouldn't behoove of us to use a disk storage mechanism to save that data. Not even a database (that's disk IO). Instead using `System Memory` (`RAM`) would be the most performant. 
 
-Just remember, you'll need to know _HOW_ much RAM you'll need and that depends on the hash you'd use to identify requester IDs. Servers (or even AWS components) can easily handle 132GB of memory[^memory-angent]! 😳😳😳. 
+Just remember, you'll need to know _HOW_ much RAM you'll need and that depends on the hash you'd use to identify requester IDs. Servers (or even AWS components) can easily handle 132GB of memory[^memory-management]! 😳😳😳. 
 
 About storage. `User + Requests Count`
 
@@ -64,23 +69,6 @@ x            256 bytes
 ----------------------------
 =       24.68005 GB
 ```
-
-<!-- 
-
-Show this as an expandable section.
-
-Remember, there are [conversion calculators](https://calcuworld.com/business-calculators/bytes-calculator/) out there for free to do these calculations for us. Don't bother to remember the conversion formula
-```
-IPv4
-  → 32 bits
-    → 4 bytes
-
-IPv6
-  → 128 bits
-    → 16 bytes
-```
-
- -->
 
 {{% alert title="Note" color="info" %}}
 Rate limiting is something that requires swift responses so storing your deterministic data in a system that uses IO will be too slow so using something like `Redis` or in memory would be best.
@@ -118,40 +106,37 @@ In either case authentication to the component/service would be re-enabled once 
 1. Determine how many requests per time period
 2. How to handle spikes?
 
-### Fixed Window & Sliding Window[^fixed-window]
-![Fixed Window Diagram](./_fixed-window.png)<br />
-[^fixed-window] - Image Attribution
+### Fixed Window & Sliding Window
+![](../_assets/architectures/_fixed-window.png)
+<br />
+[^fixed-window] Fixed Window - Image Attribution
 
 The `Fixed Window` algorithm is one of the easier algorithms to implement for a rate limiter but doing this would introduce spikes that could become an annoyance or even these spikes could harm the system over time as the requests aren't spread out. The benefit is that it's really easy to impliment but it isn't accurate as there could be spikes it is much easier on resoures (memory in this case).
 
 An alternative is the `Sliding Window` algorithm. Instead of disreguarding the history of a user's requests this algorithm takes that into account. A drawback is storage. For every IP if we want to store the date of the last x requests (if our rule allows for 100 requests per second then we'd store 100 timestamps @ 4 bytes 😳😬😬). 
 
 ### Token Bucket
-![Token Bucket](./_token-bucket.png)
-[^bucket]: Image Attribution
+![](../_assets/architectures/_token-bucket.png)
+<br />
+[^bucket] Token - Image Attribution
 
 ### Leaky Bucket
-![Leaky Bucket](./_leaky-bucket.png)
-[^bucket]: Image Attribution
+![](../_assets/architectures/_leaky-bucket.png)
+<br />
+[^bucket] Leaky - Image Attribution
 
 ### Counter
 ### Sliding-Window Counter
 ### Backoff (relazing limit)
 ### Performance & Optimization
 
-## Footnotes & Citations
-[Rate Limiting system design | TOKEN BUCKET, Leaky Bucket, Sliding Logs - YouTube](https://www.youtube.com/watch?v=mhUQe4BKZXs)
-[System Design Interview - Rate Limiting (local and distributed) - YouTube](https://www.youtube.com/watch?v=FU4WlwfS3G0)
-
-[API Rate Limiter System Design](https://www.enjoyalgorithms.com/blog/design-api-rate-limiter)
-
-[Design a Distributed Scalable API Rate Limiter](https://systemsdesign.cloud/SystemDesign/RateLimiter)
-
-[Scaling your API with rate limiters](https://stripe.com/blog/rate-limiters)
+## Citations & Footnotes
+- [Rate Limiting system design | TOKEN BUCKET, Leaky Bucket, Sliding Logs - YouTube](https://www.youtube.com/watch?v=mhUQe4BKZXs)
+- [System Design Interview - Rate Limiting (local and distributed) - YouTube](https://www.youtube.com/watch?v=FU4WlwfS3G0)
+- [API Rate Limiter System Design](https://www.enjoyalgorithms.com/blog/design-api-rate-limiter)
+- [Design a Distributed Scalable API Rate Limiter](https://systemsdesign.cloud/SystemDesign/RateLimiter)
+- [Scaling your API with rate limiters](https://stripe.com/blog/rate-limiters)
 
 [^bucket]: [What is Token Bucket and Leaky Bucket algorithms | Hans Blog](https://hansliu.com/posts/2020/11/what-is-token-bucket-and-leaky-bucket-algorithms.html)
-
-[^memory-angent]: Even though your hardware (virtual or physical) you'll need to account for the operational costs of the hardware used even at the firewall level and this depends on the traffic your system recieves and the money you can spend on this component of your entire system.
-
+[^memory-management]: Even though your hardware (virtual or physical) you'll need to account for the operational costs of the hardware used even at the firewall level and this depends on the traffic your system recieves and the money you can spend on this component of your entire system.
 [^fixed-window]: [Sliding Window- Fixed Rate : Practical Rate Limiting for Web APIs | by msingh | Medium](https://software-factotum.medium.com/sliding-window-fixed-rate-practical-rate-limiting-for-web-apis-c8408a070e4c)
-

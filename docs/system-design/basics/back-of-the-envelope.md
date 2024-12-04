@@ -1,10 +1,53 @@
+<!-- # Back of envelope calculations
+
+## Overview
+
+
+## Examples
+### Twitter
+- 300M MAU
+  - 50% MAU use daily -> 150M DAU
+- 25% tweeting
+  - 0.5 tweets / DAU
+- Scaling factor
+  - 2x average in morning
+- (150M DAU) * (0.5 tweets per DAU) * (2x Scale) / (86400s / day)
+  - 1500 tweets / second
+- Convert to Scientic Notation
+  - 150M DAU
+    - 150 * 10^6 = 1.5 x 10^8
+  - 0.5 tweets per DAU
+  - 2x Scale
+  - 86400s / day
+    - Round up to 100,000 seconds
+      - 10^5
+- Math it up!
+  - Group 10s together
+    - 1.5 X .5 * 2 * 10^6
+      - 10^3 = 10^8 * 10^5 => 10^(8-5)
+    - 1.5 * 10^3 => 1500 tweets created / second
+
+## Links
+### Byte Calculator
+I refuse to remember the formula to convert bytes. It's a dumb thing to memorize. Besides it's not like we live in a world bereft of [tools](https://calcuworld.com/business-calculators/bytes-calculator/) (online or otherise) that exist for free that can handle these conversions. It is simply not useful to keep this in my brain just for doing these calculations for `Back of envelope calculations`. 
+
+### Articles & videos
+- [Bytes Calculator | Byte Converter | Bit Converter](https://calcuworld.com/business-calculators/bytes-calculator/)
+- [Understanding Latency versus Throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+- [Back-of-the-envelope](https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation)
+- [Back-Of-The-Envelope / Capacity Planning - YouTube](https://www.youtube.com/watch?v=UC5xf8FbdJc)
+
+-->
+
 # Additional Information
 - [Back of the Envelope Calculations](#back-of-the-envelope-calculations)
   - [Common Inputs](#common-inputs)
-- [Powers of two table](#powers-of-two-table)
-- [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-  - [Latency numbers visualized](#latency-numbers-visualized)
-- [Real world architectures](#real-world-architectures)
+- [Estimate Lookups](#estimate-lookups)
+  - [Powers of Two](#powers-of-two)
+  - [Byte Calculator](#byte-calculator)
+  - [Latency](#latency)
+- [Real World Architectures](#real-world-architectures)
+  - [Twitter Example](#twitter-example)
 - [Citations \& Footnotes](#citations--footnotes)
 
 ## Back of the Envelope Calculations
@@ -24,7 +67,9 @@ You'll sometimes be asked to do `back-of-the-envelope` estimates. For example, y
     - e.g. Uber
       - Peak usage -> 2x average
 
-## Powers of two table
+## Estimate Lookups
+
+### Powers of Two
 ```
 Power           Exact Value         Approx Value        Bytes
 ---------------------------------------------------------------
@@ -38,7 +83,12 @@ Power           Exact Value         Approx Value        Bytes
 40              1,099,511,627,776   1 trillion           1 TB
 ```
 
-## Latency numbers every programmer should know
+### Byte Calculator
+I refuse to remember the formula to convert bytes. It's a dumb thing to memorize. Besides it's not like we live in a world bereft of [tools](https://calcuworld.com/business-calculators/bytes-calculator/) (online or otherise) that exist for free that can handle these conversions. It is simply not useful to keep this in my brain just for doing these calculations for `Back of envelope calculations`. 
+
+### Latency
+![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
+
 ```
 Latency Comparison Numbers
 --------------------------
@@ -74,10 +124,35 @@ Handy metrics based on numbers above:
 * 6-7 world-wide round trips per second
 * 2,000 round trips per second within a data center
 
-### Latency numbers visualized
-![](https://camo.githubusercontent.com/77f72259e1eb58596b564d1ad823af1853bc60a3/687474703a2f2f692e696d6775722e636f6d2f6b307431652e706e67)
+## Real World Architectures
+### Twitter Example
+```
+- 300M MAU
+  - 50% MAU use daily -> 150M DAU
+- 25% tweeting
+  - 0.5 tweets / DAU
+- Scaling factor
+  - 2x average in morning
+- (150M DAU) * (0.5 tweets per DAU) * (2x Scale) / (86400s / day)
+  - 1500 tweets / second
+- Convert to Scientic Notation
+  - 150M DAU
+    - 150 * 10^6 = 1.5 x 10^8
+  - 0.5 tweets per DAU
+  - 2x Scale
+  - 86400s / day
+    - Round up to 100,000 seconds
+      - 10^5
+```
 
-## Real world architectures
+Math it up!
+```
+- Group 10s together
+  - 1.5 X .5 * 2 * 10^6
+    - 10^3 = 10^8 * 10^5 => 10^(8-5)
+  - 1.5 * 10^3 => 1500 tweets created / second
+```
+
 > Articles on how real world systems are designed.
 
 <p align="center">
@@ -116,11 +191,15 @@ Handy metrics based on numbers above:
 | Misc            | **Zookeeper** - Centralized infrastructure and services enabling synchronization | [slideshare.net](http://www.slideshare.net/sauravhaloi/introduction-to-apache-zookeeper)                                                       |
 
 ## Citations & Footnotes
-- [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-- [Powers of two table](#powers-of-two-table)
-- [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
 - [Powers of two](https://en.wikipedia.org/wiki/Power_of_two)
 - [Latency numbers every programmer should know - 1](https://gist.github.com/jboner/2841832)
 - [Latency numbers every programmer should know - 2](https://gist.github.com/hellerbarde/2843375)
 - [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 - [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
+- [Bytes Calculator | Byte Converter | Bit Converter](https://calcuworld.com/business-calculators/bytes-calculator/)
+- [Understanding Latency versus Throughput](https://community.cadence.com/cadence_blogs_8/b/fv/posts/understanding-latency-vs-throughput)
+- [Back-of-the-envelope](https://bytebytego.com/courses/system-design-interview/back-of-the-envelope-estimation)
+- [Back-Of-The-Envelope / Capacity Planning - YouTube](https://www.youtube.com/watch?v=UC5xf8FbdJc)
+- [Byte Calculator](https://calcuworld.com/business-calculators/bytes-calculator/)
+  - I refuse to remember the formula to convert bytes. It's a dumb thing to memorize. Besides it's not like we live in a world bereft of (online or otherise) that exist for free that can handle these conversions. It is simply not useful to keep this in my brain just for doing these calculations for `Back of envelope calculations`. 
+
